@@ -1,3 +1,12 @@
+<?php
+  require './config/database.php';
+
+  echo $_SESSION['success_flash'];
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
