@@ -18,14 +18,14 @@
 
         }
 
-        public function CreateCourse($course_code, $course_title, $course_description, $dept_code, $faculty_code, $id_number){
+        public function CreateCourse($course_code, $course_title, $course_description,$credit_unit, $dept_code, $faculty_code, $id_number){
 
             $errors = array();
             $message = '';
             $created_at = date('Y-m-d');
 
-            $insert_sql = "INSERT INTO courses (course_id,course_code,course_title,course_description, dept_code,faculty_code, id_number, created_at) 
-            VALUES(NULL,'$course_code','$course_title','$course_description','$dept_code','$faculty_code','$id_number','$created_at')" ;
+            $insert_sql = "INSERT INTO courses (course_id,course_code,course_title,course_description,credit_unit, dept_code,faculty_code, id_number, created_at) 
+            VALUES(NULL,'$course_code','$course_title','$course_description','$credit_unit','$dept_code','$faculty_code','$id_number','$created_at')" ;
 
 
             if($insert_query = $this->db->query($insert_sql)){

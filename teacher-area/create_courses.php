@@ -13,9 +13,10 @@
   $dept_code = 'CEG';
   $faculty_code = 'ENG';
   $id_number = '123456';
+  $credit_unit = 2;
 
 
-  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description, $dept_code, $faculty_code, $id_number)
+  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description,$credit_unit ,$dept_code, $faculty_code, $id_number)
 
 
   */
