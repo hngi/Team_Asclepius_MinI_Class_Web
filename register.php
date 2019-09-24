@@ -29,7 +29,16 @@ $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_passw
 </head>
 
 <body>
-
+<form action="#" class="form-box">
+  <input type="text" name="fname" class="input-form" id="" placeholder="Fullname">
+  <input type="text" name="lname" class="input-form" id="" placeholder="Lastname">
+  <input type="text" name="uname" class="input-form" id="" placeholder="Username">
+  <input type="text" name="email"class="input-form" id="" placeholder="email">
+  <input type="password" name="password" class="input-form" id="" placeholder="Password">
+  <input type="text" name="c_password" class="input-form" id="" placeholder="confirm Password">
+  <input type="submit" value="Submit" class="btn btn-success">
+  
+</form>
 
   <script src="js/main.js"></script>
 </body>
