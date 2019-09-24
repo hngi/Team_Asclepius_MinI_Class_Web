@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 23, 2019 at 10:20 PM
+-- Generation Time: Sep 24, 2019 at 11:52 AM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -21,6 +21,56 @@ SET time_zone = "+00:00";
 --
 -- Database: `mini_class`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+DROP TABLE IF EXISTS `courses`;
+CREATE TABLE IF NOT EXISTS `courses` (
+  `course_id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_code` varchar(20) NOT NULL,
+  `course_title` varchar(255) NOT NULL,
+  `course_description` text NOT NULL,
+  `dept_code` varchar(20) NOT NULL,
+  `faculty_code` varchar(20) NOT NULL,
+  `id_number` varchar(20) NOT NULL,
+  `created_at` text NOT NULL,
+  PRIMARY KEY (`course_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`course_id`, `course_code`, `course_title`, `course_description`, `dept_code`, `faculty_code`, `id_number`, `created_at`) VALUES
+(1, 'CEG313', 'strength of materials', 'dEscribing the stregnth of different materials in civil eng.', 'CEG', 'ENG', '123456', '2019-09-24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notes`
+--
+
+DROP TABLE IF EXISTS `notes`;
+CREATE TABLE IF NOT EXISTS `notes` (
+  `note_id` int(11) NOT NULL AUTO_INCREMENT,
+  `course_code` varchar(20) NOT NULL,
+  `note_title` varchar(200) NOT NULL,
+  `note_file` varchar(255) NOT NULL,
+  `id_number` varchar(30) NOT NULL,
+  `created_at` varchar(30) NOT NULL,
+  PRIMARY KEY (`note_id`)
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notes`
+--
+
+INSERT INTO `notes` (`note_id`, `course_code`, `note_title`, `note_file`, `id_number`, `created_at`) VALUES
+(2, 'CEG313', 'strength of materials', '', '123456', '2019-09-24');
 
 -- --------------------------------------------------------
 

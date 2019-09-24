@@ -74,21 +74,21 @@ Class User{
                 $faculty_code = '';
                 $image = '';
                 $gender ='';
-				$insert_sql = "INSERT INTO users (user_id,email,fullname,role,id_number,courses, dept_code,faculty_code,password,image, hash,created_at,status) 
+				        $insert_sql = "INSERT INTO users (user_id,email,fullname,role,id_number,courses, dept_code,faculty_code,password,image, hash,created_at,status) 
                 VALUES(NULL,'$email','$fullname','$role','$id_number','$courses','$dept_code','$faculty_code','$hashed_password','$image','$hash','$created_at','$status')" ;
 
 
                 //if insert success, send verification mail
                 if($insert_query = $this->db->query($insert_sql)){
                     
-                    $from = 'admin@fxtraderoptions.com';  
+                    $from = '';  
                     $headers = "MIME-Version: 1.0" . "\r\n";
                     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
                     $headers .= "From: <" . $from . ">\r\n";
-                    $headers .= "Reply-To: admin@fxtraderoptions.com\r\n";
-                    $headers .= "Return-Path: admin@fxtraderoptions.com\r\n";
-                    $headers .= "CC: admin@fxtraderoptions.com\r\n";
-                    $headers .= "BCC: admin@fxtraderoptions.com\r\n";
+                    $headers .= "Reply-To: \r\n";
+                    $headers .= "Return-Path: \r\n";
+                    $headers .= "CC: \r\n";
+                    $headers .= "BCC: \r\n";
                 
                     $to = $email;
                     $body = '<!doctype html>
