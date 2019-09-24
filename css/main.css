@@ -1,0 +1,24 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-image: url(../images/images3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box {
+    position: absolute;
+    transform: translate(25rem, 12rem);
+    width: 50%;
+}
+
+.form-box .input-form {
+    width: 20rem;
+    height: 2.7rem;
+    margin-bottom: .5rem;
+    border: none;
+    border-radius: 10px;
+}
