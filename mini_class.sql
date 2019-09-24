@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Sep 24, 2019 at 11:52 AM
+-- Generation Time: Sep 24, 2019 at 03:13 PM
 -- Server version: 5.7.19
 -- PHP Version: 5.6.31
 
@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `course_code` varchar(20) NOT NULL,
   `course_title` varchar(255) NOT NULL,
   `course_description` text NOT NULL,
+  `credit_unit` int(5) NOT NULL,
   `dept_code` varchar(20) NOT NULL,
   `faculty_code` varchar(20) NOT NULL,
   `id_number` varchar(20) NOT NULL,
@@ -45,8 +46,8 @@ CREATE TABLE IF NOT EXISTS `courses` (
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`course_id`, `course_code`, `course_title`, `course_description`, `dept_code`, `faculty_code`, `id_number`, `created_at`) VALUES
-(1, 'CEG313', 'strength of materials', 'dEscribing the stregnth of different materials in civil eng.', 'CEG', 'ENG', '123456', '2019-09-24');
+INSERT INTO `courses` (`course_id`, `course_code`, `course_title`, `course_description`, `credit_unit`, `dept_code`, `faculty_code`, `id_number`, `created_at`) VALUES
+(1, 'CEG313', 'strength of materials', 'dEscribing the stregnth of different materials in civil eng.', 4, 'CEG', 'ENG', '123456', '2019-09-24');
 
 -- --------------------------------------------------------
 
@@ -101,7 +102,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`user_id`, `email`, `fullname`, `role`, `id_number`, `courses`, `dept_code`, `faculty_code`, `password`, `image`, `hash`, `created_at`, `status`) VALUES
-(1, 'agughalamDavis@yahoo.com', 'davis', 'lecturer', '268174', '', '', '', '$2y$10$zfn8D0aTk7IVdSiluDTz/e3cIOl8JXGGqNYEXDka6DvT5k3nkHnUS', '', '2ab56412b1163ee131e1246da0955bd1', '2019-09-23', 1),
+(1, 'agughalamDavis@yahoo.com', 'davis', 'lecturer', '268174', '[\"CEG313\",\"english\",\"chemistry\"]', '', '', '$2y$10$zfn8D0aTk7IVdSiluDTz/e3cIOl8JXGGqNYEXDka6DvT5k3nkHnUS', '', '2ab56412b1163ee131e1246da0955bd1', '2019-09-23', 1),
 (2, 'agughalamDav@yahoo.com', 'davis', 'lecturer', '295629', '', '', '', '$2y$10$yFFny7GDAQyiLJ2RWFGtR.AcQqp9hhP.6SbSbosun24iv0CXWgCs2', '', 'd1f255a373a3cef72e03aa9d980c7eca', '2019-09-23', 0);
 COMMIT;
 

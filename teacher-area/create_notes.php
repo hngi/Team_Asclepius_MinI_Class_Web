@@ -4,6 +4,7 @@
 
   $lecturer = new Lecturer;
 
+   /* Not tested. will be tested once the front end guys give a page
     if(!empty($_FILES)){
 
           $errors = array();
@@ -49,8 +50,9 @@
                 $upload_message = "Sorry, there was an error uploading your file.";
             }
         }
+        
              
-    }
+    }*/
 
 ?>
 
