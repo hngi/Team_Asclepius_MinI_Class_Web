@@ -22,3 +22,110 @@ body {
     border: none;
     border-radius: 10px;
 }
+
+main {
+    text-align: center;
+}
+
+main  h1 {
+    margin-top: -2rem;
+    color: #fff;
+    text-shadow: 0 0 8px #888;
+}
+
+header > .logo > img{
+    width: 50px;
+    height: 50px;
+}
+
+.login-form {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    margin-top: 4.2rem;
+}
+
+.icon {
+    margin: auto 0;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.login-form > .user-name,
+.login-form > .password {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    /* width: 100%; */
+    background: #fff;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.user-name:active {
+    width: 10px;
+}
+
+.user-name > input,
+.password > input {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.login-form a {
+    text-decoration: none;
+    color:#fff;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin: 0.5rem; 
+    text-shadow: 0 0 8px #888;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 1rem;
+    background: #fff;
+    font-weight: bolder;
+}
+
+.btn:hover {
+    background: rgb(37, 37, 235);
+    color: #fff;
+}
+
+
+.line {
+    width: 150px;
+    height: 10px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+@media (min-width: 740px) {
+    header > .logo > img{
+        width: 65px;
+        height: 65px;
+    }
+
+    .login-form > .user-name,
+    .login-form > .password {
+    width: 40%; 
+    }
+
+    .btn {
+        padding: 1rem 4rem;
+    }
+}
