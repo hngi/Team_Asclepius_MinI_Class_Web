@@ -140,13 +140,20 @@ img {
 }
 .wrapper-grid {
   display: grid;
-  grid-template-areas: "grid1 grid2";
+  grid-template-areas: "grid1 grid1 grid2";
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   font-size: 1rem;
 }
 .grid-1 {
+  grid-area: grid1;
   grid-column: 1 / span 2;
+}
+
+.grid-2 {
+  width: 22rem;
+  grid-area: grid2;
+  grid-column: 3 / span 3;
 }
 
 .grid-1 {
