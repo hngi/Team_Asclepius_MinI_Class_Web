@@ -5,12 +5,7 @@ $user =  new User;
 
 /* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details 
 you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-
-
-
-
 $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password)
-
 
 
 ?>

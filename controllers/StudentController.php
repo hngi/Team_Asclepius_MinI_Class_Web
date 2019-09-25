@@ -78,9 +78,58 @@ require '../config/database.php';
 
             }
 
+        }
 
+        public function SubmitAssignment($hw,$course_code,$user_id){
+            $message='';
+            if(getimagesize($_FILES[$hw]['tmp_name'])==FALSE){
+                $message='please upload a file.';
+            }
+            else{
+                $created_at=date('y-m-d');
+                $ass = $_FILES[$hw]['name'];
+                $target="assigment/submit/".basename($ass);
+                move_uploaded_file($_FILES[$hw]['tmp_name'],$target);
+                try{
+                    $insert_sql = "INSERT INTO `submit_assignment` (user_id,course_code,assignment_name,created_at) VALUES('$user_id','$course_code','$ass','$created_at')" ;
+                    $insert_query = $this->db->query($insert_sql) or die(mysqli_error($this->db));
+                    $message = 'Assignment Succesfully Submited';
+                }
+                catch (Exception $e){
+                    $message = 'Something Went wrong. Please try again.';
+                }
+
+
+            }
+            return $message;
+        }
+
+        public function ShowAssignmentToLecturer($course_code){
+
+            $sql = "SELECT assignment_name FROM submit_assignment where course = '$course_code'";
+            $query = $this->db->query($sql);
+            $Courses = mysqli_fetch_assoc($query);
+            $courses = $Courses['course_code'];
+            $allcourse=[];
+
+            foreach ($courses as $item){
+                array_push($allcourse,$item);
+            }
+            return $allcourse;
 
         }
+
+        public function ShowAssignmentToStudent($user_id){
+
+            $sql = "SELECT assignment_name FROM submit_assignment where user_id = '$user_id'";
+            $query = $this->db->query($sql);
+            $Courses = mysqli_fetch_assoc($query);
+            $course = $Courses['course_code'];
+
+            return $course;
+
+        }
+
     }
 
 
