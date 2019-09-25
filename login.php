@@ -1,16 +1,15 @@
 <?php
   require 'controllers/user.php';
-
   $user =  new User;
 
   /*----to test login, create variables email and password with the same email 
   and password you used to register just under this comment---*/
  
-
-  $message = $user->UserLogin($email,$password);
-
-  var_dump($message);
-
+  if (isset($_POST['login'])) {
+    $email = mysqli_real_escape_string($db, $_POST['email']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
+    $message = $user->UserLogin($email,$password);
+  }
 
 ?>
 
@@ -37,7 +36,7 @@
 
   <main>
     <h1>Get Active</h1>
-    <form class="login-form">
+    <form class="login-form" method="post">
       <div class="user-name">
         <div class="icon">
           <i class="fa fa-user" aria-hidden="true"></i>
@@ -52,7 +51,7 @@
         <input type="password" placeholder="Password" minlength="3" required>
       </div>
 
-      <input type="submit" value="LOGIN" class="btn">
+      <input type="submit" value="LOGIN" name="login" class="btn">
 
       <a href="#">Forget Password?</a>
       <div class="line"></div>
