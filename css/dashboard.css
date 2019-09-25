@@ -1,0 +1,402 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #ffffff;
+  color: #0a0a0a;
+}
+header {
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
+.text-secondary {
+  color: #eece1a;
+}
+a {
+  text-decoration: none;
+  color: #17a2b8;
+}
+a:hover {
+  color: #17a2b8;
+}
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+header div.lead {
+  background: #ffffff;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+}
+span#student-name {
+  color: #0a0a0a;
+}
+
+section h1.lg-heading,
+section h2.lg-heading,
+section h3.lg-heading {
+  font-size: 3rem;
+}
+
+section h1.sm-heading,
+section h2.sm-heading,
+section h3.sm-heading {
+  margin-bottom: 2rem;
+  padding: 0.2rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/*NavBar*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  top: 2;
+  border-bottom: solid 1px #17a2b8;
+  opacity: 0.9;
+  height: 6rem !important;
+}
+
+.navbar a {
+  color: #0a0a0a;
+  padding: 0.45rem;
+  margin: 0 0.25rem;
+  font-size: 2rem;
+}
+.navbar a:hover {
+  color: #17a2b8;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.bg-dark {
+  background: #c4c4c4;
+}
+.navbar ul li img {
+  display: inline-block;
+  width: 3rem;
+  border-radius: 10rem;
+}
+.navbar ul li#avatar a,
+img {
+  width: 3rem;
+  height: 3rem;
+  top: 3rem;
+  border-radius: 10rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin-top: 13rem;
+  padding: 2rem;
+}
+
+.grid-1 .grey,
+.grey {
+  background: rgba(196, 196, 196, 0.3);
+  border-radius: 11.9029px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+.grey {
+  height: 30rem;
+}
+
+#wrapper-grid-1.grey {
+  height: 8rem !important;
+}
+
+.lead-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.wrapper-grid {
+  display: grid;
+  grid-template-areas: "grid1 grid2";
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  font-size: 1rem;
+}
+.grid-1 {
+  grid-column: 1 / span 2;
+}
+
+.grid-1 {
+  display: grid;
+  grid-template-areas:
+    "top top"
+    "item-1 item-2"
+    "item-3 item-4";
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.wrapper-grid-1 {
+  grid-area: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+#grey-2 ul.first-list,
+#grey-2 ul.second-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+#grey-2 ul.second-list {
+  font-style: italic;
+  font-size: 1.3rem;
+}
+
+.content-grid div {
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.content-grid div:last-child {
+  border-bottom: none;
+}
+.content-grid div:first-child {
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-areas:
+    "calendar"
+    "schedule";
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.responsive-calendar {
+  grid-area: calendar;
+  border: 1px solid rgba(208, 79, 79, 0.46) !important;
+  height: auto;
+}
+.schedule {
+  grid-area: schedule;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  height: 100vh;
+  margin-top: 3rem;
+  font-family: Rosario;
+}
+.subject-group {
+}
+.chapter {
+  font-style: italic;
+}
+.my {
+  margin-bottom: 3rem !important;
+}
+.my:last-child {
+  margin-bottom: 0 !important;
+}
+
+.note {
+  display: grid;
+  grid-template-areas: "image grid1 grid2";
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.1rem;
+}
+.image {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / span 1;
+}
+.name-1 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2 / span 3;
+}
+#time-1 {
+  display: flex;
+  flex-direction: column;
+  grid-column: 4 / span 5;
+}
+
+.note img {
+  float: left;
+}
+.note span#time {
+  position: relative;
+  display: block;
+  float: right;
+  margin-top: 0.5rem !important;
+  clear: both;
+}
+.no-border-bottom {
+  border-bottom: none !important;
+}
+
+span.circle {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 10rem;
+  float: left;
+}
+.circle-1 {
+  background: rgba(208, 79, 79, 0.46);
+}
+.circle-2 {
+  background: rgba(79, 146, 208, 0.46);
+}
+.circle-3 {
+  background: rgba(197, 208, 79, 0.46);
+}
+.circle-4 {
+  background: rgba(105, 208, 79, 0.46);
+}
+.circle-5 {
+  background: rgba(205, 79, 208, 0.46);
+}
+.circle-6 {
+  background: rgba(159, 79, 208, 0.46);
+}
+.schedule ul {
+  margin-left: 3rem;
+}
+
+/*footer starts*/
+footer {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: 1000;
+  margin: 0 auto;
+  background: #ffffff;
+  width: 100vw;
+}
+
+footer .blue {
+  color: #009da4;
+}
+/*footer ends*/
+
+/*MEDIA QUERY*/
+@media screen and (min-width: 48rem) {
+}
+
+@media (max-width: 700px) {
+  .navbar ul li a {
+    font-size: 0.8rem;
+  }
+  .hide-sm {
+    display: none;
+  }
+  .landing {
+    overflow-x: hidden;
+  }
+  .container {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 8rem;
+  }
+
+  /*Text Styles*/
+  .x-large {
+    font-size: 3rem;
+  }
+  .x-large {
+    font-size: 2rem;
+  }
+  .lead {
+    font-size: 1rem;
+    display: block;
+    width: 100vw;
+    background: #ffffff;
+  }
+
+  /*NavBar*/
+  .navbar {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar h1[hide] {
+    display: none;
+    height: 0;
+    overflow: hidden;
+    top: 0;
+  }
+  .navbar ul {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /*NavBar*/
+
+  .navbar {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .navbar ul li a {
+    font-size: 0.6rem;
+  }
+  .data .input {
+    width: 100%;
+    height: 4vh;
+  }
+  #msg {
+    width: 100%;
+    height: 20vh;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  body {
+    font-size: 0.7rem;
+  }
+  .navbar {
+    font-size: 0.5rem;
+  }
+}
