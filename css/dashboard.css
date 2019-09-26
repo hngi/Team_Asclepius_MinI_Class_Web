@@ -14,10 +14,16 @@ body {
   background-image: url("https://res.cloudinary.com/hng-pre-internship/image/upload/v1568937724/welcome%20page/topright_gjq4ew.png");
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   z-index: -1;
+}
+.menu-nav {
+}
+#logo {
 }
 .logo {
   width: 100%;
+  margin-left: 0;
 }
 header {
   top: 0;
@@ -48,12 +54,20 @@ h3 {
 }
 header div.lead {
   background: #ffffff;
-  padding-bottom: 1rem;
+  padding-bottom: 0.2rem;
   padding-left: 0.5rem;
   margin-bottom: 0;
 }
-span#student-name {
+#student-name {
+  padding-top: 0.9rem;
+  padding-left: 1rem;
   color: #0a0a0a;
+}
+#student-name h2 {
+  font-size: 1.5rem !important;
+}
+#student-name h3 {
+  font-size: 1rem !important;
 }
 
 section h1.lg-heading,
@@ -74,6 +88,7 @@ section h3.sm-heading {
 .navbar {
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   padding: 0.7rem 2rem;
   position: fixed;
@@ -123,7 +138,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-top: 13rem;
+  margin-top: 6.5rem;
   padding: 2rem;
 }
 
@@ -147,6 +162,9 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+.wrapper-grid-1 {
+  margin-bottom: -5rem !important;
 }
 .wrapper-grid {
   display: grid;
@@ -237,7 +255,7 @@ img {
   align-items: center;
   align-content: center;
   height: 100vh;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   font-family: Rosario;
 }
 .subject-group {
@@ -246,7 +264,7 @@ img {
   font-style: italic;
 }
 .my {
-  margin-bottom: 3rem !important;
+  margin-bottom: 1rem !important;
 }
 .my:last-child {
   margin-bottom: 0 !important;
@@ -357,7 +375,7 @@ footer .blue {
     display: flex;
     text-align: center;
     justify-content: center;
-    margin-top: 8rem;
+    margin-top: 5rem;
   }
 
   /*Text Styles*/
@@ -380,6 +398,7 @@ footer .blue {
     justify-content: center;
     width: 100%;
   }
+
   .navbar h1[hide] {
     display: none;
     height: 0;
