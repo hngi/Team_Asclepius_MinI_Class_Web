@@ -346,7 +346,17 @@ Class User{
             public function UserLogin($email, $password){
                 $errors = array();
                 $message = '';
+		
+		// Required field names
+		$required = array($email, $password);
 
+		// Loop over field names, make sure each one exists and is not empty
+		foreach($required as $field) {
+		  if (empty($_POST[$field])) {
+		    $errors[] = "All fields are required.";
+		  }
+		}
+		    
                 //validate email
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
