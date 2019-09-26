@@ -58,6 +58,9 @@ header div.lead {
   padding-left: 0.5rem;
   margin-bottom: 0;
 }
+header div.lead h1 {
+  font-size: 1.5rem;
+}
 #student-name {
   padding-top: 0.9rem;
   padding-left: 1rem;
@@ -68,12 +71,6 @@ header div.lead {
 }
 #student-name h3 {
   font-size: 1rem !important;
-}
-
-section h1.lg-heading,
-section h2.lg-heading,
-section h3.lg-heading {
-  font-size: 2rem;
 }
 
 /*NavBar*/
