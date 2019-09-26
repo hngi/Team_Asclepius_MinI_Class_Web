@@ -156,7 +156,7 @@ img {
   justify-content: space-evenly;
 }
 .wrapper-grid-1 {
-  margin-bottom: -2rem !important;
+  margin-bottom: -1rem !important;
 }
 .wrapper-grid {
   display: grid;
