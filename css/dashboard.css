@@ -10,8 +10,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #ffffff;
   color: #0a0a0a;
+  background-image: url("https://res.cloudinary.com/hng-pre-internship/image/upload/v1568937724/welcome%20page/topright_gjq4ew.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+.logo {
+  width: 100%;
 }
 header {
   top: 0;
@@ -44,6 +50,7 @@ header div.lead {
   background: #ffffff;
   padding-bottom: 1rem;
   padding-left: 0.5rem;
+  margin-bottom: 0;
 }
 span#student-name {
   color: #0a0a0a;
@@ -52,7 +59,7 @@ span#student-name {
 section h1.lg-heading,
 section h2.lg-heading,
 section h3.lg-heading {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 section h1.sm-heading,
@@ -72,17 +79,20 @@ section h3.sm-heading {
   position: fixed;
   z-index: 1;
   width: 100%;
-  top: 2;
+  top: 0.3;
   border-bottom: solid 1px #17a2b8;
   opacity: 0.9;
-  height: 6rem !important;
+  height: 4rem !important;
 }
 
 .navbar a {
   color: #0a0a0a;
   padding: 0.45rem;
   margin: 0 0.25rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-evenly;
 }
 .navbar a:hover {
   color: #17a2b8;
@@ -126,7 +136,7 @@ img {
   padding: 0.5rem;
 }
 .grey {
-  height: 30rem;
+  height: 22rem;
 }
 
 #wrapper-grid-1.grey {
@@ -196,8 +206,6 @@ img {
 .content-grid div:last-child {
   border-bottom: none;
 }
-.content-grid div:first-child {
-}
 
 .grid-2 {
   display: grid;
@@ -205,6 +213,16 @@ img {
     "calendar"
     "schedule";
   grid-template-columns: repeat(1, 1fr);
+}
+
+.lead-topic,
+#lead-topic {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+.subject,
+#subject {
+  font-size: 1.2rem !important;
 }
 
 .responsive-calendar {
