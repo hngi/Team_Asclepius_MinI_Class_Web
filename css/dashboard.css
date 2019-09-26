@@ -435,6 +435,12 @@ footer .blue {
 }
 
 @media (max-width: 700px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
+  }
   .wrapper-grid {
     display: grid;
     grid-template-areas:
@@ -460,18 +466,28 @@ footer .blue {
     grid-template-columns: repeat(1, 1fr);
   }
   .responsive-calendar {
-    width: 50vw;
+    width: 100%;
     grid-area: calendar;
     height: 45%;
   }
   .schedule {
-    width: 50vw;
+    width: 100%;
     grid-area: schedule;
+  }
+
+  .content-grid,
+  .wrapper-grid-1 {
+    width: 25rem !important;
+    margin: 0 auto;
   }
 }
 
 @media screen and (max-width: 500px) {
-  /*NavBar*/
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
 
   .grid-1 {
     display: grid;
@@ -483,7 +499,35 @@ footer .blue {
       "item-4";
     grid-template-columns: repeat(1, 1fr);
     gap: 1rem;
-    width: 50vw;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-areas:
+      "calendar"
+      "schedule";
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #calendar-hide {
+    widows: 100vw;
+
+    margin: 0 auto;
+  }
+  .schedule {
+    grid-area: schedule;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: -5rem !important;
+  }
+  .responsive-calendar {
+    width: 100%;
+  }
+  .content-grid,
+  .wrapper-grid-1 {
+    width: 25rem !important;
+    margin: 0 auto;
   }
 }
 
@@ -504,12 +548,8 @@ footer .blue {
   }
   #calendar-hide {
     display: none !important;
-    width: 50vw;
-    grid-area: calendar;
-    height: 45%;
   }
   .schedule {
-    width: 50vw;
     grid-area: schedule;
   }
 }
