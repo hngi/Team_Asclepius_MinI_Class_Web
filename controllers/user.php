@@ -346,17 +346,14 @@ Class User{
             public function UserLogin($email, $password){
                 $errors = array();
                 $message = '';
-		
-		// Required field names
-		$required = array($email, $password);
 
-		// Loop over field names, make sure each one exists and is not empty
-		foreach($required as $field) {
-		  if (empty($_POST[$field])) {
-		    $errors[] = "All fields are required.";
-		  }
-		}
-		    
+                //Check empty
+                if(empty($email) || empty($password)){
+
+                  $errors[] = 'Fields cannot be empty';
+
+                }
+                    
                 //validate email
                 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
@@ -383,8 +380,8 @@ Class User{
                 }else{
                     if(!password_verify($password, $UserDetails['password'])){
                         $errors[] = "Incorrect Password";
+                    }
                 }
-            }
 
                 //check for errors
                 if (!empty($errors)) {
@@ -406,7 +403,7 @@ Class User{
 
                     }else if($pers = 'stu'){
 
-                      header('Location:student-area/dashboardSubject.html');
+                      header('Location:student-area/student_dashboard.php');
 
                     }
                     

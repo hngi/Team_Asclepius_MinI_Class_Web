@@ -2,29 +2,19 @@
 require 'controllers/user.php';
 $user =  new User;
 if (isset($_POST['register'])) {
+
   $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $role = mysqli_real_escape_string($db, $_POST['role']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
   $confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
+
+
+  $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password);
 }
 
-//<<<<<<< HEAD
-///* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details
-//you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-//$message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password)
-//=======
-//  $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password);
-//}
-//
-//
-//>>>>>>> 2ac6f5bb48ab0c5b39a1fbc911276e77f4403d67
-//
-///* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details
-//you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-//
-//?>
-//
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,22 +37,35 @@ if (isset($_POST['register'])) {
   <p class="lead text-center signup text-white">Sign Up</p>
   <form action="" class="form-box" method="post" onsubmit="return validate();">
     <div id="error_message">
+    <div style="width: 50%; margin: 0 auto;">
+        <?php
+            
+            if(!empty($message)){
+
+              foreach($message as $mess){
+
+                echo "<div class='alert alert-danger'>$mess</div>";
+              }
+
+            }
+          ?>
+    </div>
 
     </div>
     <div>
       <input type="text" name="fullname" class="input-form"  placeholder="Fullname" id="full_name"//    </div>
    <div>
-      <input type="text" name="email" class="input-form" placeholder="email" id="email">
+      <input type="text" name="email" class="input-form" placeholder="Email" id="email">
     </div>
     <div>
       <input type="password" name="password" class="input-form" id="password" placeholder="Password" id="password">
     </div>
 
     <div>
-      <input type="password" name="confirm_password" class="input-form" id="confirm_password" placeholder="confirm Password" id="confirm_password">
+      <input type="password" name="confirm_password" class="input-form" id="confirm_password" placeholder="Confirm Password" id="confirm_password">
    </div>
 
-    <select id="inputState" class="form-control" name="role">
+    <select id="inputState" class="form-control sel" name="role" >
       <option selected>Choose role</option>
       <option value="lecturer">Lecturer</option>
       <option value="student">Student</option>

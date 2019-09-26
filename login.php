@@ -2,8 +2,6 @@
 require 'controllers/user.php';
 $user =  new User;
 
-/*----to test login, create variables email and password with the same email 
-  and password you used to register just under this comment---*/
 
 if (isset($_POST['login'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
@@ -38,20 +36,26 @@ if (isset($_POST['login'])) {
 
   <main>
     <h1>Get Active</h1>
-    
+
+    <div style="width: 50%; margin: 0 auto;">
         <?php
-        
-          if(!empty($message)){
+            
+            if(!empty($message)){
 
-            foreach($message as $mess){
+              foreach($message as $mess){
 
-              echo "<div class='alert alert-danger'>.'$mess'.</div>";
+                echo "<div class='alert alert-danger'>$mess</div>";
+              }
+
+
             }
 
-          }
 
+          ?>
 
-        ?>
+    </div>
+    
+       
     
     <form class="login-form" method="post">
       <div class="user-name">
