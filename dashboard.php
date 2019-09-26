@@ -1,7 +1,7 @@
 <?php
   require './config/database.php';
 
-  echo $_SESSION['success_flash'];
+  echo $_SESSION['successflash'];
 
 
 
