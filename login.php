@@ -8,6 +8,8 @@ $user =  new User;
 if (isset($_POST['login'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
+
+
   $message = $user->UserLogin($email, $password);
 }
 
@@ -36,6 +38,21 @@ if (isset($_POST['login'])) {
 
   <main>
     <h1>Get Active</h1>
+    
+        <?php
+        
+          if(!empty($message)){
+
+            foreach($message as $mess){
+
+              echo "<div class='alert alert-danger'>.'$mess'.</div>";
+            }
+
+          }
+
+
+        ?>
+    
     <form class="login-form" method="post">
       <div class="user-name">
         <div class="icon">

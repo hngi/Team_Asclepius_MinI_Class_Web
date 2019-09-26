@@ -68,7 +68,7 @@ Class User{
                 $hash = md5(rand(0,1000));
                 $created_at = date('Y-m-d');
                 $status = 0;
-                $id_number = rand(10000,500000);
+                $id_number = substr($role,0,3).rand(10000,500000);
                 $courses = '';
                 $dept_code = '';
                 $faculty_code = '';
@@ -387,8 +387,19 @@ Class User{
                 
                     $_SESSION['User'] = $user_id;
                     $_SESSION['success_flash'] = "You are logged in successfully.";
+                    $person = $UserDetails['id_number'];
+                    $pers = substr($person, 0, 3);
 
-                    header('Location:dashboard.php');
+                    if($pers = 'lec'){
+
+                      header('Location:dashboard.php');
+
+                    }else if($pers = 'stu'){
+
+                      header('Location:student-area/dashboardSubject.html');
+
+                    }
+                    
                 }
 
             }
