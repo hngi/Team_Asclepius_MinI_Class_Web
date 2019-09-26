@@ -130,7 +130,12 @@ a {
 .header ul a:hover {
   background-color: #dcd;
 }
-
+.pl {
+  padding-left: 0.5rem !important;
+}
+.pr {
+  padding-right: 0.5rem !important;
+}
 .header .logo {
   width: 8rem;
 }
@@ -151,7 +156,7 @@ a {
   height: 2px;
   width: 18px;
   position: relative;
-  transition: background 0.2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .header .menu-icon .nav-icon:before {
@@ -213,6 +218,10 @@ a {
 
 .bg-dark {
   background: #c4c4c4;
+  border-bottom: #17a2b8 solid 1px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  height: 4.3rem;
 }
 .navbar ul li img {
   display: inline-block;
@@ -223,7 +232,7 @@ a {
 img {
   width: 3rem;
   height: 3rem;
-  top: 3rem;
+  margin-top: 0.5rem;
   border-radius: 10rem;
 }
 
@@ -483,7 +492,10 @@ footer .blue {
     font-size: 1rem;
     display: block;
     width: 100vw;
-    background: #ffffff;
+    background: #ffffff !important;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    z-index: 1;
   }
 
   /*NavBar*/
