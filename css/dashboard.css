@@ -33,7 +33,7 @@ header {
 }
 
 .text-secondary {
-  color: #eece1a;
+  color: #17a2b8;
 }
 a {
   text-decoration: none;
@@ -74,14 +74,6 @@ section h1.lg-heading,
 section h2.lg-heading,
 section h3.lg-heading {
   font-size: 2rem;
-}
-
-section h1.sm-heading,
-section h2.sm-heading,
-section h3.sm-heading {
-  margin-bottom: 2rem;
-  padding: 0.2rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
 }
 
 /*NavBar*/
@@ -164,7 +156,7 @@ img {
   justify-content: space-evenly;
 }
 .wrapper-grid-1 {
-  margin-bottom: -5rem !important;
+  margin-bottom: -3rem !important;
 }
 .wrapper-grid {
   display: grid;
