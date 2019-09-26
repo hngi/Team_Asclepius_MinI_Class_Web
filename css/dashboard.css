@@ -16,11 +16,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
   z-index: -1;
+  overflow-x: hidden !important;
 }
-.menu-nav {
-}
-#logo {
-}
+
 .logo {
   width: 100%;
   margin-left: 0;
@@ -73,39 +71,7 @@ header div.lead h1 {
   font-size: 1rem !important;
 }
 
-/*NavBar
-.navbar {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0.7rem 2rem;
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-  top: 0.3;
-  border-bottom: solid 1px #17a2b8;
-  opacity: 0.9;
-  height: 4rem !important;
-}
-
-.navbar a {
-  color: #0a0a0a;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
-  font-size: 1.5rem;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-evenly;
-}
-.navbar a:hover {
-  color: #17a2b8;
-}
-
-.navbar ul {
-  display: flex;
-}*/
-
+/*NavBar*/
 a {
   color: #000;
 }
@@ -469,56 +435,37 @@ footer .blue {
 }
 
 @media (max-width: 700px) {
-  .navbar ul li a {
-    font-size: 0.8rem;
-  }
-  .hide-sm {
-    display: none;
-  }
-  .landing {
-    overflow-x: hidden;
-  }
-  .container {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-top: 5rem;
-  }
-
-  /*Text Styles*/
-  .x-large {
-    font-size: 3rem;
-  }
-  .x-large {
-    font-size: 2rem;
-  }
-  .lead {
+  .wrapper-grid {
+    display: grid;
+    grid-template-areas:
+      "grid1"
+      "grid1"
+      "grid2";
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
     font-size: 1rem;
-    display: block;
-    width: 100vw;
-    background: #ffffff !important;
-    padding-right: 0 !important;
-    padding-left: 0 !important;
+  }
+  .grid-1 {
+    grid-area: grid1;
   }
 
-  /*NavBar*/
-  .navbar {
-    text-align: center;
-    justify-content: center;
-    width: 100%;
+  .grid-2 {
+    grid-area: grid2;
   }
 
-  .navbar h1[hide] {
-    display: none;
-    height: 0;
-    overflow: hidden;
-    top: 0;
+  .grid-2 {
+    display: grid;
+    grid-template-areas: "calendar schedule";
+    grid-template-columns: repeat(1, 1fr);
   }
-  .navbar ul {
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+  .responsive-calendar {
+    width: 50vw;
+    grid-area: calendar;
+    height: 45%;
+  }
+  .schedule {
+    width: 50vw;
+    grid-area: schedule;
   }
 }
 
