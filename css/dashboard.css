@@ -480,6 +480,9 @@ footer .blue {
     width: 25rem !important;
     margin: 0 auto;
   }
+  #calendar-hide {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -528,6 +531,9 @@ footer .blue {
   .wrapper-grid-1 {
     width: 25rem !important;
     margin: 0 auto;
+  }
+  #calendar-hide {
+    display: none !important;
   }
 }
 
