@@ -68,13 +68,16 @@ body {
 }
 
 .form-box h3 .link {
-    color: #fff;
+    color: red;
 }
 
-.form-box h3 .link:hover {
-    text-decoration: none;
-    color: gold;
+
+
+.login-form h3 .link {
+    color: red;
 }
+
+
 
 .signup {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -191,11 +194,13 @@ header>.logo>img {
     margin: 1rem;
     background: #fff;
     font-weight: bolder;
+    background: blue;
+    color: #fff;
 }
 
 .btn:hover {
-    background: rgb(37, 37, 235);
-    color: #fff;
+    background: #fff;
+    color: blue;
 }
 
 .line {
@@ -218,4 +223,31 @@ header>.logo>img {
     .btn {
         padding: 1rem 4rem;
     }
+    
+}
+
+/* error */
+.form-box #error_message {
+    margin-top: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+    margin-bottom: 4px;
+    border-radius: 10px;
+}
+
+.login-form #errorForResetPassword {
+    margin-top: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+    margin-bottom: 2px;
+     width: 40%;
+    
 }

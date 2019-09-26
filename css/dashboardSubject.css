@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+
+body {
+  position: absolute;
+  background: #ffffff;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #c4c4c4;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+ 
+}
+
+img {
+  width: 80px;
+  height: 180px;
+  float: left;
+  margin-top: -22px;
+  padding: 0px 50px;
+}
+
+a {
+  padding: 5px 5px;
+  margin: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav img {
+  height: 80px;
+}
+
+.nav a {
+  float: right;
+  
+} 
+
+
+
+.middle {
+  background-color: rgba(68, 82, 207, 0.13);
+  line-height: 5px;
+  text-align: left;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 16px;
+  width: 75%;
+  height: 140px;
+}
+
+form {
+  background-color: rgba(196, 196, 196, 0.3);
+  padding: 20px;
+  margin: 30px;
+  border-radius: 16px;
+  width: 75%;
+}
+
+label {
+  padding: 10px 10px 10px 30px;
+  margin-top: 5px;
+
+
+
+}
+
+input {
+  width: 300px;
+  height: 20px;
+  margin: 30px 15px;
+  display: inline-flex;
+
+
+}
+
+textarea {
+  width: 300px;
+  height: 400px;
+  margin: 30px 15px 10px 95px;
+  display: inline-flex;
+
+
+}
+
+hr {
+  width: 1px;
+  background: black; 
+  border: none;
+}
+  
+  
