@@ -264,7 +264,7 @@ img {
 }
 .greetings {
   position: relative;
-  margin-left: 1rem;
+  margin-right: -11rem;
   z-index: 0;
 }
 
