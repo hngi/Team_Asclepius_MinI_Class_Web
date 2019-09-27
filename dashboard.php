@@ -51,9 +51,11 @@ $user =$student->GetUser($user_id);
     //$id_number = 'stu268174';
 
     $id_number = $user['id_number'];
+    $faculty = $user['faculty_code'];
     $notes = $student->ShowCourseNotes($id_number);
-
     $assignments = $student->ShowCourseAssignments($id_number);
+    $courses = $student->ShowRegdCourses($id_number);
+    
 
    
 
@@ -193,11 +195,134 @@ $user =$student->GetUser($user_id);
     <div class="side" id="b">
 
       <div id="caleandar">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora earum, qui expedita enim quaerat id non, iusto distinctio sequi minus atque illo. At eum non fugiat voluptatibus cum delectus unde.
+        <h3>Registered Courses</h3>
+        <div class="list-group">
+          <ul class="list-group">
+            <?php
+              foreach($courses as $cos){
+
+                echo ' <a href="course.php?course_code='.$cos.'"><li class="list-group-item">'.$cos.'</li></a>';
+              }
+
+
+            ?>
+          </ul>
+
+        </div>
+        
       </div>
-      <div>
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempora earum, qui expedita enim quaerat id non, iusto distinctio sequi minus atque illo. At eum non fugiat voluptatibus cum delectus unde.
+
+      <div id="caleandar">
+        <hr>
+        <h3>Register Courses</h3>
+        <form action="" method="POST">
+          <div class="form-group">
+            <label for="course1">First Course</label>
+            <select name="course1" id="course1" class="form-control">
+              <option value=""></option>
+              <?php
+                $fac_courses = $student->SelectCourses($faculty);
+                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
+              ?>
+                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+
+              <?php
+                  endwhile;
+              ?>
+              <?php
+
+
+              ?>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="course2">Second Course</label>
+            <select name="course2" id="course2" class="form-control">
+              <option value=""></option>
+              <?php
+                $fac_courses = $student->SelectCourses($faculty);
+                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
+              ?>
+                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+
+              <?php
+                  endwhile;
+              ?>
+              <?php
+
+
+              ?>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="course3">Third Course</label>
+            <select name="course3" id="course3" class="form-control">
+              <option value=""></option>
+              <?php
+                $fac_courses = $student->SelectCourses($faculty);
+                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
+              ?>
+                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+
+              <?php
+                  endwhile;
+              ?>
+              <?php
+
+
+              ?>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="course4">Fourth Course</label>
+            <select name="course4" id="course4" class="form-control">
+              <option value=""></option>
+              <?php
+                $fac_courses = $student->SelectCourses($faculty);
+                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
+              ?>
+                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+
+              <?php
+                  endwhile;
+              ?>
+              <?php
+
+
+              ?>
+            </select>
+
+          </div>
+          <div class="form-group">
+            <label for="course5">Fifth Course</label>
+            <select name="course5" id="course5" class="form-control">
+              <option value=""></option>
+              <?php
+                $fac_courses = $student->SelectCourses($faculty);
+                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
+              ?>
+                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+
+              <?php
+                  endwhile;
+              ?>
+              <?php
+
+
+              ?>
+            </select>
+
+          </div>
+          <div>
+            <input type="submit" value="Submit" name="course_reg">
+          </div> 
+        </form>
+        
       </div>
+      
 
     </div>
   </div>
