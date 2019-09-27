@@ -157,7 +157,7 @@ a {
 
 @media only screen and (max-width: 300px) {
     .register_login-content {
-        width: 50%;
+        width: 90%;
         margin: 50px auto;
         padding: 20px;
         background: white;
