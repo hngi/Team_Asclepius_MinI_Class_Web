@@ -1,19 +1,19 @@
 <?php
 
-require '../config/database.php';
+    require_once('./config/database.php') ;
+
 
     class Student {
 
+       
+        private $db;
+
+
         public function __construct(){
 
-            $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-          
-            if(mysqli_connect_errno()){
-  
-              echo "Database connection failed with following errors:" . mysqli_connect_error();
-  
-              die();
-          }
+            $db = new DB;
+
+            $this->db = $db->get_connection();
 
         }
 
@@ -60,7 +60,10 @@ require '../config/database.php';
         }
 
         public function ShowCourseNotes($id_number){
-            $sql = "SELECT courses FROM users where id_number = '$id_number'";
+
+            $notes = [];
+
+            $sql = "SELECT * FROM users where id_number = '$id_number'";
             $query = $this->db->query($sql);
             $RegdCourses = mysqli_fetch_assoc($query);
 
@@ -73,10 +76,44 @@ require '../config/database.php';
                 $note_query = $this->db->query($note_sql);
 
                 $note = mysqli_fetch_assoc($note_query);
+                
+                if(!empty($note)){
 
-                return $note;
+                    array_push($notes, $note);
+                }
+                
 
             }
+            return $notes;
+
+        }
+
+        public function ShowCourseAssignments($id_number){
+
+            $assignments = [];
+
+            $sql = "SELECT * FROM users where id_number = '$id_number'";
+            $query = $this->db->query($sql);
+            $RegdCourses = mysqli_fetch_assoc($query);
+
+            $courses_offered = $RegdCourses['courses'];
+            $courses_offered = json_decode($courses_offered);
+
+            foreach($courses_offered as $course){
+
+                $assignment_sql = "SELECT * FROM assignments where course_code = '$course'";
+                $assignments_query = $this->db->query($assignment_sql);
+
+                $assignment = mysqli_fetch_assoc($assignments_query);
+                
+                if(!empty($assignment)){
+
+                    array_push($assignments, $assignment);
+                }
+                
+
+            }
+            return $assignments;
 
         }
 
@@ -129,6 +166,16 @@ require '../config/database.php';
             return $course;
 
         }
+
+        public function GetUser($user_id){
+
+            $sql = "SELECT * FROM users where user_id = '$user_id'";
+            $query =$this->db->query($sql);
+
+            $user = mysqli_fetch_assoc($query);
+
+            return $user;
+          }
 
     }
 

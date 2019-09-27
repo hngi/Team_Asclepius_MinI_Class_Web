@@ -1,17 +1,39 @@
 <?php
 
-    require "constants.php";
+    class DB {
 
-    $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        public function __construct(){
 
-    if(mysqli_connect_errno()){
+            require "constants.php";
+        }
 
-        echo "Database connection failed with following errors:" . mysqli_connect_error();
+        public function get_connection(){
+            $db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-        die();
+            if(mysqli_connect_errno()){
+        
+                echo "Database connection failed with following errors:" . mysqli_connect_error();
+        
+                die();
+            }else{
+
+                session_start();
+
+                return $db;
+
+            }
+                    
+           
+
+        }
+
+
     }
-            
-    session_start();
+    
+
+    
+
+   
    
 
 
