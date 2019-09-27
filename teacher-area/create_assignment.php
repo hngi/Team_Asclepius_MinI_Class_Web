@@ -4,26 +4,62 @@ require '../controllers/LecturerController.php';
 
 $lecturer = new Lecturer;
 
-/* test variables----> uncomment these variables, fill them in with your own values and 
-  navigate to the page to test. Make sure your database is imported and connected.
 
-  $course_code = 'CEG313';
-  $course_title = 'strength of materials';
-  $course_description = 'dEscribing the stregnth of different materials in civil eng.';
-  $dept_code = 'CEG';
-  $faculty_code = 'ENG';
+if(isset($_POST['create_assignment'])){
+
+  $assignment_title = $_POST['assignment_title'];
+  $course_code = $_POST['course_code'];
   $id_number = '123456';
-  $credit_unit = 2;
 
+  if(!empty($_FILES)){
 
-  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description,$credit_unit ,$dept_code, $faculty_code, $id_number)
+    $errors = array();
+    $name =$_FILES['assignment_file']['name'];
+    $nameArray = explode('.', $name);
+    $fileName = $nameArray[0];
+    $fileExt = $nameArray[1];
+    $allowed = array('pdf','doc','docx');
+    $target_dir = "../uploads/assignments/";
+    $target_file = $target_dir . basename($_FILES["assignment_file"]["name"]);    
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
+    // Check if file already exists
+    if (file_exists($target_file)) {
+      $error[] = "Sorry, file already exists.";        
+    
+    }
+    // Check file size
+    if ($_FILES["assignment_file"]["size"] > 500000) {
+      $error[] = "Sorry, your file is too large. Upload files less than 5mb.";
+       
+    }
+    // Allow certain file formats
+    if(!in_array($fileExt, $allowed)){
+      $error[] = "The file must be either pdf, doc or docx.";
+      
+    }
+    if (!empty($errors)) {
 
-  */
+      foreach($errors as $error){
 
+          $wrong = $error;
 
+      }
 
+  // if everything is ok, try to upload file
+  } else {
+      if (move_uploaded_file($_FILES["assignment_file"]["tmp_name"], $target_file)) { 
+          
+          $upload_message = $lecturer->CreateAssignment($course_code, $assignment_title,$target_file,$id_number);
 
+      } else {
+          $upload_message = "Sorry, there was an error uploading your file.";
+      }
+  }
+}
+  
+
+}
 
 ?>
 
@@ -44,36 +80,46 @@ $lecturer = new Lecturer;
 </head>
 
 <body>
-  <div id="overhead">
-    <h3>TEACHER'S DASHBOARD</h3>
-  </div>
   <?php require_once "header.php"; ?>
 
   <div class="register_login-content">
-    <form action="" method="POST">
+    <form action="create_assignment.php" method="POST" enctype="multipart/form-data">
       <h2 class="form-title">Add Assignment</h2>
 
       <div id="error_message">
+      <?php
+            if(!empty($errors)){
+
+              foreach($errors as $error){
+
+                echo '<div class="alert alert-info">'.$error.'</div>';
+              }
+
+              
+
+            }
+
+        ?>
 
       </div>
 
       <div>
-        <label for="">Assignment Name</label>
-        <input type="text" name="assignment_name" id="assignment_name" class="text-input">
+        <label for="">Assignment Title</label>
+        <input type="text" name="assignment_title" id="assignment_title" class="text-input">
       </div>
       <div>
-        <label for="">Assignment description</label>
-        <input type="text" name="assignment_description" id="assignment_description" class="text-input">
+        <label for="">Course</label>
+        <input type="text" name="course_code" id="course_code" class="text-input">
       </div>
       <div>
-        <label for="">Assignment Content</label>
-        <textarea name="ass_content" id="" cols="30" rows="5" class="text-input"></textarea>
+        <label for="">Assignment</label>
+       <input type="file" name="assignment_file">
       </div>
 
 
       <div>
-        <button type="submit" class="btn btn-big " id="btn-success" name="assignment">Create Assignment</button>
-        <a type="button" class="btn btn-big btn-light" href="assignment.php">Cancle</a>
+      <input type="submit" class="btn btn-big " id="btn-success" name="create_assignment" value="Create Assignment">
+        <a type="button" class="btn btn-big btn-light" href="assignment.php">Cancel</a>
       </div>
 
 
