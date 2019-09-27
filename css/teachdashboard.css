@@ -10,3 +10,18 @@
 #container-teacherArea{
   margin-bottom: 5%;
 }
+
+.container.card {
+  margin-top: 50px;
+}
+@media only screen and (max-width: 992px) {
+  .container.card {
+    margin-top: 20px;
+  }
+}
+
+.visite-site{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 25px;
+}

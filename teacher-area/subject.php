@@ -46,7 +46,7 @@ $lecturer = new Lecturer;
   <div id="overhead">
     <h3>TEACHER'S DASHBOARD</h3>
   </div>
- <?php require_once "header.php";?>
+  <?php require_once "header.php"; ?>
 
   <div class="container">
     <a href="create_subject.php" value="" class="btn btn-success mb-4 " id="button-link">Add Subject</a>
@@ -117,8 +117,9 @@ $lecturer = new Lecturer;
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/newdashboard.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/menu-bar.js"></script>
+  <script src="/js/newdashboard.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>

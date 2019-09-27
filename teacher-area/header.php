@@ -9,7 +9,7 @@
       <li><a href="assignment.php">Assignment's</a></li>
       <li>
         <a href="#">
-          <img src="images/lecturer.jpg" alt="">
+          <img src="../images/lecturer.jpg" alt="">
           <!-- <i class="fa fa-user"></i> -->
           Ayenko
           <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
