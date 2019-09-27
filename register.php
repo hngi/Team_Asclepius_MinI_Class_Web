@@ -52,17 +52,24 @@ if (isset($_POST['register'])) {
     </div>
 
     </div>
-    <div>
+    <div class="icon-pos">
       <input type="text" name="fullname" class="input-form"  placeholder="Fullname" id="full_name"//    </div>
-   <div>
+      <span> <img src="fonts/Vector-2.png" class="icon" alt="icon-user"></span>
+   <div class="icon-pos">
       <input type="text" name="email" class="input-form" placeholder="Email" id="email">
+      <span> <img src="fonts/Vector.png" class="icon" alt="icon-user"></span>
+
     </div>
-    <div>
+    <div class="icon-pos">
       <input type="password" name="password" class="input-form" id="password" placeholder="Password" id="password">
+      <span> <img src="fonts/Vector-1.png" class="icon" alt="icon-user"></span>
+
     </div>
 
-    <div>
+    <div class="icon-pos">
       <input type="password" name="confirm_password" class="input-form" id="confirm_password" placeholder="Confirm Password" id="confirm_password">
+      <span> <img src="fonts/Vector-1.png" class="icon" alt="icon-user"></span>
+
    </div>
 
     <select id="inputState" class="form-control sel" name="role" >
@@ -72,7 +79,7 @@ if (isset($_POST['register'])) {
     </select>
 
     <input type="submit" value="Submit" name="register" class="btn">
-    <h3 class="text-center text-white">Already have an account ? <a class=" link" href="login.php">Login</a></h3>
+    <h3 class="text-center text-white small-text">Already have an account ? <a class=" link" href="login.php">Login</a></h3>
 
   </form>
 

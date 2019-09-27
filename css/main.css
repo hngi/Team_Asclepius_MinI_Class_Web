@@ -17,7 +17,7 @@ body {
 
 .form-box {
     position: absolute;
-    transform: translate(21rem, 14rem);
+    transform: translate(21rem, 10rem);
     width: 50%;
 }
 
@@ -77,18 +77,14 @@ body {
     color: red;
 }
 
-
-
 .login-form h3 .link {
     color: red;
 }
 
-
-
 .signup {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     position: absolute;
-    transform: translate(38rem, 8rem);
+    transform: translate(38rem, 4rem);
     font-size: 3rem;
 }
 
@@ -229,10 +225,11 @@ header>.logo>img {
     .btn {
         padding: 1rem 4rem;
     }
-    
 }
 
+
 /* error */
+
 .form-box #error_message {
     margin-top: 20px;
     background: #fe8b8e;
@@ -254,6 +251,42 @@ header>.logo>img {
     transition: all 0.5s ease;
     color: #fff;
     margin-bottom: 2px;
-     width: 40%;
-    
+    width: 40%;
+}
+
+.form-box .icon-pos {
+    position: relative;
+}
+
+.icon-pos .icon {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: .7rem;
+    left: 95%;
+}
+
+@media only screen and (max-width:900px) {
+    .icon-pos .icon {
+        left: 92%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .icon-pos .icon {
+        left: 88%;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .icon-pos .icon {
+        left: 80%;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .small-text {
+        font-size: 17px;
+        font-weight: 600;
+    }
 }
