@@ -68,7 +68,7 @@ Class User{
                 $hash = md5(rand(0,1000));
                 $created_at = date('Y-m-d');
                 $status = 0;
-                $id_number = rand(10000,500000);
+                $id_number = substr($role,0,3).rand(10000,500000);
                 $courses = '';
                 $dept_code = '';
                 $faculty_code = '';
@@ -347,18 +347,7 @@ Class User{
                 $errors = array();
                 $message = '';
 
-                //validate email
-                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-
-                    $errors[] = 'Invalid Email';
-
-                }
-                //check password length
-                if(strlen($password) < 6){
-
-                    $errors[] = "Password must be atleast 6 characters long";
-
-                }
+               
 
                 //check if email exists
                 $sql = "SELECT * FROM users WHERE email = '$email' and status = 1";
@@ -373,8 +362,8 @@ Class User{
                 }else{
                     if(!password_verify($password, $UserDetails['password'])){
                         $errors[] = "Incorrect Password";
+                    }
                 }
-            }
 
                 //check for errors
                 if (!empty($errors)) {
@@ -387,8 +376,19 @@ Class User{
                 
                     $_SESSION['User'] = $user_id;
                     $_SESSION['success_flash'] = "You are logged in successfully.";
+                    $person = $UserDetails['id_number'];
+                    $pers = substr($person, 0, 3);
 
-                    header('Location:dashboard.php');
+                    if($pers = 'lec'){
+
+                      header('Location:dashboard.php');
+
+                    }else if($pers = 'stu'){
+
+                      header('Location:student-area/student_dashboard.php');
+
+                    }
+                    
                 }
 
             }

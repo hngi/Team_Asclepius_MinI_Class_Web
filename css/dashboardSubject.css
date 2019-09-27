@@ -11,9 +11,12 @@ body {
 
 header {
   background-color: #c4c4c4;
-  overflow: hidden;
   position: relative;
   width: 100%;
+  height: 85px;
+  left: 10px;
+  top: 10px;
+  
  
 }
 
@@ -27,7 +30,6 @@ img {
 
 a {
   padding: 5px 5px;
-  margin: 15px 30px;
   text-align: center;
   text-decoration: none;
   font-size: 17px;
@@ -64,17 +66,16 @@ form {
 }
 
 label {
-  padding: 10px 10px 10px 30px;
-  margin-top: 5px;
+  padding: 0px 10px 0px 10px;
 
 
 
 }
 
 input {
-  width: 300px;
+  width: 270px;
   height: 20px;
-  margin: 30px 15px;
+  margin: 10px 80px 5px 2px;
   display: inline-flex;
 
 
@@ -83,16 +84,19 @@ input {
 textarea {
   width: 300px;
   height: 400px;
-  margin: 30px 15px 10px 95px;
+  margin: 10px 20px 5px 120px;
   display: inline-flex;
 
 
 }
 
-hr {
-  width: 1px;
-  background: black; 
-  border: none;
+.vl {
+  border-left: 1px solid black;
+  height: 800px;
+  position: absolute;
+  left: 81%;
+  margin-left: -3px;
+  top: 100px;
 }
   
   

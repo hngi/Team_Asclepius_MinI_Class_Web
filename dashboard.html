@@ -9,9 +9,9 @@
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Dosis&display=swap" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
     <!--Bootstrap -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
     <!--Respomsive slider -->
     <link href="css/responsive-calendar.css" rel="stylesheet">
 
@@ -21,69 +21,38 @@
 
 <body>
 
-
-    <header>
+    <header class="header">
         <div class="lead">
             <h1>Student's Dashboard</h1>
         </div>
 
-        <nav class="navbar bg-dark">
+        <div class="bg-dark">
+            <a href="index.html">
+                <img class="logo"
+                    src="https://res.cloudinary.com/hng-pre-internship/image/upload/v1569494676/welcome%20page/ASC-logo_gbmuak.png"
+                    alt="logo">
+            </a>
 
-            <h1 hide>
-                <a href="index.html">
-                    ASCLEPIUS CLASS
-                </a>
-            </h1>
-            <div class="menu-branding">
-                <div class="portrait"></div>
-            </div>
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon"> <span class="nav-icon"></span></label>
 
-            <ul class="menu-nav">
-
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Class Note</a></li>
+                <li><a href="#">Assignment</a></li>
+                <li><a href="#">Report</a></li>
+                <li id="avatar">
+                    <img src="https://res.cloudinary.com/hng-pre-internship/image/upload/v1567354361/IMG_20180912_163412_ld7cuh.jpg"
+                        alt="avatar">
                 </li>
-
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link">
-                        Home
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-                    <a href="classnote.html" class="nav-link">
-                        Class Note
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-                    <a href="assignment.html" class="nav-link">
-                        Assignment
-                    </a>
-
-                </li>
-
-                <li class="nav-item">
-                    <a href="report.html" class="nav-link">
-                        Report
-                    </a>
-
-                </li>
-
-                <li class="nav-item" id="avatar">
-                    <a href="#" class="nav-link">
-
-                        <img src="https://res.cloudinary.com/hng-pre-internship/image/upload/v1567354361/IMG_20180912_163412_ld7cuh.jpg"
-                            alt="avatar">
-                    </a>
-                </li>
-                <span id="student-name">
+                <li id="student-name">
                     <h2>Code Noob</h2>
-                    <h3>Student</h3>
-                </span>
+                    <h3 class="text-secondary">Student</h3>
+                </li>
             </ul>
-        </nav>
+        </div>
     </header>
+
 
     <div class="wrapper">
 
@@ -140,12 +109,12 @@
                                 <span class="small-dot">
                                 </span>
                                 <div class="unit">
-                                    <ul class="first-list">
+                                    <ul class="first-list" id="lead-topic">
                                         <li>Physics</li>
                                         <li>Optics and Light</li>
                                         <li>Today</li>
                                     </ul>
-                                    <ul class="second-list">
+                                    <ul class="second-list" id="subject">
                                         <li>Chapter II</li>
                                         <li>Illustration</li>
                                         <li>10.00 am</li>
@@ -161,12 +130,12 @@
                                 <span class="small-dot">
                                 </span>
                                 <div class="unit">
-                                    <ul class="first-list">
+                                    <ul class="first-list" id="lead-topic">
                                         <li>Physics</li>
                                         <li>Optics and Light</li>
                                         <li>Today</li>
                                     </ul>
-                                    <ul class="second-list">
+                                    <ul class="second-list" id="subject">
                                         <li>Chapter II</li>
                                         <li>Illustration</li>
                                         <li>10.00 am</li>
@@ -238,8 +207,8 @@
                                 <div class="content-header">
                                     <span class="big-dot">
                                     </span>
-                                    <h1 class="lead-topic">Project Frog Surgery</h1>
-                                    <h1 class="Subject">Bilogy</h1>
+                                    <h1 class="lead-topic" id="lead-topic">Project Frog Surgery</h1>
+                                    <h1 class="Subject" id="subject">Biology</h1>
                                     <p class="date">Note Received <span id="date">12 Aug 2019</span> (<span
                                             id="time">10.00
                                             am</span>)
@@ -249,7 +218,7 @@
                                     <span class="big-dot">
                                     </span>
                                     <h1 class="lead-topic">Project Frog Surgery</h1>
-                                    <h1 class="Subject">Bilogy</h1>
+                                    <h1 class="Subject" id="subject">Biology</h1>
                                     <p class="date">Note Received <span id="date">12 Aug 2019</span> (<span
                                             id="time">10.00
                                             am</span>)
@@ -262,31 +231,32 @@
 
             </div>
 
+            <div id="calendar-hide">
+                <div class="container grid-2">
+                    <!-- Responsive calendar - START -->
+                    <div class="responsive-calendar">
+                        <div class="controls">
+                            <a class="pull-left" data-go="prev">
+                                <div class="btn btn-primary">Prev</div>
+                            </a>
+                            <h4><span data-head-year></span> <span data-head-month></span></h4>
+                            <a class="pull-right" data-go="next">
+                                <div class="btn btn-primary">Next</div>
+                            </a>
+                        </div>
+                        <hr />
+                        <div class="day-headers">
+                            <div class="day header">Mon</div>
+                            <div class="day header">Tue</div>
+                            <div class="day header">Wed</div>
+                            <div class="day header">Thu</div>
+                            <div class="day header">Fri</div>
+                            <div class="day header">Sat</div>
+                            <div class="day header">Sun</div>
+                        </div>
+                        <div class="days" data-group="days">
 
-            <div class="container grid-2">
-                <!-- Responsive calendar - START -->
-                <div class="responsive-calendar">
-                    <div class="controls">
-                        <a class="pull-left" data-go="prev">
-                            <div class="btn btn-primary">Prev</div>
-                        </a>
-                        <h4><span data-head-year></span> <span data-head-month></span></h4>
-                        <a class="pull-right" data-go="next">
-                            <div class="btn btn-primary">Next</div>
-                        </a>
-                    </div>
-                    <hr />
-                    <div class="day-headers">
-                        <div class="day header">Mon</div>
-                        <div class="day header">Tue</div>
-                        <div class="day header">Wed</div>
-                        <div class="day header">Thu</div>
-                        <div class="day header">Fri</div>
-                        <div class="day header">Sat</div>
-                        <div class="day header">Sun</div>
-                    </div>
-                    <div class="days" data-group="days">
-
+                        </div>
                     </div>
                 </div>
                 <!-- Responsive calendar - END -->

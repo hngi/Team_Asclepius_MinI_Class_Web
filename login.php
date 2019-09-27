@@ -1,15 +1,15 @@
 <?php
-  require 'controllers/user.php';
-  $user =  new User;
+require 'controllers/user.php';
+$user =  new User;
 
-  /*----to test login, create variables email and password with the same email 
-  and password you used to register just under this comment---*/
- 
-  if (isset($_POST['login'])) {
-    $email = mysqli_real_escape_string($db, $_POST['email']);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
-    $message = $user->UserLogin($email,$password);
-  }
+
+if (isset($_POST['login'])) {
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
+
+
+  $message = $user->UserLogin($email, $password);
+}
 
 ?>
 
@@ -22,42 +22,49 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/newdashboard.css">
+  <link rel="stylesheet" href="css/form.css">
   <title>Document</title>
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <img src="./images/Logo.png" alt="logo">
-    </div>
-  </header>
 
-  <main>
-    <h1>Get Active</h1>
-    <form class="login-form" method="post">
-      <div class="user-name">
-        <div class="icon">
-          <i class="fa fa-user" aria-hidden="true"></i>
-        </div>
-        <input type="text" placeholder="Username" required minlength="3">
+  <div class="register_login-content" id="login-form">
+    <form action="" method="POST">
+      <h2 class="form-title">Get Active</h2>
+
+      <div id="error_message">
+        <?php
+
+        if (!empty($message)) {
+
+          foreach ($message as $mess) {
+
+            echo "<div class='alert alert-danger'>$mess</div>";
+          }
+        }
+
+
+        ?>
       </div>
 
-      <div class="password">
-        <div class="icon">
-          <i class="fa fa-briefcase" aria-hidden="true"></i>
-        </div>
-        <input type="password" placeholder="Password" minlength="3" required>
+
+      <div>
+        <label for="">Email</label>
+        <input type="email" name="email" id="email" class="text-input">
+      </div>
+      <div>
+        <label for="">Password</label>
+        <input type="password" name="password" id="password" class="text-input">
       </div>
 
-      <input type="submit" value="LOGIN" name="login" class="btn">
-
-      <a href="#">Forget Password?</a>
-      <div class="line"></div>
-      
+      <div>
+        <button type="submit" class="btn btn-big" name="login">Login</button>
+      </div>
+      <p>Don't have an account? <a href="register.php" class="text-danger">Register</a></p>
+      <a href="forget_password.php" class="text-danger text-center">Forget Password</a>
     </form>
-  </main>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
