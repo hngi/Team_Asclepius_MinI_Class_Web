@@ -68,13 +68,16 @@ if (isset($_POST['login'])) {
       </div>
 
 
-      <div>
+      <div class="group">
         <label for="">Email</label>
         <input type="email" name="email" id="email" class="text-input">
+        <span><img src="fonts/Vector.png" class="icon" alt=""></span>
       </div>
-      <div>
+      <div class="group">
         <label for="">Password</label>
         <input type="password" name="password" id="password" class="text-input">
+        <span><img src="fonts/Vector-1.png" class="icon" alt=""></span>
+
       </div>
 
       <div>
