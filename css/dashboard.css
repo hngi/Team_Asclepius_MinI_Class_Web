@@ -10,8 +10,18 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #ffffff;
   color: #0a0a0a;
+  background-image: url("https://res.cloudinary.com/hng-pre-internship/image/upload/v1568937724/welcome%20page/topright_gjq4ew.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: -1;
+  overflow-x: hidden !important;
+}
+
+.logo {
+  width: 100%;
+  margin-left: 0;
 }
 header {
   top: 0;
@@ -21,7 +31,7 @@ header {
 }
 
 .text-secondary {
-  color: #eece1a;
+  color: #17a2b8;
 }
 a {
   text-decoration: none;
@@ -42,58 +52,142 @@ h3 {
 }
 header div.lead {
   background: #ffffff;
-  padding-bottom: 1rem;
+  padding-bottom: 0.2rem;
   padding-left: 0.5rem;
+  margin-bottom: 0;
 }
-span#student-name {
+header div.lead h1 {
+  font-size: 1.5rem;
+}
+#student-name {
+  padding-top: 0.9rem;
+  padding-left: 1rem;
   color: #0a0a0a;
 }
-
-section h1.lg-heading,
-section h2.lg-heading,
-section h3.lg-heading {
-  font-size: 3rem;
+#student-name h2 {
+  font-size: 1.5rem !important;
 }
-
-section h1.sm-heading,
-section h2.sm-heading,
-section h3.sm-heading {
-  margin-bottom: 2rem;
-  padding: 0.2rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
+#student-name h3 {
+  font-size: 1rem !important;
 }
 
 /*NavBar*/
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.7rem 2rem;
+a {
+  color: #000;
+}
+.header {
+  box-shadow: 0px 4px 2px -0.005 rgba(0, 0, 0, 0.2);
   position: fixed;
-  z-index: 1;
   width: 100%;
-  top: 2;
-  border-bottom: solid 1px #17a2b8;
-  opacity: 0.9;
-  height: 6rem !important;
+  z-index: 3;
+}
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+.header ul a {
+  display: block;
+  padding: 18px;
+  border-right: 1px solid #ccc;
+  text-decoration: none;
+}
+.header ul a:hover {
+  background-color: #dcd;
+}
+.pl {
+  padding-left: 0.5rem !important;
+}
+.pr {
+  padding-right: 0.5rem !important;
+}
+.header .logo {
+  width: 8rem;
+}
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+.header .menu-icon {
+  padding: 28px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+.header .menu-icon .nav-icon {
+  background: #323;
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: all 0.2s ease-out;
 }
 
-.navbar a {
-  color: #0a0a0a;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
-  font-size: 2rem;
+.header .menu-icon .nav-icon:before {
+  background: #323;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
 }
-.navbar a:hover {
-  color: #17a2b8;
+.header .menu-icon .nav-icon:after {
+  background: #323;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: -5px;
+}
+.header .menu-btn {
+  display: none;
+}
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
 }
 
-.navbar ul {
-  display: flex;
+.header .menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after {
+  transform: rotate(45deg);
+  top: 0;
+}
+@media screen and (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+
+  .header li a {
+    padding: 18px 38px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
 }
 
 .bg-dark {
   background: #c4c4c4;
+  border-bottom: #17a2b8 solid 1px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.4rem;
 }
 .navbar ul li img {
   display: inline-block;
@@ -104,8 +198,9 @@ section h3.sm-heading {
 img {
   width: 3rem;
   height: 3rem;
-  top: 3rem;
+  margin-top: 0.5rem;
   border-radius: 10rem;
+  margin-left: 0.5rem;
 }
 
 .wrapper {
@@ -113,7 +208,7 @@ img {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  margin-top: 13rem;
+  margin-top: 6.5rem;
   padding: 2rem;
 }
 
@@ -126,7 +221,7 @@ img {
   padding: 0.5rem;
 }
 .grey {
-  height: 30rem;
+  height: 22rem;
 }
 
 #wrapper-grid-1.grey {
@@ -138,15 +233,25 @@ img {
   flex-direction: row;
   justify-content: space-evenly;
 }
+.wrapper-grid-1 {
+  margin-bottom: -0.1rem !important;
+}
 .wrapper-grid {
   display: grid;
-  grid-template-areas: "grid1 grid2";
+  grid-template-areas: "grid1 grid1 grid2";
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   font-size: 1rem;
 }
 .grid-1 {
+  grid-area: grid1;
   grid-column: 1 / span 2;
+}
+
+.grid-2 {
+  width: 22rem;
+  grid-area: grid2;
+  grid-column: 3 / span 3;
 }
 
 .grid-1 {
@@ -180,7 +285,9 @@ img {
   font-style: italic;
   font-size: 1.3rem;
 }
-
+.content-grid {
+  line-height: 2.2rem;
+}
 .content-grid div {
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.3);
   margin-bottom: 1.5rem;
@@ -188,8 +295,6 @@ img {
 
 .content-grid div:last-child {
   border-bottom: none;
-}
-.content-grid div:first-child {
 }
 
 .grid-2 {
@@ -200,10 +305,21 @@ img {
   grid-template-columns: repeat(1, 1fr);
 }
 
+.lead-topic,
+#lead-topic {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+.subject,
+#subject {
+  font-size: 1.2rem !important;
+}
+
 .responsive-calendar {
   grid-area: calendar;
   border: 1px solid rgba(208, 79, 79, 0.46) !important;
   height: auto;
+  z-index: -10;
 }
 .schedule {
   grid-area: schedule;
@@ -212,7 +328,7 @@ img {
   align-items: center;
   align-content: center;
   height: 100vh;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   font-family: Rosario;
 }
 .subject-group {
@@ -221,7 +337,7 @@ img {
   font-style: italic;
 }
 .my {
-  margin-bottom: 3rem !important;
+  margin-bottom: 1rem !important;
 }
 .my:last-child {
   margin-bottom: 0 !important;
@@ -319,76 +435,105 @@ footer .blue {
 }
 
 @media (max-width: 700px) {
-  .navbar ul li a {
-    font-size: 0.8rem;
-  }
-  .hide-sm {
-    display: none;
-  }
-  .landing {
-    overflow-x: hidden;
-  }
-  .container {
+  .wrapper {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    margin-top: 8rem;
+    flex-direction: column;
+    align-content: center;
+    margin: 0 auto;
   }
-
-  /*Text Styles*/
-  .x-large {
-    font-size: 3rem;
-  }
-  .x-large {
-    font-size: 2rem;
-  }
-  .lead {
+  .wrapper-grid {
+    display: grid;
+    grid-template-areas:
+      "grid1"
+      "grid1"
+      "grid2";
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
     font-size: 1rem;
-    display: block;
     width: 100vw;
-    background: #ffffff;
+  }
+  .grid-1 {
+    grid-area: grid1;
   }
 
-  /*NavBar*/
-  .navbar {
-    text-align: center;
-    justify-content: center;
-    width: 100%;
+  .grid-2 {
+    grid-area: grid2;
   }
-  .navbar h1[hide] {
-    display: none;
-    height: 0;
-    overflow: hidden;
-    top: 0;
+
+  .grid-2 {
+    display: grid;
+    grid-template-areas: "calendar schedule";
+    grid-template-columns: repeat(1, 1fr);
   }
-  .navbar ul {
+  .responsive-calendar {
     width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
+    grid-area: calendar;
+    height: 45%;
+  }
+  .schedule {
+    width: 100%;
+    grid-area: schedule;
+  }
+
+  .content-grid,
+  .wrapper-grid-1 {
+    width: 25rem !important;
+    margin: 0 auto;
+  }
+  #calendar-hide {
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 500px) {
-  /*NavBar*/
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
 
-  .navbar {
-    width: 100%;
-    text-align: center;
+  .grid-1 {
+    display: grid;
+    grid-template-areas:
+      "top"
+      "item-1"
+      "item-2"
+      "item-3"
+      "item-4";
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-areas:
+      "calendar"
+      "schedule";
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #calendar-hide {
+    widows: 100vw;
+
+    margin: 0 auto;
+  }
+  .schedule {
+    grid-area: schedule;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-left: 0;
-    margin-right: 0;
+    align-content: center;
+    margin: 0 auto;
+    margin-top: -5rem !important;
   }
-  .navbar ul li a {
-    font-size: 0.6rem;
-  }
-  .data .input {
+  .responsive-calendar {
     width: 100%;
-    height: 4vh;
   }
-  #msg {
-    width: 100%;
-    height: 20vh;
+  .content-grid,
+  .wrapper-grid-1 {
+    width: 25rem !important;
+    margin: 0 auto;
+  }
+  #calendar-hide {
+    display: none !important;
   }
 }
 
@@ -398,5 +543,19 @@ footer .blue {
   }
   .navbar {
     font-size: 0.5rem;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-areas:
+      "calendar"
+      "schedule";
+    grid-template-columns: repeat(1, 1fr);
+  }
+  #calendar-hide {
+    display: none !important;
+  }
+  .schedule {
+    grid-area: schedule;
   }
 }
