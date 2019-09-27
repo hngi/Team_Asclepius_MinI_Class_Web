@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f6f6f6;
+  font-family: 'Lora', serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Candal', serif;
+  color: #444;
+}
+
+#overhead{
+  height: 50px;
+}
+
+#overhead h3{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* header */
+header {
+  height: 66px;
+  background: lightgray;
+}
+
+header * {
+  color: #ffffff;
+}
+
+header .logo {
+  float: left;
+  height: inherit;
+  /* border: 1px solid red; */
+  margin-left: 2em;
+}
+
+header .logo-text {
+  margin: 9px;
+  font-family: 'Candal', serif;
+}
+
+header img{
+  border-radius: 50%;
+  height: 35px;
+}
+
+header .logo-text span {
+  color: rgb(141, 141, 184);
+}
+
+header ul {
+  float: right;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  /* border: 1px solid red; */
+
+}
+
+header ul li {
+  float: left;
+  position: relative;
+}
+
+/* for dropdown */
+header ul li ul {
+  position: absolute;
+  top: 66px;
+  right: 0px;
+  width: 180px;
+  display: none;
+  z-index: 90000;
+}
+
+header ul li:hover ul {
+  display: block;
+}
+
+header ul li ul li {
+  width: 100%;
+}
+
+header ul li ul li a {
+  padding: 10px;
+  background: #ffffff;
+  color: #444444;
+}
+
+header ul li ul li a:hover {
+  background: rgb(231, 231, 248);
+}
+
+
+header ul li a {
+  display: block;
+  padding: 21px;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+header ul li a:hover {
+  background: rgb(231, 231, 248);
+  transition: 0.5em;
+}
+
+header .logout {
+  color: red;
+}
+
+header .menu-toggle {
+  display: none;
+}
+
+#page-wrapper {
+  min-height: 100%;
+}
+
+#page-wrapper a:hover {
+  color: #0084;
+}
+
+
+@media only screen and (max-width: 992px) {
+  header {
+    position: relative;
+  }
+
+  header ul {
+    width: 100%;
+    background: #0084;
+    max-height: 0px;
+    /* border: red solid 1px; */
+    overflow: hidden;
+  }
+
+  .showing {
+    max-height: 100em;
+  }
+
+  header ul li {
+    width: 100%;
+  }
+
+  header ul li ul {
+    position: static;
+    display: block;
+    width: 100%;
+    background: inherit;
+  }
+
+  header ul li ul li a {
+    padding: 10px;
+    background: #0084;
+    color: white;
+    padding-left: 50px;
+  }
+
+  header ul li ul li a:hover {
+    background: #0084;
+  }
+
+  header ul li ul li a.logout {
+    color: red;
+  }
+
+  header .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.9em;
+  }
+
+  header .logo {
+    margin-left: .8em;
+  }
+
+
+}
+
+/* Main page */
+#page-wrapper {
+  margin-top: 80px;
+   display: grid;
+   grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+   grid-gap: 1em;
+   grid-template-areas: "a a a b";
+   color: #ffffff;
+}
+
+div#a {
+  grid-area: a;
+  color: #444444;
+}
+
+div#b {
+  grid-area: b;
+  color: #444444;
+}
+
+.main img{
+  height: 200px;
+  padding-left: 100px;
+  width: 100%;
+}
+
+
+
+.main-first{
+  display: grid;
+  grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+  grid-gap: .5em;
+  grid-template-areas: "c d d d";
+  margin-bottom: -130px;
+  
+}
+
+div#c {
+  grid-area: c;
+
+}
+
+div#d {
+  grid-area: d;
+  background: rgb(231, 231, 248);
+  border-radius: 30px;
+  padding: 20px;
+  
+}
+
+.main-second{
+  margin-top: 100px;
+  margin-bottom: -30%;
+}
+
+.main .main-second {
+   display: grid;
+   grid-template-columns: repeat(2, minmax(100px, 1fr));
+   grid-gap: 1em;
+   color: green;
+}
+
+/* #grandChild{
+ 
+  padding: 10px;
+ 
+} */
+
+#grandChild #p-div{
+  margin-top: 50px; 
+  background: rgb(233, 233, 238);
+  color: gray;
+  padding: 10px;
+  border-radius: 30px;
+}
+#grandChild .title a{
+  float: right;
+  margin-right: 50px;
+}
+#grandChild .title h4 {
+  float: left;
+}
+
+#p-div #col{
+  display: grid;
+   grid-template-columns: repeat(2, minmax(100px, 1fr));
+}
+
+#p-div .assignment{
+  display: grid;
+   grid-template: repeat(2, 1fr)/repeat(4, 1fr);
+   grid-gap: .3em;
+   grid-template-areas: "g h h h";
+}
+
+div#g {
+  grid-area: g;
+  
+}
+
+div#h {
+  grid-area: h;
+
+}
+
+.color-blue{
+  background:blue;
+  border-radius: 50%;
+  height: 20px;
+  width: 30%;
+
+}
+
+.color-red {
+  background:blue;
+  border-radius: 50%;
+  height: 20px;
+  width: 30%;
+}
+
+.assignment-child{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(100px, 1fr));
+  grid-gap: .8em;
+}
+
+/* FOOTER */
+.footer{
+  background: black;
+  height: 50px;
+  color: #ffffff;
+}
+
+.footer-middle{
+  padding-top: 20px;
+}
