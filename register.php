@@ -1,29 +1,20 @@
 <?php
 require 'controllers/user.php';
 $user =  new User;
+
 if (isset($_POST['register'])) {
-  $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $role = mysqli_real_escape_string($db, $_POST['role']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
-  $confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
+
+  $fullname = $_POST['fullname'];
+  $email = $_POST['email'];
+  $role = $_POST['role'];
+  $password = $_POST['password'];
+  $confirm_password =  $_POST['confirm_password'];
+
+
+  $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password);
+
 }
 
-//<<<<<<< HEAD
-///* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details
-//you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-//$message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password)
-//=======
-//  $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password);
-//}
-//
-//
-//>>>>>>> 2ac6f5bb48ab0c5b39a1fbc911276e77f4403d67
-//
-///* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details
-//you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-//
-//
 ?>
 
 <!DOCTYPE html>
@@ -56,21 +47,27 @@ if (isset($_POST['register'])) {
 
       </div>
 
-      <div>
+      <div class="group">
         <label for="">Fullname</label>
         <input type="text" name="fullname" id="full_name" class="text-input">
+        <span><img src="fonts/Vector-2.png" class="icon" alt=""></span>
       </div>
-      <div>
+      <div class="group">
         <label for="">Email</label>
         <input type="email" name="email" id="email" class="text-input">
+        <span><img src="fonts/Vector.png" class="icon" alt=""></span>
       </div>
-      <div>
+      <div class="group">
         <label for="">Password</label>
         <input type="password" name="password" id="password" class="text-input">
+        <span><img src="fonts/Vector-1.png" class="icon" alt=""></span>
+
       </div>
-      <div>
+      <div class="group">
         <label for="">Confirm Password</label>
         <input type="password" name="confirm_password" id="confirm_password" class="text-input">
+        <span><img src="fonts/Vector-1.png" class="icon" alt=""></span>
+
       </div>
       <div>
         <label for="">Role</label>
