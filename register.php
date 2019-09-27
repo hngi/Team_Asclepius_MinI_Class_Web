@@ -1,29 +1,20 @@
 <?php
 require 'controllers/user.php';
 $user =  new User;
+
 if (isset($_POST['register'])) {
-  $fullname = mysqli_real_escape_string($db, $_POST['fullname']);
-  $email = mysqli_real_escape_string($db, $_POST['email']);
-  $role = mysqli_real_escape_string($db, $_POST['role']);
-  $password = mysqli_real_escape_string($db, $_POST['password']);
-  $confirm_password = mysqli_real_escape_string($db, $_POST['confirm_password']);
+
+  $fullname = $_POST['fullname'];
+  $email = $_POST['email'];
+  $role = $_POST['role'];
+  $password = $_POST['password'];
+  $confirm_password =  $_POST['confirm_password'];
+
+
+  $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password);
+
 }
 
-//<<<<<<< HEAD
-///* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details
-//you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-//$message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password)
-//=======
-//  $message = $user->CreateUser($fullname, $email, $role, $password, $confirm_password);
-//}
-//
-//
-//>>>>>>> 2ac6f5bb48ab0c5b39a1fbc911276e77f4403d67
-//
-///* To test registeration, create variables $fullname, $email, $role, $password, $confirm_password with the same details
-//you would like to use to register just under this comment, save and and refresh the page, then go to login page and follow the instructions */
-//
-//
 ?>
 
 <!DOCTYPE html>
