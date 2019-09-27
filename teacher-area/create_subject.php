@@ -5,7 +5,7 @@ require '../controllers/LecturerController.php';
 $lecturer = new Lecturer;
 
 
-if(isset($_POST['create_course'])){
+if (isset($_POST['create_course'])) {
 
   $course_code = $_POST['course_code'];
   $course_title = $_POST['course_title'];
@@ -16,8 +16,7 @@ if(isset($_POST['create_course'])){
 
   $id_number = 'stu268174';
 
-  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description,$credit_unit ,$dept_code, $faculty_code, $id_number);
-
+  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description, $credit_unit, $dept_code, $faculty_code, $id_number);
 }
 
 /* test variables----> uncomment these variables, fill them in with your own values and 
@@ -68,11 +67,10 @@ if(isset($_POST['create_course'])){
 
       <div id="error_message">
         <?php
-            if(!empty($message)){
+        if (!empty($message)) {
 
-              echo '<div class="alert alert-info">'.$message.'</div>';
-
-            }
+          echo '<div class="alert alert-info">' . $message . '</div>';
+        }
 
         ?>
       </div>
@@ -103,7 +101,7 @@ if(isset($_POST['create_course'])){
       </div>
       <div>
         <input type="submit" class="btn btn-big " id="btn-success" name="create_course" value="Create Course">
-        <a  type="button" class="btn btn-big btn-light" href="subject.php">Cancel</a>
+        <a type="button" class="btn btn-big btn-light" href="subject.php">Cancel</a>
       </div>
 
 
@@ -118,8 +116,9 @@ if(isset($_POST['create_course'])){
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/newdashboard.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/menu-bar.js"></script>
+  <script src="/js/newdashboard.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>

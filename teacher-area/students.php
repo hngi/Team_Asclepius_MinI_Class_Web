@@ -115,8 +115,9 @@ $lecturer = new Lecturer;
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/newdashboard.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/menu-bar.js"></script>
+  <script src="/js/newdashboard.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>
