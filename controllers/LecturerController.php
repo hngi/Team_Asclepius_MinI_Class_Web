@@ -1,20 +1,17 @@
 <?php
 
-    require '../config/database.php';
+    require_once('../config/database.php');
 
     class Lecturer {
 
-         //Constructor to Initiate database connection
+        private $db;
+
+        //Constructor to Initiate database connection
         public function __construct(){
 
-            $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-            
-            if(mysqli_connect_errno()){
+            $db = new DB;
 
-                echo "Database connection failed with following errors:" . mysqli_connect_error();
-
-                die();
-            }
+            $this->db = $db->get_connection();
 
         }
 

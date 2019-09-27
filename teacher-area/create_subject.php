@@ -4,6 +4,22 @@ require '../controllers/LecturerController.php';
 
 $lecturer = new Lecturer;
 
+
+if(isset($_POST['create_course'])){
+
+  $course_code = $_POST['course_code'];
+  $course_title = $_POST['course_title'];
+  $course_description = $_POST['course_description'];
+  $dept_code = $_POST['department'];
+  $faculty_code = $_POST['faculty'];
+  $credit_unit = $_POST['credit_unit'];
+
+  $id_number = 'stu268174';
+
+  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description,$credit_unit ,$dept_code, $faculty_code, $id_number);
+
+}
+
 /* test variables----> uncomment these variables, fill them in with your own values and 
   navigate to the page to test. Make sure your database is imported and connected.
 
@@ -44,36 +60,50 @@ $lecturer = new Lecturer;
 </head>
 
 <body>
-  <div id="overhead">
-    <h3>TEACHER'S DASHBOARD</h3>
-  </div>
   <?php require_once "header.php"; ?>
 
   <div class="register_login-content">
-    <form action="" method="POST">
-      <h2 class="form-title">Subject Registration</h2>
+    <form action="create_subject.php" method="POST">
+      <h2 class="form-title">Create Course</h2>
 
       <div id="error_message">
+        <?php
+            if(!empty($message)){
 
+              echo '<div class="alert alert-info">'.$message.'</div>';
+
+            }
+
+        ?>
       </div>
 
       <div>
-        <label for="">Subject Name</label>
-        <input type="text" name="subject_name" id="subject_name" class="text-input">
+        <label for="">Course Title</label>
+        <input type="text" name="course_title" id="course_title" class="text-input">
       </div>
       <div>
-        <label for="">Subject description</label>
-        <input type="text" name="subject_description" id="Subject_description" class="text-input">
+        <label for="">Course Code</label>
+        <input type="text" name="course_code" id="course_code" class="text-input">
       </div>
       <div>
-        <label for="">Subject Content</label>
-        <textarea name="" id="" cols="30" rows="5" class="text-input"></textarea>
+        <label for="">Course description</label>
+        <textarea name="course_description" id="course_description" cols="30" rows="5" class="text-input"></textarea>
       </div>
-
-
       <div>
-        <button type="submit" class="btn btn-big " id="btn-success" name="subject">Create Subject</button>
-        <a type="button" class="btn btn-big btn-light" href="subject.php">Cancle</a>
+        <label for="">Credit Units</label>
+        <input type="number" name="credit_unit" id="credit_unit" class="text-input" min=1>
+      </div>
+      <div>
+        <label for="">Department</label>
+        <input type="text" name="department" id="department" class="text-input">
+      </div>
+      <div>
+        <label for="">Faculty</label>
+        <input type="text" name="faculty" id="faculty" class="text-input">
+      </div>
+      <div>
+        <input type="submit" class="btn btn-big " id="btn-success" name="create_course" value="Create Course">
+        <a  type="button" class="btn btn-big btn-light" href="subject.php">Cancel</a>
       </div>
 
 

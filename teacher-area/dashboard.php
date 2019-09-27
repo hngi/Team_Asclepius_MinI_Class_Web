@@ -43,9 +43,6 @@ $lecturer = new Lecturer;
 </head>
 
 <body>
-  <div id="overhead">
-    <h3>TEACHER'S DASHBOARD</h3>
-  </div>
   <?php require_once "header.php"; ?>
 
   <div class="container" id="container-teacherArea">

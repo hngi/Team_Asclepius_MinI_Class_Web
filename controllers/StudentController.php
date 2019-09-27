@@ -50,10 +50,12 @@
 
         public function ShowRegdCourses($id_number){
 
-            $sql = "SELECT courses FROM users where id_number = '$id_number'";
+            $sql = "SELECT * FROM users where id_number = '$id_number'";
             $query = $this->db->query($sql);
 
-            $RegdCourses = mysqli_fetch_assoc($query);
+            $Result = mysqli_fetch_assoc($query);
+            $RegdCourses = $Result['courses'];
+            $RegdCourses = json_decode($RegdCourses);
 
             return $RegdCourses;
 
@@ -176,6 +178,15 @@
 
             return $user;
           }
+
+        public function SelectCourses($faculty){
+
+            $sql ="SELECT * FROM courses WHERE faculty_code = '$faculty'";
+            $fac_courses = $this->db->query($sql);
+
+            return $fac_courses;
+
+        }
 
     }
 
