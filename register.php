@@ -56,21 +56,27 @@ if (isset($_POST['register'])) {
 
       </div>
 
-      <div>
+      <div class="group">
         <label for="">Fullname</label>
         <input type="text" name="fullname" id="full_name" class="text-input">
+        <span><img src="fonts/Vector-2.png" class="icon" alt=""></span>
       </div>
-      <div>
+      <div class="group">
         <label for="">Email</label>
         <input type="email" name="email" id="email" class="text-input">
+        <span><img src="fonts/Vector.png" class="icon" alt=""></span>
       </div>
-      <div>
+      <div class="group">
         <label for="">Password</label>
         <input type="password" name="password" id="password" class="text-input">
+        <span><img src="fonts/Vector-1.png" class="icon" alt=""></span>
+
       </div>
-      <div>
+      <div class="group">
         <label for="">Confirm Password</label>
         <input type="password" name="confirm_password" id="confirm_password" class="text-input">
+        <span><img src="fonts/Vector-1.png" class="icon" alt=""></span>
+
       </div>
       <div>
         <label for="">Role</label>
