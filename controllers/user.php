@@ -347,25 +347,7 @@ Class User{
                 $errors = array();
                 $message = '';
 
-                //Check empty
-                if(empty($email) || empty($password)){
-
-                  $errors[] = 'Fields cannot be empty';
-
-                }
-                    
-                //validate email
-                if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-
-                    $errors[] = 'Invalid Email';
-
-                }
-                //check password length
-                if(strlen($password) < 6){
-
-                    $errors[] = "Password must be atleast 6 characters long";
-
-                }
+               
 
                 //check if email exists
                 $sql = "SELECT * FROM users WHERE email = '$email' and status = 1";

@@ -1,52 +1,52 @@
 <?php
 require 'controllers/user.php';
-
-
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<div lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/newdashboard.css">
+    <link rel="stylesheet" href="css/form.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <title>Document</title>
+  </head>
 
-<body>
-  <header>
-    <div class="logo">
+  <body>
+
+    <!-- <div class="logo">
       <img src="./images/Logo.png" alt="logo">
-    </div>
-  </header>
+    </div> -->
 
-  <main>
-    <h1>Recover Password</h1>
-    <form class="login-form" method="post" onsubmit="return resetPassword();">
-      <div id="errorForResetPassword">
 
-      </div>
-      <div class="user-name">
-        <div class="icon">
-          <i class="fa fa-user" aria-hidden="true"></i>
+    <div class="register_login-content" id="login-form">
+      <form action="" method="POST" onsubmit="return resetPassword();">
+        <h2 class="form-title">Recover Your Password</h2>
+
+        <div id="errorForResetPassword">
+
         </div>
-        <input type="text" name="email" placeholder="Email" id="email">
-      </div>
 
-      <input type="submit" value="Recover" name="recover_password" class="btn">
-      <h3 class="text-center text-white">Return back to <a class="link" href="login.php">login</a></h3>
 
-      <div class="line"></div>
+        <div>
+          <label for="">Email</label>
+          <input type="email" name="email" id="email" class="text-input">
+        </div>
 
-    </form>
-  </main>
+        <div>
+          <button type="submit" class="btn btn-big" name="recover_password">Recover Password</button>
+        </div>
+        <p>Return back to <a href="login.php" class="text-danger">Login</a></p>
 
-  <script src="js/main.js"></script>
-</body>
+      </form>
+    </div>
 
-</html>
+    <script src="js/main.js"></script>
+  </body>
+
+</div>
