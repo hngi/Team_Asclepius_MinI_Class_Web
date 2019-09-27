@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+
+
+body {
+  position: absolute;
+  background: #ffffff;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background-color: #c4c4c4;
+  position: relative;
+  width: 100%;
+  height: 85px;
+  left: 10px;
+  top: 10px;
+  
+ 
+}
+
+img {
+  width: 80px;
+  height: 180px;
+  float: left;
+  margin-top: -22px;
+  padding: 0px 50px;
+}
+
+a {
+  padding: 5px 5px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.nav img {
+  height: 80px;
+}
+
+.nav a {
+  float: right;
+  
+} 
+
+
+
+.middle {
+  background-color: rgba(68, 82, 207, 0.13);
+  line-height: 5px;
+  text-align: left;
+  padding: 20px;
+  margin: 30px;
+  border-radius: 16px;
+  width: 75%;
+  height: 140px;
+}
+
+form {
+  background-color: rgba(196, 196, 196, 0.3);
+  padding: 20px;
+  margin: 30px;
+  border-radius: 16px;
+  width: 75%;
+}
+
+label {
+  padding: 0px 10px 0px 10px;
+
+
+
+}
+
+input {
+  width: 270px;
+  height: 20px;
+  margin: 10px 80px 5px 2px;
+  display: inline-flex;
+
+
+}
+
+textarea {
+  width: 300px;
+  height: 400px;
+  margin: 10px 20px 5px 120px;
+  display: inline-flex;
+
+
+}
+
+.vl {
+  border-left: 1px solid black;
+  height: 800px;
+  position: absolute;
+  left: 81%;
+  margin-left: -3px;
+  top: 100px;
+}
+  
+  

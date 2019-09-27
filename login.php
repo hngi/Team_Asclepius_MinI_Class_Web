@@ -1,16 +1,15 @@
 <?php
-  require 'controllers/user.php';
+require 'controllers/user.php';
+$user =  new User;
 
-  $user =  new User;
 
-  /*----to test login, create variables email and password with the same email 
-  and password you used to register just under this comment---*/
- 
+if (isset($_POST['login'])) {
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
 
-  $message = $user->UserLogin($email,$password);
 
-  var_dump($message);
-
+  $message = $user->UserLogin($email, $password);
+}
 
 ?>
 
@@ -37,26 +36,47 @@
 
   <main>
     <h1>Get Active</h1>
-    <form class="login-form">
+
+    <div style="width: 50%; margin: 0 auto;">
+        <?php
+            
+            if(!empty($message)){
+
+              foreach($message as $mess){
+
+                echo "<div class='alert alert-danger'>$mess</div>";
+              }
+
+
+            }
+
+
+          ?>
+
+    </div>
+    
+       
+    
+    <form class="login-form" method="post">
       <div class="user-name">
         <div class="icon">
           <i class="fa fa-user" aria-hidden="true"></i>
         </div>
-        <input type="text" placeholder="Username" required minlength="3">
+        <input type="text" name="email" placeholder="Email">
       </div>
 
       <div class="password">
         <div class="icon">
           <i class="fa fa-briefcase" aria-hidden="true"></i>
         </div>
-        <input type="password" placeholder="Password" minlength="3" required>
+        <input type="password" name="password" placeholder="Password">
       </div>
 
-      <input type="submit" value="LOGIN" class="btn">
-
-      <a href="#">Forget Password?</a>
+      <input type="submit" value="LOGIN" name="login" class="btn">
+      <h3 class="text-center text-white">Don't have an account ? <a class="link" href="register.php">Register</a></h3>
+      <a href="forget_password.php" class="text-danger">Forget Password?</a>
       <div class="line"></div>
-      
+
     </form>
   </main>
 

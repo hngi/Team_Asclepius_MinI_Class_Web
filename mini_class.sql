@@ -109,3 +109,53 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+CREATE TABLE `create_assignment` (
+  `id` int(11) NOT NULL,
+  `user_id` int(100) NOT NULL,
+  `course_code` int(100) NOT NULL,
+  `assignment_name` varchar(200) NOT NULL,
+  `due_date` date NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `create_assignment`
+--
+
+INSERT INTO `create_assignment` (`id`, `user_id`, `course_code`, `assignment_name`, `due_date`, `created_at`) VALUES
+(1, 2, 200, 'decimals', '2019-09-03', '2019-09-12');
+
+CREATE TABLE `submit_assignment` (
+  `id` int(11) NOT NULL,
+  `user_id` int(100) NOT NULL,
+  `course_code` int(100) NOT NULL,
+  `assignment_name` varchar(200) NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `submit_assignment`
+--
+
+INSERT INTO `submit_assignment` (`id`, `user_id`, `course_code`, `assignment_name`, `created_at`) VALUES
+(1, 3, 200, 'decimals', '2019-09-11');
+
+ALTER TABLE `courses`
+  ADD PRIMARY KEY (`course_id`);
+
+--
+-- Indexes for table `create_assignment`
+--
+ALTER TABLE `create_assignment`
+  ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `create_assignment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+
+
+--
+-- AUTO_INCREMENT for table `submit_assignment`
+--
+ALTER TABLE `submit_assignment`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
