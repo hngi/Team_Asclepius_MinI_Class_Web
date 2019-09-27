@@ -19,17 +19,6 @@ body {
   overflow-x: hidden !important;
 }
 
-.logo {
-  width: 100%;
-  margin-left: 0;
-}
-header {
-  top: 0;
-  position: fixed;
-  z-index: 2;
-  width: 100%;
-}
-
 .text-secondary {
   color: #17a2b8;
 }
@@ -50,6 +39,31 @@ h3 {
   margin: 0;
   font-weight: 400;
 }
+img {
+  transition: all 1.5s ease-out;
+}
+img:hover,
+#mimg:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+img.logo:hover,
+#mimg:hover {
+  border: none;
+}
+
+/*HEADER/NAVBAR BEGINS*/
+.logo {
+  width: 100%;
+  margin-left: 0;
+}
+header {
+  top: 0;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+}
+
 header div.lead {
   background: #ffffff;
   padding-bottom: 0.2rem;
@@ -71,7 +85,6 @@ header div.lead h1 {
   font-size: 1rem !important;
 }
 
-/*NavBar*/
 a {
   color: #000;
 }
@@ -203,6 +216,8 @@ img {
   margin-left: 0.5rem;
 }
 
+/*HEADER/NAVBAR ENDS*/
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -212,6 +227,14 @@ img {
   padding: 2rem;
 }
 
+/*GRIDS BEGIN*/
+.type,
+#prompt {
+  font-size: 1.5rem;
+}
+.type {
+  color: #17a2b8;
+}
 .grid-1 .grey,
 .grey {
   background: rgba(196, 196, 196, 0.3);
@@ -228,6 +251,23 @@ img {
   height: 8rem !important;
 }
 
+.graduant {
+  position: relative;
+}
+.graduant img#mimg {
+  position: absolute;
+  border-radius: none !important;
+  height: 8.3rem;
+  left: 5rem;
+  width: 5rem;
+  top: -1.2rem;
+}
+.greetings {
+  position: relative;
+  margin-left: 1rem;
+  z-index: 0;
+}
+
 .lead-header {
   display: flex;
   flex-direction: row;
@@ -236,6 +276,7 @@ img {
 .wrapper-grid-1 {
   margin-bottom: -0.1rem !important;
 }
+
 .wrapper-grid {
   display: grid;
   grid-template-areas: "grid1 grid1 grid2";
@@ -307,8 +348,9 @@ img {
 
 .lead-topic,
 #lead-topic {
-  font-size: 1.5rem !important;
+  font-size: 1.2rem !important;
   font-weight: bold;
+  padding-bottom: 1rem;
 }
 .subject,
 #subject {
@@ -406,6 +448,7 @@ span.circle {
 .schedule ul {
   margin-left: 3rem;
 }
+/*GRIDS END*/
 
 /*footer starts*/
 footer {
@@ -436,10 +479,10 @@ footer .blue {
 
 @media (max-width: 700px) {
   .wrapper {
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-content: center;
-    margin: 0 auto;
   }
   .wrapper-grid {
     display: grid;
@@ -487,9 +530,11 @@ footer .blue {
 
 @media screen and (max-width: 500px) {
   .wrapper {
+    margin-top: 6rem;
     display: flex;
     flex-direction: column;
     align-content: center;
+    left: 0;
   }
 
   .grid-1 {
@@ -559,3 +604,6 @@ footer .blue {
     grid-area: schedule;
   }
 }
+/*MEDIA QUERIES END*/
+
+/*          =============   END   ============== */
