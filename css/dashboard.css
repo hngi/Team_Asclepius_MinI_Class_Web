@@ -256,8 +256,8 @@ img {
 }
 .graduant img#mimg {
   position: absolute;
-  border-radius: none !important;
-  height: 8.3rem;
+  border-radius: 0;
+  height: 8rem;
   left: 5rem;
   width: 5rem;
   top: -1.2rem;
