@@ -375,16 +375,17 @@ Class User{
                     $_SESSION['User'] = $user_id;
                     $_SESSION['success_flash'] = "You are logged in successfully.";
                     $_SESSION['id_number'] = $UserDetails['id_number'];
-                    $person = $UserDetails['id_number'];
-                    $pers = substr($person, 0, 3);
+                    $person = $UserDetails['role'];
+                    
 
-                    if($pers = 'lec'){
+                    if($person == 'student'){
 
-                      header('Location:dashboard.php');
+                      header('Location: student-area/dashboard.php');
 
-                    }else if($pers = 'stu'){
+                    }else{
 
-                      header('Location:student-area/student_dashboard.php');
+                    
+                      header('Location: teacher-area/dashboard.php');
 
                     }
                     

@@ -1,6 +1,6 @@
 <?php
 
-require_once('controllers/StudentController.php');
+require_once('../controllers/StudentController.php');
 
 
 $student = new Student;
@@ -9,56 +9,30 @@ $user_id = $_SESSION['User'];
 
 $user = $student->GetUser($user_id);
 
+    if(isset($_POST['course_reg'])){
 
-/* Testing displaying courses on student dashboard. Take note, only courses for the student's department
-   will be shown on his dashboard. 
-   
+      $courses_array = [];
 
-    $dept_code = 'CEG';
+      $course1 = $_POST['course1'];
+      $course2 = $_POST['course2'];
+      $course3 = $_POST['course3'];
+      $course4 = $_POST['course4'];
+      $course5 = $_POST['course5'];
 
-    $courses = $student->ShowCourses($dept_code);
-
-    var_dump($courses); */
-
-
-
-
-/* Testing displaying registered courses only. please write all your front-end code under the php tags. Only backend guys
-    that understand what is happening here can try to test it. Or ask me for explanation.
-
-    $id_number = 268174;
-
-    $RegdCourses = $student->ShowRegdCourses($id_number);
+      array_push($courses_array, $course1, $course2, $course3, $course4, $course5 );
 
 
 
-    $courses_offered = $RegdCourses['courses'];
-    $courses_offered = json_decode($courses_offered);
-
-    foreach($courses_offered as $course){
-
-        echo $course. ' ';
+      $mess = $student->RegisterCourses($courses_array, $id_number);
     }
 
-    */
-
-
-
-
-/*Tested displaying notes. Works Perfect. Only notes for registered courses will be displayed. */
-
-
-//$id_number = 'stu268174';
+  
 
 $id_number = $user['id_number'];
 $faculty = $user['faculty_code'];
 $notes = $student->ShowCourseNotes($id_number);
 $assignments = $student->ShowCourseAssignments($id_number);
 $courses = $student->ShowRegdCourses($id_number);
-
-
-
-
 
 
 ?>
@@ -72,8 +46,8 @@ $courses = $student->ShowRegdCourses($id_number);
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://kit.fontawesome.com/2d058dd44a.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins|Candal|Lora" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/newdashboard.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/newdashboard.css">
 
 
   <!-- <link rel="stylesheet" href="css/main.css"> -->
@@ -91,7 +65,7 @@ $courses = $student->ShowRegdCourses($id_number);
     <ul class="nav">
       <li><a href="#">Home</a></li>
       <li><a href="#">Class Note</a></li>
-      <li><a href="#">Assignment</a></li>
+      <li><a href="submit_assignment.php">Submit Assignment</a></li>
       <li><a href="#">Subject</a></li>
 
       <li>
@@ -104,7 +78,7 @@ $courses = $student->ShowRegdCourses($id_number);
 
         <ul>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="logout.php" class="logout">Logout</a></li>
+          <li><a href="../logout.php" class="logout">Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -214,7 +188,17 @@ $courses = $student->ShowRegdCourses($id_number);
       <div id="caleandar">
         <hr>
         <h3>Register Courses</h3>
-        <form action="" method="POST">
+        <form action="dashboard.php" method="POST">
+          <div id="error-message">
+              <?php
+                if(!empty($mess)){
+
+                  echo '<div class="alert alert-info">'.$mess.'</div>';
+                }
+
+              ?>
+              
+            </div> 
           <div class="form-group">
             <label for="course1">First Course</label>
             <select name="course1" id="course1" class="form-control">
@@ -316,8 +300,13 @@ $courses = $student->ShowRegdCourses($id_number);
 
           </div>
           <div>
+<<<<<<< HEAD:student-area/dashboard.php
+            <input type="submit" class="btn btn-primary" value="Register" name="course_reg">
+          </div> 
+=======
             <input type="submit" value="Submit" name="course_reg">
           </div>
+>>>>>>> 008cbf44e9439a37f0984d99bf9134781269936a:dashboard.php
         </form>
 
       </div>
