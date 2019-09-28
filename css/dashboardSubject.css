@@ -1,17 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
 
+@media only screen and (max-width:600px) {
+  .nav, .middle, form, img, {
+    width:100%; 
+  }
+}
 
 body {
   position: absolute;
   background: #ffffff;
   width: 100%;
-  font-family: Roboto, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
   background-color: #c4c4c4;
-  position: initial;
+  position: absolute;
   width: 100%;
   height: 65.41px;
   left: 0px;
@@ -23,7 +28,9 @@ header {
 header img {
   height: 66px;
   margin-top: 0px;
-  width: 200px;
+  margin-left: 0px;
+  width: 100px;
+  position: absolute;
 }
 
 img {
@@ -43,7 +50,7 @@ a {
 
 .nav img {
   height: 60px;
-  width:70px;
+  width:5vw;
   padding-left: 120px;
 }
 
@@ -54,10 +61,10 @@ a {
 
 .navtext {
   padding-right: 10px;
-  padding-top: 10px;
+  padding-top: 20px;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.5vw;
   line-height: 10px;
 }
 
@@ -72,22 +79,26 @@ a {
   background-color: rgba(68, 82, 207, 0.13);
   line-height: 5px;
   padding: 20px;
-  margin: 30px;
+  margin-top: 100px;
+  margin-left: 10px;
   border-radius: 16px;
   width: 60%;
   height: 130px;
+  position: initial;
+  font-size: 1.5vw;
 }
 
 form {
   background-color: rgba(196, 196, 196, 0.3);
   padding: 20px;
-  margin: 30px;
+  margin-top: 40px;
+  margin-left: 10px;
   border-radius: 16px;
   width: 60%;
 }
 
 label {
-  padding: 0px 10px 0px 10px;
+  padding: 10px 10px 20px 0px;
 
 
 
@@ -96,7 +107,7 @@ label {
 select {
   width: 200px;
   height: 20px;
-  margin: 10px 80px 5px 2px;
+  margin: 0px 80px 5px 2px;
   display: inline-flex;
 
 
@@ -105,7 +116,7 @@ select {
 textarea {
   width: 230px;
   height: 400px;
-  margin: 10px 20px 5px 120px;
+  margin: 10px 160px 15px 5px;
   display: inline-flex;
 
 
@@ -121,6 +132,8 @@ textarea {
 }
 
 .username {
-  padding-right: 120px;
+  padding-right: 100px;
+  font-size: 1.6vw;
+  padding-top: 10px;
 }
   
