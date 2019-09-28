@@ -43,10 +43,14 @@ $lecturer = new Lecturer;
 </head>
 
 <body>
+  <div id="overhead">
+    <h3>TEACHER'S DASHBOARD</h3>
+
+  </div>
   <?php require_once "header.php"; ?>
 
-  <div class="container" id="container-teacherArea">
-    <h3 id="button-link"></h3>
+  <div class="container card" id="container-teacherArea">
+    <a href="../dashboard.php" target="_blank" class="text-danger visite-site">Visite Site</a>
 
     <div class="col-md-12">
       <div class="row">
@@ -100,8 +104,9 @@ $lecturer = new Lecturer;
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/newdashboard.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/menu-bar.js"></script>
+  <script src="/js/newdashboard.js"></script>
+  <script src="/js/main.js"></script>
 </body>
 
 </html>

@@ -7,14 +7,7 @@ $student = new Student;
 
 $user_id = $_SESSION['User'];
 
-$user =$student->GetUser($user_id);
-
-    $id_number = $user['id_number'];
-    $faculty = $user['faculty_code'];
-    $notes = $student->ShowCourseNotes($id_number);
-    $assignments = $student->ShowCourseAssignments($id_number);
-    $courses = $student->ShowRegdCourses($id_number);
-
+$user = $student->GetUser($user_id);
 
     if(isset($_POST['course_reg'])){
 
@@ -32,11 +25,15 @@ $user =$student->GetUser($user_id);
 
       $mess = $student->RegisterCourses($courses_array, $id_number);
     }
-    
 
-   
+  
 
-   
+$id_number = $user['id_number'];
+$faculty = $user['faculty_code'];
+$notes = $student->ShowCourseNotes($id_number);
+$assignments = $student->ShowCourseAssignments($id_number);
+$courses = $student->ShowRegdCourses($id_number);
+
 
 ?>
 
@@ -59,7 +56,7 @@ $user =$student->GetUser($user_id);
 </head>
 
 <body>
- 
+
   <header>
     <div class="logo">
       <h1 class="logo-text"><span>Asclepius</span>Class</h1>
@@ -75,7 +72,7 @@ $user =$student->GetUser($user_id);
         <a href="#">
           <img src="images/lecturer.jpg" alt="">
           <!-- <i class="fa fa-user"></i> -->
-          <?= $user['fullname'];?>
+          <?= $user['fullname']; ?>
           <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
         </a>
 
@@ -94,7 +91,7 @@ $user =$student->GetUser($user_id);
           <img src="images/graduant.png" alt="">
         </div>
         <div id="d">
-          <h6>Hi, <?= $user['fullname'];?> </h6>
+          <h6>Hi, <?= $user['fullname']; ?> </h6>
           <h4>Welcome to Asclepius Class</h4>
           <p>All about classroom activities would be updated here</p>
         </div>
@@ -105,19 +102,19 @@ $user =$student->GetUser($user_id);
             <h4>Class Notes</h4>
             <a href="#">See all</a>
           </div>
-          
-          <div id="p-div">
-          <?php
 
-            foreach($notes as $note){
+          <div id="p-div">
+            <?php
+
+            foreach ($notes as $note) {
 
               echo '<div id="col">
-              <p>'.
-                 $note["course_code"].'</p>
+              <p>' .
+                $note["course_code"] . '</p>
               <div>
-                <h6>'.$note["note_title"].'</h6>
+                <h6>' . $note["note_title"] . '</h6>
                 <p>Biology</p>
-                <p>Date Added : '.$note["created_at"].'</p>
+                <p>Date Added : ' . $note["created_at"] . '</p>
               </div>
             </div>
             <div>
@@ -126,7 +123,7 @@ $user =$student->GetUser($user_id);
             <hr>';
             }
 
-          ?>  
+            ?>
           </div>
         </div>
 
@@ -137,16 +134,16 @@ $user =$student->GetUser($user_id);
           </div>
           <div id="p-div">
             <?php
-              foreach($assignments as $assignment){
+            foreach ($assignments as $assignment) {
 
-                echo '<div class="assignment">
+              echo '<div class="assignment">
                 <div id="g" class="color-blue"> </div>
                 <div class="assignment-child" id="h">
                   <div>
-                    <p>'.$assignment['course_code'].'</p>
+                    <p>' . $assignment['course_code'] . '</p>
                   </div>
                   <div>
-                    <p>'.$assignment['assignment_title'].'</p>
+                    <p>' . $assignment['assignment_title'] . '</p>
                   </div>
   
                 </div>
@@ -157,8 +154,7 @@ $user =$student->GetUser($user_id);
                 <a href="#" class="btn btn-success float-right">Submit</a>
               </div>
               <hr>';
-
-              }
+            }
 
 
 
@@ -176,17 +172,17 @@ $user =$student->GetUser($user_id);
         <div class="list-group">
           <ul class="list-group">
             <?php
-              foreach($courses as $cos){
+            foreach ($courses as $cos) {
 
-                echo ' <a href="course.php?course_code='.$cos.'"><li class="list-group-item">'.$cos.'</li></a>';
-              }
+              echo ' <a href="course.php?course_code=' . $cos . '"><li class="list-group-item">' . $cos . '</li></a>';
+            }
 
 
             ?>
           </ul>
 
         </div>
-        
+
       </div>
 
       <div id="caleandar">
@@ -208,13 +204,13 @@ $user =$student->GetUser($user_id);
             <select name="course1" id="course1" class="form-control">
               <option value=""></option>
               <?php
-                $fac_courses = $student->SelectCourses($faculty);
-                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
-              ?>
-                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+              $fac_courses = $student->SelectCourses($faculty);
+              while ($fac_course = mysqli_fetch_assoc($fac_courses)) :
+                ?>
+                <option value="<?= $fac_course['course_code']; ?>"><?= $fac_course['course_title']; ?></option>
 
               <?php
-                  endwhile;
+              endwhile;
               ?>
               <?php
 
@@ -228,13 +224,13 @@ $user =$student->GetUser($user_id);
             <select name="course2" id="course2" class="form-control">
               <option value=""></option>
               <?php
-                $fac_courses = $student->SelectCourses($faculty);
-                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
-              ?>
-                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+              $fac_courses = $student->SelectCourses($faculty);
+              while ($fac_course = mysqli_fetch_assoc($fac_courses)) :
+                ?>
+                <option value="<?= $fac_course['course_code']; ?>"><?= $fac_course['course_title']; ?></option>
 
               <?php
-                  endwhile;
+              endwhile;
               ?>
               <?php
 
@@ -248,13 +244,13 @@ $user =$student->GetUser($user_id);
             <select name="course3" id="course3" class="form-control">
               <option value=""></option>
               <?php
-                $fac_courses = $student->SelectCourses($faculty);
-                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
-              ?>
-                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+              $fac_courses = $student->SelectCourses($faculty);
+              while ($fac_course = mysqli_fetch_assoc($fac_courses)) :
+                ?>
+                <option value="<?= $fac_course['course_code']; ?>"><?= $fac_course['course_title']; ?></option>
 
               <?php
-                  endwhile;
+              endwhile;
               ?>
               <?php
 
@@ -268,13 +264,13 @@ $user =$student->GetUser($user_id);
             <select name="course4" id="course4" class="form-control">
               <option value=""></option>
               <?php
-                $fac_courses = $student->SelectCourses($faculty);
-                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
-              ?>
-                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+              $fac_courses = $student->SelectCourses($faculty);
+              while ($fac_course = mysqli_fetch_assoc($fac_courses)) :
+                ?>
+                <option value="<?= $fac_course['course_code']; ?>"><?= $fac_course['course_title']; ?></option>
 
               <?php
-                  endwhile;
+              endwhile;
               ?>
               <?php
 
@@ -288,13 +284,13 @@ $user =$student->GetUser($user_id);
             <select name="course5" id="course5" class="form-control">
               <option value=""></option>
               <?php
-                $fac_courses = $student->SelectCourses($faculty);
-                  while($fac_course = mysqli_fetch_assoc($fac_courses)):
-              ?>
-                <option  value="<?=$fac_course['course_code']; ?>"><?=$fac_course['course_title']; ?></option>
+              $fac_courses = $student->SelectCourses($faculty);
+              while ($fac_course = mysqli_fetch_assoc($fac_courses)) :
+                ?>
+                <option value="<?= $fac_course['course_code']; ?>"><?= $fac_course['course_title']; ?></option>
 
               <?php
-                  endwhile;
+              endwhile;
               ?>
               <?php
 
@@ -304,12 +300,17 @@ $user =$student->GetUser($user_id);
 
           </div>
           <div>
+<<<<<<< HEAD:student-area/dashboard.php
             <input type="submit" class="btn btn-primary" value="Register" name="course_reg">
           </div> 
+=======
+            <input type="submit" value="Submit" name="course_reg">
+          </div>
+>>>>>>> 008cbf44e9439a37f0984d99bf9134781269936a:dashboard.php
         </form>
-        
+
       </div>
-      
+
 
     </div>
   </div>
@@ -322,8 +323,9 @@ $user =$student->GetUser($user_id);
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/newdashboard.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/menu-bar.js"></script>
+  <script src="/js/newdashboard.js"></script>
+  <script src="/js/main.js"></script>
 
 
 
