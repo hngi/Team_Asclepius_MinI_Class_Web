@@ -17,7 +17,7 @@
 
         <ul>
           <li><a href="students.php">View Students</a></li>
-          <li><a href="#" class="logout">Logout</a></li>
+          <li><a href="../logout.php" class="logout">Logout</a></li>
         </ul>
       </li>
     </ul>

@@ -1,57 +1,64 @@
 <?php
 
-require '../controllers/LecturerController.php';
+require '../controllers/StudentController.php';
 
-$lecturer = new Lecturer;
+$student = new Student;
 
 
-if (isset($_POST['create_assignment'])) {
+if(isset($_POST['submit_assignment'])){
 
   $assignment_title = $_POST['assignment_title'];
   $course_code = $_POST['course_code'];
   $id_number = '123456';
 
-  if (!empty($_FILES)) {
+  if(!empty($_FILES)){
 
     $errors = array();
-    $name = $_FILES['assignment_file']['name'];
+    $name =$_FILES['submission_file']['name'];
     $nameArray = explode('.', $name);
     $fileName = $nameArray[0];
     $fileExt = $nameArray[1];
-    $allowed = array('pdf', 'doc', 'docx');
-    $target_dir = "../uploads/assignments/";
-    $target_file = $target_dir . basename($_FILES["assignment_file"]["name"]);
-    $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    $allowed = array('pdf','doc','docx');
+    $target_dir = "../uploads/assignments/submissions/";
+    $target_file = $target_dir . basename($_FILES["submission_file"]["name"]);    
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
     // Check if file already exists
     if (file_exists($target_file)) {
-      $error[] = "Sorry, file already exists.";
+      $error[] = "Sorry, file already exists.";        
+    
     }
     // Check file size
-    if ($_FILES["assignment_file"]["size"] > 500000) {
+    if ($_FILES["submission_file"]["size"] > 500000) {
       $error[] = "Sorry, your file is too large. Upload files less than 5mb.";
+       
     }
     // Allow certain file formats
-    if (!in_array($fileExt, $allowed)) {
+    if(!in_array($fileExt, $allowed)){
       $error[] = "The file must be either pdf, doc or docx.";
+      
     }
     if (!empty($errors)) {
 
-      foreach ($errors as $error) {
+      foreach($errors as $error){
 
-        $wrong = $error;
+          $wrong = $error;
+
       }
 
-      // if everything is ok, try to upload file
-    } else {
-      if (move_uploaded_file($_FILES["assignment_file"]["tmp_name"], $target_file)) {
+  // if everything is ok, try to upload file
+  } else {
+      if (move_uploaded_file($_FILES["submission_file"]["tmp_name"], $target_file)) { 
+          
+          $upload_message = $student->SubmitAssignment($course_code, $assignment_title,$target_file,$id_number);
 
-        $upload_message = $lecturer->CreateAssignment($course_code, $assignment_title, $target_file, $id_number);
       } else {
-        $upload_message = "Sorry, there was an error uploading your file.";
+          $upload_message = "Sorry, there was an error uploading your file.";
       }
-    }
   }
+}
+  
+
 }
 
 ?>
@@ -73,21 +80,24 @@ if (isset($_POST['create_assignment'])) {
 </head>
 
 <body>
-  <?php require_once "header.php"; ?>
+  <?php require_once "../teacher-area/header.php"; ?>
 
   <div class="register_login-content">
-    <form action="create_assignment.php" method="POST" enctype="multipart/form-data">
-      <h2 class="form-title">Add Assignment</h2>
+    <form action="submit_assignment.php" method="POST" enctype="multipart/form-data">
+      <h2 class="form-title">Submit Assignment</h2>
 
       <div id="error_message">
-        <?php
-        if (!empty($errors)) {
+      <?php
+            if(!empty($errors)){
 
-          foreach ($errors as $error) {
+              foreach($errors as $error){
 
-            echo '<div class="alert alert-info">' . $error . '</div>';
-          }
-        }
+                echo '<div class="alert alert-info">'.$error.'</div>';
+              }
+
+              
+
+            }
 
         ?>
 
@@ -103,10 +113,10 @@ if (isset($_POST['create_assignment'])) {
       </div>
       <div>
         <label for="">Assignment</label>
-        <input type="file" name="assignment_file">
+       <input type="file" name="submission_file">
       </div>
       <div>
-        <input type="submit" class="btn btn-big " id="btn-success" name="create_assignment" value="Create Assignment">
+      <input type="submit" class="btn btn-big " id="btn-success" name="submit_assignment" value="Submit Assignment">
         <a type="button" class="btn btn-big btn-light" href="assignment.php">Cancel</a>
       </div>
 
@@ -122,9 +132,8 @@ if (isset($_POST['create_assignment'])) {
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="../js/menu-bar.js"></script>
-  <script src="/js/newdashboard.js"></script>
-  <script src="/js/main.js"></script>
+  <script src="js/newdashboard.js"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

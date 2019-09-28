@@ -1,6 +1,6 @@
 <?php
 
-    require_once('./config/database.php') ;
+    require_once('../config/database.php') ;
 
 
     class Student {
@@ -31,8 +31,15 @@
         public function RegisterCourses($courses_array, $id_number){
 
             $message = '';
+            $courses_arr = [];
 
-            $courses = json_encode($courses_array);
+            foreach($courses_array as $course){
+                if(!empty($course)){
+                    array_push($courses_arr, $course);
+                }
+            }
+
+            $courses = json_encode($courses_arr);
 
             $insert_sql = "UPDATE users SET courses = '$courses' WHERE id_number = '$id_number'";
 
@@ -119,30 +126,27 @@
 
         }
 
-        public function SubmitAssignment($hw,$course_code,$user_id){
-            $message='';
-            if(getimagesize($_FILES[$hw]['tmp_name'])==FALSE){
-                $message='please upload a file.';
-            }
-            else{
-                $created_at=date('y-m-d');
-                $ass = $_FILES[$hw]['name'];
-                $target="assigment/submit/".basename($ass);
-                move_uploaded_file($_FILES[$hw]['tmp_name'],$target);
-                try{
-                    $insert_sql = "INSERT INTO `submit_assignment` (user_id,course_code,assignment_name,created_at) VALUES('$user_id','$course_code','$ass','$created_at')" ;
-                    $insert_query = $this->db->query($insert_sql) or die(mysqli_error($this->db));
-                    $message = 'Assignment Succesfully Submited';
-                }
-                catch (Exception $e){
-                    $message = 'Something Went wrong. Please try again.';
-                }
+        public function SubmitAssignment($course_code, $assignment_title,$target_file,$id_number){
+
+            $errors = array();
+            $message = '';
+            $created_at = date('Y-m-d');
+            $grade = '';
+            $updated_at = '';
+
+            $insert_sql = "INSERT INTO submissions (submission_id,course_code,assignment_title,id_number,submission_file,created_at,grade, updated_at) 
+            VALUES(NULL,'$course_code','$assignment_title','$id_number','$target_file','$created_at','$grade', '$updated_at')" ;
 
 
-            }
-            return $message;
+            if($insert_query = $this->db->query($insert_sql) ){
+
+                $message = 'Assignment submitted successfully';
+
+            } 
+
+
+
         }
-
         public function ShowAssignmentToLecturer($course_code){
 
             $sql = "SELECT assignment_name FROM submit_assignment where course = '$course_code'";
