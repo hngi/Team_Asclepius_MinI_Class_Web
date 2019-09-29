@@ -1,5 +1,8 @@
 <?php
+
 require 'controllers/user.php';
+include('includes/header.php');
+
 $user =  new User;
 
 
@@ -20,51 +23,16 @@ if (isset($_POST['login'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/newdashboard.css">
-  <link rel="stylesheet" href="css/form.css">
-  <title>Document</title>
-</head>
-
-<body>
-
   <div class="alert alert-sucess">
-      <?php
-        
-      ?>
+      
   </div>
 
   <div class="register_login-content" id="login-form">
-    <form action="" method="POST">
+    <form action="login.php" method="POST">
       <h2 class="form-title">Get Active</h2>
 
       <div id="error_message">
-        <?php
-        if(!empty($reg_message)){
-
-          echo "<div class='alert alert-success'>$reg_message</div>";
-
-          unset($_SESSION['register_message']);
-        }
-
-        if (!empty($message)) {
-
-          foreach ($message as $mess) {
-
-            echo "<div class='alert alert-danger'>$mess</div>";
-          }
-        }
-
-
-        ?>
+       
       </div>
 
 
@@ -77,9 +45,7 @@ if (isset($_POST['login'])) {
         <label for="">Password</label>
         <input type="password" name="password" id="password" class="text-input">
         <span><img src="fonts/Vector-1.png" class="icon" alt=""></span>
-
       </div>
-
       <div>
         <button type="submit" class="btn btn-big" name="login">Login</button>
       </div>
