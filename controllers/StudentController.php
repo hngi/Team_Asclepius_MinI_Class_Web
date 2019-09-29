@@ -79,7 +79,7 @@
             $courses_offered = $RegdCourses['courses'];
             $courses_offered = json_decode($courses_offered);
 
-            foreach($courses_offered as $course){
+            while($course = $courses_offered){
 
                 $note_sql = "SELECT * FROM notes where course_code = '$course'";
                 $note_query = $this->db->query($note_sql);
@@ -108,7 +108,7 @@
             $courses_offered = $RegdCourses['courses'];
             $courses_offered = json_decode($courses_offered);
 
-            foreach($courses_offered as $course){
+            while($course = $courses_offered){
 
                 $assignment_sql = "SELECT * FROM assignments where course_code = '$course'";
                 $assignments_query = $this->db->query($assignment_sql);
@@ -142,7 +142,10 @@
 
                 $message = 'Assignment submitted successfully';
 
-            } 
+            } else{
+                
+                die(mysqli_error($this->db));
+            }
 
 
 
@@ -190,6 +193,29 @@
 
             return $fac_courses;
 
+        }
+        
+        public function SelectDepartments(){
+            
+            $sql ="SELECT * FROM departments";
+            $departments = $this->db->query($sql);
+
+            return $departments;
+        }
+        
+         public function SelectFaculties(){
+            
+            $sql ="SELECT * FROM faculties";
+            $faculties = $this->db->query($sql);
+
+            return $faculties;
+        }
+        
+        public function UpdateStudent($faculty_code, $dept_code,$id_number){
+            
+            $sql = "UPDATE users SET faculty_code = '$faculty_code', dept_code = '$dept_code' WHERE id_number = '$id_number'";
+            
+            $query = $this->db->query($sql) or die(mysqli_error($this->db));
         }
 
     }
