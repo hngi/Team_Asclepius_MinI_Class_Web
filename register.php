@@ -1,5 +1,6 @@
 <?php
 require 'controllers/user.php';
+include('includes/header.php');
 $user =  new User;
 
 if (isset($_POST['register'])) {
@@ -17,21 +18,6 @@ if (isset($_POST['register'])) {
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/newdashboard.css">
-  <link rel="stylesheet" href="css/form.css">
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-  <title>Document</title>
-</head>
-
 <body>
 
   <!-- <div class="logo">
@@ -44,7 +30,24 @@ if (isset($_POST['register'])) {
       <h2 class="form-title">Register</h2>
 
       <div id="error_message">
+         <?php
+        if(!empty($reg_message)){
 
+          echo "<div class='alert alert-success'>$reg_message</div>";
+
+          unset($_SESSION['register_message']);
+        }
+
+        if (!empty($message)) {
+
+          foreach ($message as $mess) {
+
+            echo "<div class='alert alert-danger'>$mess</div>";
+          }
+        }
+
+
+        ?>
       </div>
 
       <div class="group">
