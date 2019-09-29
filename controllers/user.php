@@ -99,6 +99,7 @@ Class User{
                     $_SESSION['User'] = $user_id;
                     $_SESSION['success_flash'] = "You are logged in successfully.";
                     $_SESSION['id_number'] = $UserDetails['id_number'];
+                    $_SESSION['fullname'] = $UserDetails['fullname'];
                     $person = $UserDetails['role'];
                     
 

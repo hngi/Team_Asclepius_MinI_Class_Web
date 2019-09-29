@@ -1,6 +1,6 @@
 <?php
 
-require_once('../controllers/StudentController.php');
+require('../controllers/StudentController.php');
 include('includes/header.php');
 include('includes/nav.php');
 
@@ -12,6 +12,7 @@ $user_id = $_SESSION['User'];
 $user = $student->GetUser($user_id);
 
 $id_number = $_SESSION['id_number'];
+
 $faculty = $user['faculty_code'];
 $notes = $student->ShowCourseNotes($id_number);
 $assignments = $student->ShowCourseAssignments($id_number);
@@ -152,7 +153,7 @@ $courses = $student->ShowRegdCourses($id_number);
 
             <?php
             
-            if (!empty($course)) {
+            if (!empty($courses)) {
                foreach ($courses as $cos) {
 
                 echo ' <a href="course.php?course_code=' . $cos . '"><li class="list-group-item">' . $cos . '</li></a>';

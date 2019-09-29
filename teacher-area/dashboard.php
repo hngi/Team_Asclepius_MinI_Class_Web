@@ -43,14 +43,14 @@ $lecturer = new Lecturer;
 </head>
 
 <body>
-  <div id="overhead">
-    <h3>TEACHER'S DASHBOARD</h3>
-
-  </div>
   <?php require_once "header.php"; ?>
 
   <div class="container card" id="container-teacherArea">
-    <a href="../dashboard.php" target="_blank" class="text-danger visite-site">Visite Site</a>
+    <div class="jumbotron text-center">
+        <p>Welcome to the Teacher Area</p>
+    
+    </div>
+   <!-- <a href="../dashboard.php" target="_blank" class="text-danger visite-site">Visite Site</a>
 
     <div class="col-md-12">
       <div class="row">
@@ -94,7 +94,7 @@ $lecturer = new Lecturer;
       </div>
 
 
-    </div>
+    </div>-->
   </div>
   <!-- FOOTER -->
   <div class="footer text-center">

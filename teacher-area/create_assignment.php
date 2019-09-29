@@ -9,7 +9,7 @@ if (isset($_POST['create_assignment'])) {
 
   $assignment_title = $_POST['assignment_title'];
   $course_code = $_POST['course_code'];
-  $id_number = '123456';
+  $id_number = $_SESSION['id_number'];
 
   if (!empty($_FILES)) {
 
