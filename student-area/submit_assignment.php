@@ -1,6 +1,8 @@
 <?php
 
 require '../controllers/StudentController.php';
+include('includes/header.php');
+include('includes/nav.php');
 
 $student = new Student;
 
@@ -63,25 +65,6 @@ if(isset($_POST['submit_assignment'])){
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://kit.fontawesome.com/2d058dd44a.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Poppins|Candal|Lora" rel="stylesheet">
-  <link rel="stylesheet" href="../css/bootstrap.css">
-  <link rel="stylesheet" href="../css/newdashboard.css">
-  <link rel="stylesheet" href="../css/teachdashboard.css">
-  <link rel="stylesheet" href="../css/form2.css">
-  <title>Document</title>
-</head>
-
-<body>
-  <?php require_once "../teacher-area/header.php"; ?>
-
   <div class="register_login-content">
     <form action="submit_assignment.php" method="POST" enctype="multipart/form-data">
       <h2 class="form-title">Submit Assignment</h2>
@@ -105,15 +88,15 @@ if(isset($_POST['submit_assignment'])){
 
       <div>
         <label for="">Assignment Title</label>
-        <input type="text" name="assignment_title" id="assignment_title" class="text-input">
+        <input type="text" name="assignment_title" id="assignment_title" class="text-input" required>
       </div>
       <div>
         <label for="">Course</label>
-        <input type="text" name="course_code" id="course_code" class="text-input">
+        <input type="text" name="course_code" id="course_code" class="text-input" required>
       </div>
       <div>
         <label for="">Assignment</label>
-       <input type="file" name="submission_file">
+       <input type="file" name="submission_file" required>
       </div>
       <div>
       <input type="submit" class="btn btn-big " id="btn-success" name="submit_assignment" value="Submit Assignment">
@@ -124,16 +107,10 @@ if(isset($_POST['submit_assignment'])){
     </form>
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer text-center">
-    <div class="footer-middle">
-      &copy; Asclepius.com | Designed by Asclepius Team
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/newdashboard.js"></script>
-  <script src="js/main.js"></script>
+  <?php
+  
+    include('includes/footer.php');
+  ?>
 </body>
 
 </html>

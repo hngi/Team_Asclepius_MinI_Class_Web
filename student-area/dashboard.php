@@ -1,6 +1,8 @@
 <?php
 
 require_once('../controllers/StudentController.php');
+include('includes/header.php');
+include('includes/nav.php');
 
 
 $student = new Student;
@@ -8,6 +10,15 @@ $student = new Student;
 $user_id = $_SESSION['User'];
 
 $user = $student->GetUser($user_id);
+
+$id_number = $_SESSION['id_number'];
+$faculty = $user['faculty_code'];
+$notes = $student->ShowCourseNotes($id_number);
+$assignments = $student->ShowCourseAssignments($id_number);
+$courses = $student->ShowRegdCourses($id_number);
+
+
+
 
     if(isset($_POST['course_reg'])){
 
@@ -28,67 +39,33 @@ $user = $student->GetUser($user_id);
 
   
 
-$id_number = $user['id_number'];
-$faculty = $user['faculty_code'];
-$notes = $student->ShowCourseNotes($id_number);
-$assignments = $student->ShowCourseAssignments($id_number);
-$courses = $student->ShowRegdCourses($id_number);
+
 
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="https://kit.fontawesome.com/2d058dd44a.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Poppins|Candal|Lora" rel="stylesheet">
-  <link rel="stylesheet" href="../css/bootstrap.css">
-  <link rel="stylesheet" href="../css/newdashboard.css">
-
-
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-
-  <title>Document</title>
-</head>
-
-<body>
-
-  <header>
-    <div class="logo">
-      <h1 class="logo-text"><span>Asclepius</span>Class</h1>
-    </div>
-    <i class="fa fa-bars menu-toggle"></i>
-    <ul class="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Class Note</a></li>
-      <li><a href="submit_assignment.php">Submit Assignment</a></li>
-      <li><a href="#">Subject</a></li>
-
-      <li>
-        <a href="#">
-          <img src="images/lecturer.jpg" alt="">
-          <!-- <i class="fa fa-user"></i> -->
-          <?= $user['fullname']; ?>
-          <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-        </a>
-
-        <ul>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="../logout.php" class="logout">Logout</a></li>
-        </ul>
-      </li>
-    </ul>
-  </header>
+  
 
   <div class="container-fluid" id="page-wrapper">
+       
+      
     <div class="main" id="a">
+        <?php
+            if(empty($user['courses'])){
+                
+                echo '<div class="alert alert-danger text-center">Please <a href="student_update.php">update faculty and department</a>, then register courses.</div>';
+                
+            }
+          
+          ?>
+        
       <div class="main-first">
+          <div>
+         
+      </div>
         <div id="c">
-          <img src="images/graduant.png" alt="">
+          <img src="../images/graduant.png" alt="">
         </div>
         <div id="d">
           <h6>Hi, <?= $user['fullname']; ?> </h6>
@@ -105,6 +82,7 @@ $courses = $student->ShowRegdCourses($id_number);
 
           <div id="p-div">
             <?php
+            
 
             foreach ($notes as $note) {
 
@@ -171,11 +149,18 @@ $courses = $student->ShowRegdCourses($id_number);
         <h3>Registered Courses</h3>
         <div class="list-group">
           <ul class="list-group">
-            <?php
-            foreach ($courses as $cos) {
 
-              echo ' <a href="course.php?course_code=' . $cos . '"><li class="list-group-item">' . $cos . '</li></a>';
+            <?php
+            
+            if (!empty($course)) {
+               foreach ($courses as $cos) {
+
+                echo ' <a href="course.php?course_code=' . $cos . '"><li class="list-group-item">' . $cos . '</li></a>';
+              }
+            }else{
+              echo "<p class='text-warning'>NO course registered at the moment</p>";
             }
+           
 
 
             ?>
@@ -300,13 +285,13 @@ $courses = $student->ShowRegdCourses($id_number);
 
           </div>
           <div>
-<<<<<<< HEAD:student-area/dashboard.php
+
             <input type="submit" class="btn btn-primary" value="Register" name="course_reg">
           </div> 
-=======
-            <input type="submit" value="Submit" name="course_reg">
+
+            
           </div>
->>>>>>> 008cbf44e9439a37f0984d99bf9134781269936a:dashboard.php
+
         </form>
 
       </div>
@@ -315,18 +300,10 @@ $courses = $student->ShowRegdCourses($id_number);
     </div>
   </div>
 
-  <!-- FOOTER -->
-  <div class="footer text-center">
-    <div class="footer-middle">
-      &copy; Asclepius.com | Designed by Asclepius Team
-    </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="js/menu-bar.js"></script>
-  <script src="/js/newdashboard.js"></script>
-  <script src="/js/main.js"></script>
-
+  <?php
+    include('includes/footer.php');
+  
+  ?>
 
 
 </body>

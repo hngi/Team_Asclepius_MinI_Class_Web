@@ -95,15 +95,15 @@ if (isset($_POST['create_assignment'])) {
 
       <div>
         <label for="">Assignment Title</label>
-        <input type="text" name="assignment_title" id="assignment_title" class="text-input">
+        <input type="text" name="assignment_title" id="assignment_title" class="text-input" required>
       </div>
       <div>
         <label for="">Course</label>
-        <input type="text" name="course_code" id="course_code" class="text-input">
+        <input type="text" name="course_code" id="course_code" class="text-input" required>
       </div>
       <div>
         <label for="">Assignment</label>
-        <input type="file" name="assignment_file">
+        <input type="file" name="assignment_file" required>
       </div>
       <div>
         <input type="submit" class="btn btn-big " id="btn-success" name="create_assignment" value="Create Assignment">
