@@ -10,7 +10,7 @@ function validate() {
     const full_name = document.getElementById('full_name').value;
     const password = document.getElementById('password').value;
     const confirm_password = document.getElementById('confirm_password').value;
-  const select = document.getElementById('inputState');
+  const select = document.getElementById('role');
     const email = document.getElementById('email').value;
     const error_message = document.getElementById('error_message');
     error_message.style.padding = "10px";

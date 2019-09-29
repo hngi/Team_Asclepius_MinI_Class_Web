@@ -77,27 +77,27 @@ if (isset($_POST['create_course'])) {
 
       <div>
         <label for="">Course Title</label>
-        <input type="text" name="course_title" id="course_title" class="text-input">
+        <input type="text" name="course_title" id="course_title" class="text-input" required>
       </div>
       <div>
         <label for="">Course Code</label>
-        <input type="text" name="course_code" id="course_code" class="text-input">
+        <input type="text" name="course_code" id="course_code" class="text-input" required>
       </div>
       <div>
         <label for="">Course description</label>
-        <textarea name="course_description" id="course_description" cols="30" rows="5" class="text-input"></textarea>
+        <textarea name="course_description" id="course_description" cols="30" rows="5" class="text-input" required></textarea>
       </div>
       <div>
         <label for="">Credit Units</label>
-        <input type="number" name="credit_unit" id="credit_unit" class="text-input" min=1>
+        <input type="number" name="credit_unit" id="credit_unit" class="text-input" min=1 required>
       </div>
       <div>
         <label for="">Department</label>
-        <input type="text" name="department" id="department" class="text-input">
+        <input type="text" name="department" id="department" class="text-input" required>
       </div>
       <div>
         <label for="">Faculty</label>
-        <input type="text" name="faculty" id="faculty" class="text-input">
+        <input type="text" name="faculty" id="faculty" class="text-input" required>
       </div>
       <div>
         <input type="submit" class="btn btn-big " id="btn-success" name="create_course" value="Create Course">
