@@ -62,6 +62,28 @@
 
         }
 
+        public function SelectAssignments($id_number){
+
+            $sql = "SELECT * FROM assignments  WHERE id_number ='$id_number'";
+            $assignments = $this->db->query($sql);
+
+            return $assignments;
+
+
+
+        }
+
+        public function SelectCourses($id_number){
+
+            $sql = "SELECT * FROM courses  WHERE id_number ='$id_number'";
+            $courses = $this->db->query($sql);
+
+            return $courses;
+
+
+
+        }
+
        
 
         

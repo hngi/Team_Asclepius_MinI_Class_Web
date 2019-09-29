@@ -3,23 +3,9 @@
 require '../controllers/LecturerController.php';
 
 $lecturer = new Lecturer;
+$id_number = $_SESSION['id_number'];
 
-/* test variables----> uncomment these variables, fill them in with your own values and 
-  navigate to the page to test. Make sure your database is imported and connected.
-
-  $course_code = 'CEG313';
-  $course_title = 'strength of materials';
-  $course_description = 'dEscribing the stregnth of different materials in civil eng.';
-  $dept_code = 'CEG';
-  $faculty_code = 'ENG';
-  $id_number = '123456';
-  $credit_unit = 2;
-
-
-  $message = $lecturer->CreateCourse($course_code, $course_title, $course_description,$credit_unit ,$dept_code, $faculty_code, $id_number)
-
-
-  */
+$courses = $lecturer->SelectCourses($id_number);
 
 
 
@@ -54,17 +40,28 @@ $lecturer = new Lecturer;
       <thead class="table-primary">
         <tr>
           <th>#</th>
-          <th>Subject title</th>
-          <th>Subject description</th>
+          <th>Course title</th>
+          <th>Course description</th>
+          <th>Course Code</th>
           <th>Action</th>
         </tr>
       </thead>
+     
       <tbody>
+      <?php
+        while($course = mysqli_fetch_assoc($courses)) :
+
+
+      ?>
         <tr>
-          <td>1</td>
-          <td>Yoruba</td>
+          <td><?= $course['course_id']; ?></td>
+          <td><?= $course['course_title']; ?></td>
           <td>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur a autem, nisi, nesciunt provident ea alias iusto esse
+            <?= $course['course_description'] ?>
+
+          </td>
+          <td>
+            <?= $course['course_code'] ?>
 
           </td>
           <td>
@@ -72,39 +69,11 @@ $lecturer = new Lecturer;
             <a href="" class="text-danger">Delete</a>
           </td>
         </tr>
-        <tr>
-          <td>2</td>
-          <td>English</td>
-          <td>
-            nemo, tempora nam odit doloribus exercitationem repellat est qui labore fugit quisquam!
-          </td>
-          <td>
-            <a href="edit_subject.php">Edit</a>
-            <a href="" class="text-danger">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Maths</td>
-          <td>
-            nemo, tempora nam odit doloribus exercitationem repellat est qui labore fugit quisquam!
-          </td>
-          <td>
-            <a href="edit_subject.php">Edit</a>
-            <a href="" class="text-danger">Delete</a>
-          </td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Biology</td>
-          <td>
-            nemo, tempora nam odit doloribus exercitationem repellat est qui labore fugit quisquam!
-          </td>
-          <td>
-            <a href="edit_subject.php">Edit</a>
-            <a href="" class="text-danger">Delete</a>
-          </td>
-        </tr>
+        <?php
+          endwhile;
+
+        ?>
+        
       </tbody>
     </table>
   </div>

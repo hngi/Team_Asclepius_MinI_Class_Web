@@ -79,7 +79,7 @@
             $courses_offered = $RegdCourses['courses'];
             $courses_offered = json_decode($courses_offered);
 
-            while($course = $courses_offered){
+            foreach($courses_offered as $course){
 
                 $note_sql = "SELECT * FROM notes where course_code = '$course'";
                 $note_query = $this->db->query($note_sql);
@@ -108,7 +108,7 @@
             $courses_offered = $RegdCourses['courses'];
             $courses_offered = json_decode($courses_offered);
 
-            while($course = $courses_offered){
+            foreach($courses_offered as $course){
 
                 $assignment_sql = "SELECT * FROM assignments where course_code = '$course'";
                 $assignments_query = $this->db->query($assignment_sql);

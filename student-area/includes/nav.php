@@ -1,11 +1,5 @@
-<?php
-    require_once('../controllers/StudentController.php');
-    $student = new Student;
-    
-    $user_id = $_SESSION['User'];
-    
-    $user = $student->GetUser($user_id);
-
+<?php  
+    $fullname = $_SESSION['fullname'];
 
 ?>
 
@@ -24,7 +18,7 @@
         <a href="#">
           <img src="../images/lecturer.jpg" alt="">
           <!-- <i class="fa fa-user"></i> -->
-          <?= $user['fullname']; ?>
+          <?= $fullname; ?>
           <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
         </a>
 
