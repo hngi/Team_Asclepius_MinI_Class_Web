@@ -9,7 +9,7 @@ body {
     padding: 0;
     background: #f6f6f6;
     font-family: 'Lora', serif;
-    background-image: url(../images/images3.jpg);
+    /*background-image: url(../images/images3.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -166,5 +166,5 @@ a {
 }
 
 #login-form {
-    margin-top: 150px;
+    margin-top: 50px;
 }

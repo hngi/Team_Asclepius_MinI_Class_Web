@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-image: url(../images/images3.jpg);
+   /* background-image: url(../images/images3.jpg);*/
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;

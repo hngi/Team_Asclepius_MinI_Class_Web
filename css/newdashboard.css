@@ -37,6 +37,12 @@ header {
   background: lightgray;
 }
 
+header .logo img{
+    margin-top:7px;
+    height:50px;
+    width:100%;
+}
+
 header * {
   color: #ffffff;
 }
