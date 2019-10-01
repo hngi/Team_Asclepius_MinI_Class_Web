@@ -51,14 +51,20 @@
         public function CreateAssignment($course_code, $assignment_title,$target_file,$id_number){
 
             $errors = array();
-            $message = '';
+            $messageAss = '';
             $created_at = date('Y-m-d');
 
             $insert_sql = "INSERT INTO assignments (assignment_id,course_code,assignment_title,assignment_file,id_number,created_at) 
             VALUES(NULL,'$course_code','$assignment_title','$target_file','$id_number','$created_at')" ;
 
+             if($insert_query = $this->db->query($insert_sql)){
 
-            $insert_query = $this->db->query($insert_sql) or die(mysqli_error($this->db));
+                $messageAss = 'Assignment created successfully.';
+
+                
+            }
+            return $messageAss;
+            // $insert_query = $this->db->query($insert_sql) or die(mysqli_error($this->db));
 
         }
 

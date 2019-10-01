@@ -24,15 +24,34 @@ if (isset($_POST['login'])) {
 ?>
 
   <div class="alert alert-sucess">
-      
+      <img src="images/Image from iOS.png" alt="" srcset="" widht="100" height="70">
   </div>
+  <h4 class="little-title text-center text-info">ASCLEPIUS CLASSROOM LOGIN AREA</h4>
 
   <div class="register_login-content" id="login-form">
     <form action="login.php" method="POST">
       <h2 class="form-title">Get Active</h2>
+      <h5 class="little-title text-center">Welcome back Student or Teacher Access your dashboard </h5>
 
       <div id="error_message">
-       
+        <?php
+        if(!empty($reg_message)){
+
+          echo "<div class='alert alert-success'>$reg_message</div>";
+
+          unset($_SESSION['register_message']);
+        }
+
+        if (!empty($message)) {
+
+          foreach ($message as $mess) {
+
+            echo "<div class='alert alert-danger'>$mess</div>";
+          }
+        }
+
+
+        ?>
       </div>
 
 
@@ -50,7 +69,7 @@ if (isset($_POST['login'])) {
         <button type="submit" class="btn btn-big" name="login">Login</button>
       </div>
       <p>Don't have an account? <a href="register.php" class="text-danger">Register</a></p>
-      <a href="forget_password.php" class="text-danger text-center">Forget Password</a>
+      
     </form>
   </div>
 

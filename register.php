@@ -23,11 +23,16 @@ if (isset($_POST['register'])) {
   <!-- <div class="logo">
       <img src="./images/Logo.png" alt="logo">
     </div> -->
+     <div class="alert alert-sucess">
+      <img src="images/Image from iOS.png" alt="" srcset="" widht="100" height="70">
+  </div>
+  <h4 class="little-title text-center text-info">ASCLEPIUS CLASSROOM REGISTRATION AREA</h4>
 
 
   <div class="register_login-content">
     <form action="" method="POST" onsubmit="return validate();">
-      <h2 class="form-title">Register</h2>
+      <h2 class="form-title">Create An Account</h2>
+      <h5 class="text-center text-muted">Become a member of Asclepius School</h5>
 
       <div id="error_message">
          <?php

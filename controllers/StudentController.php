@@ -129,7 +129,7 @@
         public function SubmitAssignment($course_code, $assignment_title,$target_file,$id_number){
 
             $errors = array();
-            $message = '';
+            $messagesub = '';
             $created_at = date('Y-m-d');
             $grade = '';
             $updated_at = '';
@@ -140,13 +140,14 @@
 
             if($insert_query = $this->db->query($insert_sql) ){
 
-                $message = 'Assignment submitted successfully';
+                $messagesub = 'Assignment submitted successfully';
+                return $messagesub;
 
             } else{
                 
                 die(mysqli_error($this->db));
             }
-
+             return $messagesub;
 
 
         }
