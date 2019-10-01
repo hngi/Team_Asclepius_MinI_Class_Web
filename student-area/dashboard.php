@@ -187,7 +187,7 @@ $courses = $student->ShowRegdCourses($id_number);
             </div> 
           <div class="form-group">
             <label for="course1">First Course</label>
-            <select name="course1" id="course1" class="form-control">
+            <select name="course1" id="course1" class="form-control" required>
               <option value=""></option>
               <?php
               $fac_courses = $student->SelectCourses($faculty);
@@ -207,7 +207,7 @@ $courses = $student->ShowRegdCourses($id_number);
           </div>
           <div class="form-group">
             <label for="course2">Second Course</label>
-            <select name="course2" id="course2" class="form-control">
+            <select name="course2" id="course2" class="form-control" required>
               <option value=""></option>
               <?php
               $fac_courses = $student->SelectCourses($faculty);
@@ -227,7 +227,7 @@ $courses = $student->ShowRegdCourses($id_number);
           </div>
           <div class="form-group">
             <label for="course3">Third Course</label>
-            <select name="course3" id="course3" class="form-control">
+            <select name="course3" id="course3" class="form-control" required>
               <option value=""></option>
               <?php
               $fac_courses = $student->SelectCourses($faculty);
@@ -247,7 +247,7 @@ $courses = $student->ShowRegdCourses($id_number);
           </div>
           <div class="form-group">
             <label for="course4">Fourth Course</label>
-            <select name="course4" id="course4" class="form-control">
+            <select name="course4" id="course4" class="form-control" required>
               <option value=""></option>
               <?php
               $fac_courses = $student->SelectCourses($faculty);
@@ -267,7 +267,7 @@ $courses = $student->ShowRegdCourses($id_number);
           </div>
           <div class="form-group">
             <label for="course5">Fifth Course</label>
-            <select name="course5" id="course5" class="form-control">
+            <select name="course5" id="course5" class="form-control" required>
               <option value=""></option>
               <?php
               $fac_courses = $student->SelectCourses($faculty);

@@ -69,8 +69,12 @@ if(isset($_POST['submit_assignment'])){
     <form action="submit_assignment.php" method="POST" enctype="multipart/form-data">
       <h2 class="form-title">Submit Assignment</h2>
 
-      <div id="error_message">
+      <div id="">
       <?php
+      if (!empty($messagesub)) {
+
+          echo '<div class="alert alert-info">' . $messagesub . '</div>';
+        }
             if(!empty($errors)){
 
               foreach($errors as $error){
@@ -100,7 +104,7 @@ if(isset($_POST['submit_assignment'])){
       </div>
       <div>
       <input type="submit" class="btn btn-big " id="btn-success" name="submit_assignment" value="Submit Assignment">
-        <a type="button" class="btn btn-big btn-light" href="assignment.php">Cancel</a>
+        <a type="button" class="btn btn-big btn-light" href="dashboard.php">Cancel</a>
       </div>
 
 
