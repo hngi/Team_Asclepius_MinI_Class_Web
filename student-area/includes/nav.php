@@ -5,14 +5,14 @@
 
 <header>
     <div class="logo">
-      <h1 class="logo-text"><span>Asclepius</span>Class</h1>
+      <!--<h1 class="logo-text"><span>Asclepius</span>Class</h1>-->
+      <img src="../images/Image from iOS.png" alt="" srcset="">
     </div>
     <i class="fa fa-bars menu-toggle"></i>
     <ul class="nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Class Note</a></li>
+      <li><a href="dashboard.php">Home</a></li>
       <li><a href="submit_assignment.php">Submit Assignment</a></li>
-      <li><a href="#">Subject</a></li>
+      
 
       <li>
         <a href="#">

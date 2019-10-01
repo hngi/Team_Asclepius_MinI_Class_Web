@@ -81,6 +81,10 @@ if (isset($_POST['create_assignment'])) {
 
       <div id="error_message">
         <?php
+         if (!empty($messageAss)) {
+
+          echo '<div class="alert alert-info">' . $messageAss . '</div>';
+        }
         if (!empty($errors)) {
 
           foreach ($errors as $error) {
