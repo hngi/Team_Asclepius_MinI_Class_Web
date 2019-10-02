@@ -59,8 +59,9 @@ $assignments = $lecturer->SelectAssignments($id_number)
 
           </td>
           <td>
-            <a href="edit_assignment.php">Edit</a>
-            <a href="" class="text-danger">Delete</a>
+            <a href="edit_assignment.php" class="btn btn-primary">Edit</a>
+            <a href="" class="btn btn-danger">Delete</a>
+            <a href="grade_assignment.php?course=<?= $assignment['course_code']; ?>" class="btn btn-success">Grade</a>
           </td>
         </tr>
         <?php
