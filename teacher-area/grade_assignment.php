@@ -56,7 +56,7 @@ if(isset($_POST['submit_grade'])){
 
 
     ?>
-    <a href="create_assignment.php" value="" class="btn btn-success mb-4 " id="button-link">Grade Assignment</a>
+    <a href="create_assignment.php" value="" class="btn btn-default mb-4 " id="button-link"></a>
     <table class="table table-bordered table-responsive-lg table-condensed table-hover">
       <thead class="table-primary">
       
@@ -85,8 +85,8 @@ if(isset($_POST['submit_grade'])){
           <td><?= $user['fullname']; ?></td>
           <td><?= $ungraded['id_number'];?></td>
           <td>
-            <?= $ungraded['submission_file'];?>
-
+           
+            <a href="pdf_server.php?file=<?= $ungraded['submission_file'];?>" class="btn btn-primary">Download Assignment</a>
           </td>
           <td><?= $ungraded['created_at'];?></td>
           <td>
