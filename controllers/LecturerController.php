@@ -1,20 +1,17 @@
 <?php
 
-    require '../config/database.php';
+    require_once('../config/database.php');
 
     class Lecturer {
 
-         //Constructor to Initiate database connection
+        private $db;
+
+        //Constructor to Initiate database connection
         public function __construct(){
 
-            $this->db = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-            
-            if(mysqli_connect_errno()){
+            $db = new DB;
 
-                echo "Database connection failed with following errors:" . mysqli_connect_error();
-
-                die();
-            }
+            $this->db = $db->get_connection();
 
         }
 
@@ -50,6 +47,52 @@
             $insert_query = $this->db->query($insert_sql) or die(mysqli_error($this->db));
 
         }
+
+        public function CreateAssignment($course_code, $assignment_title,$target_file,$id_number){
+
+            $errors = array();
+            $messageAss = '';
+            $created_at = date('Y-m-d');
+
+            $insert_sql = "INSERT INTO assignments (assignment_id,course_code,assignment_title,assignment_file,id_number,created_at) 
+            VALUES(NULL,'$course_code','$assignment_title','$target_file','$id_number','$created_at')" ;
+
+             if($insert_query = $this->db->query($insert_sql)){
+
+                $messageAss = 'Assignment created successfully.';
+
+                
+            }
+            return $messageAss;
+            // $insert_query = $this->db->query($insert_sql) or die(mysqli_error($this->db));
+
+        }
+
+        public function SelectAssignments($id_number){
+
+            $sql = "SELECT * FROM assignments  WHERE id_number ='$id_number'";
+            $assignments = $this->db->query($sql);
+
+            return $assignments;
+
+
+
+        }
+
+        public function SelectCourses($id_number){
+
+            $sql = "SELECT * FROM courses  WHERE id_number ='$id_number'";
+            $courses = $this->db->query($sql);
+
+            return $courses;
+
+
+
+        }
+
+       
+
+        
 
         
 

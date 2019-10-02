@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #f6f6f6;
+    font-family: 'Lora', serif;
+    /*background-image: url(../images/images3.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Candal', serif;
+    color: #444;
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.btn-big {
+    padding: .7rem 1.3rem;
+    line-height: 1.3rem;
+}
+
+.btn {
+    padding: .5rem 1rem;
+    background: #0084;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    font-size: 1.08em;
+    font-family: 'Lora', serif;
+}
+
+.btn:hover {
+    color: #ffffff !important;
+    background: rgba(0, 0, 5, 0.267);
+}
+
+.group {
+    position: relative;
+}
+
+.text-input {
+    padding: .5rem 1rem;
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    outline: none;
+    color: #444;
+    line-height: 1.5rem;
+    font-size: 1.2em;
+    font-family: 'Lora', serif;
+}
+
+.icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    position: absolute;
+    right: 1rem;
+    bottom: .5rem;
+}
+
+
+/* Auth Pages */
+
+.register_login-content {
+    width: 35%;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+}
+
+.register_login-content .form-title {
+    text-align: center;
+}
+
+.register_login-content form div {
+    margin-bottom: 10px;
+}
+
+.register_login-content form p {
+    text-align: center;
+}
+
+.register_login-content form p a {
+    text-decoration: underline;
+}
+
+
+/* error */
+
+.register_login-content #error_message {
+    margin-top: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+    margin-bottom: 4px;
+    border-radius: 10px;
+}
+
+.register_login-content #errorForResetPassword {
+    margin-top: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+@media only screen and (max-width: 992px) {
+    .register_login-content {
+        width: 50%;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .register_login-content {
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .register_login-content {
+        width: 90%;
+        margin: 50px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+    }
+}
+
+#login-form {
+    margin-top: 50px;
+}
