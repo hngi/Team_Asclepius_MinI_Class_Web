@@ -90,6 +90,44 @@
 
         }
 
+        public function SelectUngraded($course){
+
+            $sql = "SELECT * FROM submissions  WHERE course_code ='$course' and grade=''";
+            $ungradeds = $this->db->query($sql);
+
+            return $ungradeds;
+
+
+
+        }
+
+        public function GetUser($id_number){
+
+            $sql = "SELECT * FROM users where id_number = '$id_number'";
+            $query =$this->db->query($sql);
+
+            $user = mysqli_fetch_assoc($query);
+
+            return $user;
+          }
+
+          public function AddGrade($submission_id, $grade){
+
+            $sql = "UPDATE submissions SET grade='$grade' WHERE submission_id='$submission_id'";
+            
+
+            if($query =$this->db->query($sql)){
+
+                $message = 'Graded Successfully';
+
+                return $message;
+            }
+
+           
+          }
+
+
+
        
 
         
