@@ -128,6 +128,22 @@
 
 
 
+    public function deletetAssignment($id_number, $id)
+    {
+        $message = '';
+        $sql1 = "SELECT * FROM assignments  WHERE id_number ='$id_number'";
+        $assignments = $this->db->query($sql1);
+
+        while ($fetch = mysqli_fetch_assoc($assignments)) {
+            $id = $fetch['assignment_id'];
+        }
+
+
+        $sql2 = "DELETE  FROM assignments  WHERE id_number = '$id_number' AND assignment_id = '$id' ";
+        $deleteAss = $this->db->query($sql2);
+
+        return $deleteAss;
+    }
        
 
         
