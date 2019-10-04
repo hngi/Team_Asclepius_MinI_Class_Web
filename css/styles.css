@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "montserrat", sans-serif;
+}
+
+#lg {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+nav {
+    width: 100%;
+    height: 75px;
+    background-color: #000;
+    line-height: 75px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 30px;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    transition: 0.8s all;
+}
+
+nav ul li:hover {
+    background-color: #f31a1a;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(226, 226, 226);
+    padding: 30px;
+    font-size: 15px;
+}
+
+.contact-section {
+    background-image: url("../img/bpTwo.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
+    padding: 65px 0;
+}
+
+.contact-section h1 {
+    text-align: center;
+    color: #ddd;
+}
+
+.border {
+    width: 100px;
+    height: 10px;
+    background: #34495e;
+    margin: 20px auto;
+}
+
+.contact-section .status_error {
+    padding: 0px;
+    margin-bottom: 20px;
+    background: #eed6d6;
+    /* max-width: 300px; */
+    width: 37%;
+    margin-left: 31%;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 0 100px;
+    overflow: hidden;
+}
+
+.contact-form-text {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 16px 0;
+    border: 0;
+    background: rgb(0, 0, 0);
+    padding: 20px 40px;
+    outline: none;
+    color: #ddd;
+    transition: 0.6s;
+}
+
+.cft:hover {
+    box-shadow: 0 0 10px 4px #2980b9;
+}
+
+textarea.contact-form-text {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form-btn {
+    float: right;
+    border: 0;
+    background: #34454e;
+    color: #fff;
+    padding: 12px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.contact-form-btn:hover {
+    background: #2980b9;
+}
