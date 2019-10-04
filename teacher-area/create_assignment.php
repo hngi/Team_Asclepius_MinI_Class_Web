@@ -47,6 +47,9 @@ if (isset($_POST['create_assignment'])) {
       if (move_uploaded_file($_FILES["assignment_file"]["tmp_name"], $target_file)) {
 
         $upload_message = $lecturer->CreateAssignment($course_code, $assignment_title, $target_file, $id_number);
+        $_SESSION['delete-mgs'] = 'Assignment was added successfully!';
+        echo '<script> location.replace("assignment.php"); </script>';
+        exit();
       } else {
         $upload_message = "Sorry, there was an error uploading your file.";
       }
@@ -81,7 +84,7 @@ if (isset($_POST['create_assignment'])) {
 
       <div id="error_message">
         <?php
-         if (!empty($messageAss)) {
+        if (!empty($messageAss)) {
 
           echo '<div class="alert alert-info">' . $messageAss . '</div>';
         }
