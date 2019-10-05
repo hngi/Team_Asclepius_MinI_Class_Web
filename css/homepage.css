@@ -1,0 +1,298 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #444;
+  line-height: 1.8;
+  word-spacing: 1.6px;
+  letter-spacing: 1.5px;
+  font-family: "montserrat", sans-serif;
+}
+
+@media (min-width: 1000px) {
+  body {
+    overflow-y: hidden;* {
+      padding: 0;
+      margin: 0;
+    }
+    
+    body {
+      color: #444;
+      line-height: 1.8;
+      word-spacing: 1.6px;
+      letter-spacing: 1.5px;
+      font-family: "montserrat", sans-serif;
+    }
+    
+    @media (min-width: 1000px) {
+      body {
+        overflow-y: hidden;
+      }
+    }
+    
+    header {
+      width: 100%;
+    }
+    
+    header nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 1.5rem 0.5rem;
+    }
+    
+    header nav .logo {
+      margin-left: 1rem;
+    }
+    
+    header nav .logo .logo-img {
+      width: 160px;
+      height: 60px;
+    }
+    
+    header nav .sign-up-btn {
+      margin-right: 1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border: 2.5px solid #5bc0de;
+      padding: 0.5rem 1.5rem;
+      border-radius: 10px;
+      background: none;
+    }
+    
+    header nav .sign-up-btn:hover {
+      background: #5bc0de;
+      color: #fff;
+    }
+    
+    .container .landing-page {
+      width: 100%;
+      height: 100vh;
+    }
+    
+    @media (min-width: 1000px) {
+      .container .landing-page {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+      }
+    }
+    
+    .container .landing-page .left-section {
+      text-align: center;
+    }
+    
+    @media (min-width: 1000px) {
+      .container .landing-page .left-section {
+        margin: 4rem 1rem 1rem 1rem;
+        width: 500px;
+      }
+    }
+    
+    .container .landing-page .left-section h1 {
+      padding: 1rem;
+    }
+    
+    .container .landing-page .left-section p {
+      padding: 1rem;
+      font-size: 1.1rem;
+      font-weight: 200;
+    }
+    
+    .container .landing-page .left-section p span {
+      color: #5bc0de;
+    }
+    
+    @media (min-width: 1000px) {
+      .container .landing-page .left-section p {
+        font-size: 1.5rem;
+      }
+    }
+    
+    .container .landing-page .left-section button {
+      margin-right: 1rem;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      border: 2.5px solid #5bc0de;
+      padding: 0.7rem 2rem;
+      border-radius: 10px;
+      background: none;
+    }
+    
+    .container .landing-page .left-section button:hover {
+      background: #5bc0de;
+      color: #fff;
+    }
+    
+    @media (min-width: 1000px) {
+      .container .landing-page .left-section button {
+        margin-left: 1rem;
+      }
+    }
+    
+    .container .landing-page .right-section {
+      text-align: center;
+    }
+    
+    @media (min-width: 1000px) {
+      .container .landing-page .right-section {
+        margin: 1rem;
+      }
+    }
+    
+    .container .landing-page .right-section img {
+      margin-top: 1rem;
+      width: 300px;
+      height: 400px;
+    }
+    
+    @media (min-width: 1000px) {
+      .container .landing-page .right-section img {
+        width: 600px;
+        margin-right: 1rem;
+      }
+    }
+    /*# sourceMappingURL=style.css.map */
+  }
+}
+
+header {
+  width: 100%;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem 0.5rem;
+}
+
+header nav .logo {
+  margin-left: 1rem;
+}
+
+header nav .logo .logo-img {
+  width: 160px;
+  height: 60px;
+}
+
+header nav .sign-up-btn {
+  margin-right: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 2.5px solid #5bc0de;
+  padding: 0.4rem 1.3rem;
+  border-radius: 10px;
+  background: none;
+}
+
+header nav .sign-up-btn:hover {
+  background: #5bc0de;
+  color: #fff;
+}
+
+.container .landing-page {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (min-width: 1000px) {
+  .container .landing-page {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.container .landing-page .left-section {
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .container .landing-page .left-section {
+    margin: 4rem 1rem 1rem 1rem;
+    width: 500px;
+  }
+}
+
+.container .landing-page .left-section h1 {
+  padding: 1rem;
+}
+
+.container .landing-page .left-section p {
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 200;
+}
+
+.container .landing-page .left-section p span {
+  color: #5bc0de;
+}
+
+@media (min-width: 1000px) {
+  .container .landing-page .left-section p {
+    font-size: 1.5rem;
+  }
+}
+
+.container .landing-page .left-section button {
+  margin-right: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 2.5px solid #5bc0de;
+  padding: 0.7rem 2rem;
+  border-radius: 10px;
+  background: none;
+}
+
+.container .landing-page .left-section button:hover {
+  background: #5bc0de;
+  color: #fff;
+}
+
+@media (min-width: 1000px) {
+  .container .landing-page .left-section button {
+    margin-left: 1rem;
+  }
+}
+
+.container .landing-page .right-section {
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .container .landing-page .right-section {
+    margin: 1rem;
+  }
+}
+
+.container .landing-page .right-section img {
+  margin-top: 1rem;
+  width: 300px;
+  height: 300px;
+}
+
+@media (min-width: 1000px) {
+  .container .landing-page .right-section img {
+    width: 600px;
+    margin-right: 1rem;
+  }
+}
