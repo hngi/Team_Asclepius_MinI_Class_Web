@@ -1,0 +1,433 @@
+WEBVTT
+
+00:00:05.610 --> 00:00:10.380
+Hello everyone and welcome to the environment set up lecture and this lecture we're going to go over
+
+00:00:10.380 --> 00:00:15.200
+how to get everything that you need onto your computer setup.
+
+00:00:15.420 --> 00:00:19.540
+This course is going to use Jupiter notebooks for teaching and the notes.
+
+00:00:19.540 --> 00:00:24.630
+However keep in mind that if you're an experienced Python user you are free to use whatever development
+
+00:00:24.630 --> 00:00:30.150
+environment you prefer whether it's pie charm a text editor such as Sublime Text that or no pet plus
+
+00:00:30.150 --> 00:00:32.180
+plus whatever you prefer.
+
+00:00:32.280 --> 00:00:33.590
+It will work for you.
+
+00:00:33.780 --> 00:00:37.770
+All the notes can be downloaded as py files that are compatible with any Python.
+
+00:00:37.770 --> 00:00:41.380
+Integrated Development Environment or id or texture.
+
+00:00:41.460 --> 00:00:46.910
+So if you prefer to use something that's not the Jupiter notebook's feel free to do so.
+
+00:00:47.250 --> 00:00:50.190
+Go ahead and check out either the fake Q or the lecture.
+
+00:00:50.220 --> 00:00:55.020
+Jupiter notebooks for the resource download link for this zip file that contains all that you Pernod
+
+00:00:55.030 --> 00:00:58.110
+books for the course.
+
+00:00:58.200 --> 00:01:01.170
+Now let's go ahead and move on to the actual setting up.
+
+00:01:01.230 --> 00:01:06.120
+We're going to be using the latest version of Python 3 for this course through the Anaconda distribution
+
+00:01:06.120 --> 00:01:06.600
+.
+
+00:01:06.690 --> 00:01:11.760
+All notes and syntax however are compatible with Python too so you can use whatever version you prefer
+
+00:01:11.760 --> 00:01:11.880
+.
+
+00:01:11.880 --> 00:01:16.050
+The syntax for all the libraries are going to be learning is essentially the same for both versions
+
+00:01:16.060 --> 00:01:16.320
+.
+
+00:01:16.530 --> 00:01:20.940
+Let's go ahead and go over the installation options for the Jupiter notebook's system.
+
+00:01:21.450 --> 00:01:27.150
+If you're an experienced user already has Python on their computer you may wish to install Jupiter using
+
+00:01:27.150 --> 00:01:30.710
+Python's package manager Pipp instead of Anaconda.
+
+00:01:30.780 --> 00:01:32.450
+Just go ahead and go to your command prompt.
+
+00:01:32.460 --> 00:01:36.090
+If you're a Windows user you can just type in CND to find it.
+
+00:01:36.090 --> 00:01:42.070
+Or if you're a Mac user you can just go to your terminal and use Pip's 3 install Jupiter or Pipp install
+
+00:01:42.070 --> 00:01:42.630
+Jupiter.
+
+00:01:42.780 --> 00:01:46.800
+Depending on what version of python you have again you can just install Jupiter through a quick and
+
+00:01:46.800 --> 00:01:49.270
+easy Pipp install.
+
+00:01:49.560 --> 00:01:55.500
+Now if you're a new user it's highly recommended that you install the Anaconda distribution.
+
+00:01:55.530 --> 00:02:00.020
+Anaconda is a full distribution of Python that conveniently installs Python.
+
+00:02:00.060 --> 00:02:04.920
+The Jupiter notebook and a bunch of the other commonly used packages for scientific computing and data
+
+00:02:04.920 --> 00:02:09.920
+science there were going to be using in this course that you can install everything at once.
+
+00:02:10.080 --> 00:02:17.210
+Let's go ahead and go to w w w that Jupiter or to walk through the installation steps.
+
+00:02:17.230 --> 00:02:20.930
+OK I'm going to go ahead and jump to my browser and go to this Web site.
+
+00:02:20.940 --> 00:02:26.060
+I advise you to do the same so you can follow along with the installation procedure.
+
+00:02:26.070 --> 00:02:28.390
+OK here I am at Jupiter dot org.
+
+00:02:28.410 --> 00:02:31.680
+That's J U P white TTR org.
+
+00:02:32.070 --> 00:02:35.420
+And this is the official documentation page for the Jupiter notebook.
+
+00:02:35.640 --> 00:02:41.070
+Jupiter note book has an open source interactive data science and scientific computing platform that
+
+00:02:41.070 --> 00:02:42.170
+can work actually across.
+
+00:02:42.180 --> 00:02:43.950
+Over 40 programming languages.
+
+00:02:44.100 --> 00:02:45.940
+Not just Python.
+
+00:02:46.080 --> 00:02:50.910
+It's a really slick web application that actually allows you to create insured documents that contain
+
+00:02:50.970 --> 00:02:55.530
+not just life code but equations visualizations and explanatory text.
+
+00:02:55.590 --> 00:03:00.400
+That's why it's a really great tool for teaching data science and Python libraries.
+
+00:03:00.480 --> 00:03:05.940
+I want you to scroll down on this page to see the ready to get started and then I want you to click
+
+00:03:05.940 --> 00:03:09.980
+on try in your browser and that should take you to this page.
+
+00:03:10.030 --> 00:03:11.550
+Try Jupiter.
+
+00:03:11.670 --> 00:03:12.290
+Org.
+
+00:03:12.450 --> 00:03:17.230
+And this is essentially a hosted online version of Jupiter.
+
+00:03:17.250 --> 00:03:19.310
+We're not going to be using an online version.
+
+00:03:19.320 --> 00:03:21.200
+We'll show you how to download everything locally.
+
+00:03:21.390 --> 00:03:25.590
+But I just wanted you to know that this is an option for you in case you ever want to quickly just jump
+
+00:03:25.590 --> 00:03:31.620
+to a browser and start working on Jupiter when you actually download Jupiter and have it on your computer
+
+00:03:31.740 --> 00:03:36.440
+and run it you'll get something that looks similar to this and then to start a new notebook you can
+
+00:03:36.450 --> 00:03:43.940
+click here on NEW AND YOU SHOULD SEE text file folder terminal and then some notebook options.
+
+00:03:43.950 --> 00:03:46.560
+Now you're not going to have all these options on your computer.
+
+00:03:46.560 --> 00:03:51.630
+Most likely you'll just have the option Python to Python 3 or Python roots.
+
+00:03:51.660 --> 00:03:55.710
+One of those most likely it's going to just be Python roots.
+
+00:03:55.830 --> 00:04:02.160
+You can go ahead and then click on one of these and it'll create a new notebook and then you can go
+
+00:04:02.160 --> 00:04:05.370
+ahead and start typing in Python code such as Prince.
+
+00:04:05.850 --> 00:04:06.670
+Hello.
+
+00:04:07.020 --> 00:04:10.410
+Run this cell and it should all be working.
+
+00:04:10.470 --> 00:04:12.190
+Now we'll go over in a future lecture.
+
+00:04:12.220 --> 00:04:17.930
+How Jupiter notebooks actually work how to run cells etc. how to actually manage the environment.
+
+00:04:18.060 --> 00:04:21.600
+But for now I just wanted you to know about Tricot Jupiter the.
+
+00:04:22.350 --> 00:04:23.930
+Going back to Jupiter.
+
+00:04:24.010 --> 00:04:26.790
+Or let's go ahead and install the notebook.
+
+00:04:26.790 --> 00:04:31.950
+Go ahead and click here on install the notebook and it will take you to this link right here.
+
+00:04:31.980 --> 00:04:33.670
+The Jupiter documentation page.
+
+00:04:33.690 --> 00:04:35.730
+Installing a Jupiter note book.
+
+00:04:35.970 --> 00:04:39.330
+Now Jupiter runs code in many programming languages.
+
+00:04:39.360 --> 00:04:45.930
+What we're going to be using it for is Python and what we're going to do is use the Anaconda distribution
+
+00:04:46.020 --> 00:04:47.960
+in order to install a Jupiter note notebook.
+
+00:04:47.970 --> 00:04:53.640
+So if you go ahead and kind of zoom in here you'll see that installing Jupiter using Anaconda and Khanda
+
+00:04:54.090 --> 00:04:55.600
+like I mentioned for new users.
+
+00:04:55.620 --> 00:05:00.870
+It's highly recommended that you install Anaconda Anaconda conveniently installs everything for you
+
+00:05:00.870 --> 00:05:01.180
+.
+
+00:05:01.340 --> 00:05:04.710
+What you're going gonna go ahead and do is just follow these three installation steps.
+
+00:05:04.710 --> 00:05:05.910
+It's really simple.
+
+00:05:05.910 --> 00:05:07.810
+You're going to just download Anaconda.
+
+00:05:08.190 --> 00:05:09.930
+So good and click that link.
+
+00:05:09.930 --> 00:05:14.280
+Then you can install the version of Anaconda which you downloaded and then once you've installed the
+
+00:05:14.280 --> 00:05:18.690
+Jupiter notebook to run the notebook either go to your command prompt or your terminal and you just
+
+00:05:18.690 --> 00:05:21.020
+typed Jupiter space notebook.
+
+00:05:21.030 --> 00:05:24.590
+Let me go ahead and show you what they Anaconda link looks like.
+
+00:05:25.080 --> 00:05:26.390
+It looks something like this.
+
+00:05:26.400 --> 00:05:28.440
+And you'll notice that there's a couple of options for you.
+
+00:05:28.440 --> 00:05:34.080
+It says download Anaconda now and there's basically a download for Windows Mac users or Linux users
+
+00:05:34.420 --> 00:05:38.520
+that will just take you over here to the actual download page.
+
+00:05:38.580 --> 00:05:44.490
+So if you're downloading for windows go ahead and click on Python 3.5 and depending on what kind of
+
+00:05:44.490 --> 00:05:47.390
+computer you have either a 64 bit or 32 bit.
+
+00:05:47.520 --> 00:05:50.880
+If it's on your computer most likely you have 64 bit.
+
+00:05:50.880 --> 00:05:56.520
+You can just go ahead and click on this installer or if you're using Mac OS go ahead and just click
+
+00:05:56.520 --> 00:05:59.190
+on the graphical installer for Mac OS.
+
+00:05:59.190 --> 00:06:04.650
+There is also a command line installer but I would really recommend just doing the easy graphic installer
+
+00:06:04.650 --> 00:06:05.300
+method.
+
+00:06:05.520 --> 00:06:07.570
+All you do is down the graphical installer.
+
+00:06:07.690 --> 00:06:12.510
+Double click the downloaded PKC file and then just follow the onscreen instructions.
+
+00:06:12.930 --> 00:06:18.780
+If you're a Linux user you can just go ahead and download the installer and then just use the bash line
+
+00:06:19.020 --> 00:06:21.980
+in your terminal to actually install everything you need.
+
+00:06:22.200 --> 00:06:26.520
+OK so go ahead and click on the installer download it.
+
+00:06:26.520 --> 00:06:28.270
+Follow the instructions but just double click.
+
+00:06:28.270 --> 00:06:33.460
+Being that it's executable file and everything should be working for you.
+
+00:06:33.480 --> 00:06:36.240
+Keep in mind this is quite a large installation.
+
+00:06:36.240 --> 00:06:41.730
+It's about 350 megabytes but that's also because it includes all the packages were going to be using
+
+00:06:41.730 --> 00:06:46.080
+throughout this course so once you install this you won't have to continually install the packages so
+
+00:06:46.080 --> 00:06:48.420
+I understand that it's a pretty large download.
+
+00:06:48.420 --> 00:06:52.140
+There's also something called mini anti-commie you can use but I would still recommend that you just
+
+00:06:52.140 --> 00:06:54.300
+download the full package environment.
+
+00:06:54.300 --> 00:06:57.930
+That way you don't have to continually install stuff as you go throughout the course.
+
+00:06:57.960 --> 00:07:03.360
+Once you went ahead and downloaded and just followed the onscreen onscreen instructions for the installer
+
+00:07:03.720 --> 00:07:08.030
+you'll go ahead and on the windows computer you can just come to your start.
+
+00:07:08.210 --> 00:07:10.260
+Type in C and D.
+
+00:07:10.260 --> 00:07:15.000
+This will be your command prompt and that will bring up this sort of command prompt here and what you're
+
+00:07:15.000 --> 00:07:16.160
+going to go ahead and do it.
+
+00:07:16.180 --> 00:07:19.430
+Taipan J U P Y C E R.
+
+00:07:19.500 --> 00:07:22.180
+Space notebook.
+
+00:07:22.260 --> 00:07:26.860
+If you're a Mac OS you're going to do the exact same thing except instead of command prompt.
+
+00:07:26.880 --> 00:07:28.670
+You're going to do this on your terminal.
+
+00:07:28.680 --> 00:07:31.350
+You'll just do a spotlight search for the word terminal.
+
+00:07:31.460 --> 00:07:33.760
+TR am I an AOL.
+
+00:07:33.840 --> 00:07:37.170
+You'll get a very similar environment or pop up that looks like this.
+
+00:07:37.200 --> 00:07:40.000
+It'll probably be an all white instead of a black background.
+
+00:07:40.020 --> 00:07:43.650
+You'll do the exact same thing all Taipan Jupiter space notebook.
+
+00:07:43.670 --> 00:07:51.810
+Hit enter and then in your browser you'll actually get a window or new tab to pop up and the new tab
+
+00:07:51.810 --> 00:07:58.530
+will look something like this will be at local hosts either 8000 or a slash tree and then you can go
+
+00:07:58.530 --> 00:08:03.150
+ahead and click here on NEW and you'll get some options for notebook.
+
+00:08:03.150 --> 00:08:05.770
+Most likely you won't have as many options as I do here.
+
+00:08:05.790 --> 00:08:10.380
+You'll either have something that says Python roots or Python 3 whatever it says.
+
+00:08:10.380 --> 00:08:16.080
+That's OK you can just go out and click on one of these options and you should get a Jupiter notebook
+
+00:08:16.320 --> 00:08:24.170
+if you can go ahead and just type in print and in print see say hello and then click here on.
+
+00:08:24.180 --> 00:08:25.780
+Run the cell.
+
+00:08:25.980 --> 00:08:28.060
+You should be good to go if that outputs.
+
+00:08:28.110 --> 00:08:29.160
+Hello.
+
+00:08:29.220 --> 00:08:29.740
+OK.
+
+00:08:30.000 --> 00:08:34.710
+Coming up next we're going to give you more background on how to use the Jupiter notebook as a development
+
+00:08:34.710 --> 00:08:38.800
+environment and later on we'll show you some other options as well for other ideas.
+
+00:08:38.910 --> 00:08:41.470
+In case you want to use something that's not Jupiter notebook.
+
+00:08:41.580 --> 00:08:42.100
+All right.
+
+00:08:42.240 --> 00:08:46.710
+Feel free to post any questions over the installation process to the Q&A forums and I'll be happy to
+
+00:08:46.710 --> 00:08:47.850
+help you out.
+
+00:08:47.850 --> 00:08:49.770
+Thanks everyone and I'll see you at the next lecture

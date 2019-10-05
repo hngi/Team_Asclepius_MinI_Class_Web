@@ -1,0 +1,259 @@
+html {
+    height: 100%;
+}
+
+body {
+   /* background-image: url(../images/images3.jpg);*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.form-box {
+    position: absolute;
+    transform: translate(25rem, 12rem);
+    width: 50%;
+}
+
+.form-box {
+    position: absolute;
+    transform: translate(21rem, 14rem);
+    width: 50%;
+}
+
+
+/* ======MEDIA QUERIES====== */
+
+@media only screen and (max-width:900px) {
+    .form-box {
+        transform: translate(15rem, 10rem);
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .form-box {
+        transform: translate(10rem, 10rem);
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .form-box {
+        transform: translate(5rem, 10rem);
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .form-box {
+        transform: translate(3rem, 9rem);
+        width: 80%;
+    }
+}
+
+
+/* ======MEDIA QUERIES====== */
+
+.form-box .input-form {
+    width: 100%;
+    height: 2.7rem;
+    margin-bottom: .5rem;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.sel {
+    border-radius: 10px;
+    padding-left: -10px;
+}
+
+@media only screen and (max-width:450px) {
+    .form-box .input-form {
+        width: 90%;
+        height: 2.3rem;
+    }
+}
+
+.form-box h3 .link {
+    color: red;
+}
+
+
+
+.login-form h3 .link {
+    color: red;
+}
+
+
+
+.signup {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: absolute;
+    transform: translate(38rem, 8rem);
+    font-size: 3rem;
+}
+
+
+/* ======MEDIA QUERIES====== */
+
+@media only screen and (max-width:900px) {
+    .signup {
+        transform: translate(20rem, 5rem);
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .signup {
+        transform: translate(13rem, 5rem);
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:500px) {
+    .signup {
+        transform: translate(10rem, 5rem);
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .signup {
+        transform: translate(7.5rem, 5rem);
+    }
+}
+
+
+/* ======MEDIA QUERIES====== */
+
+main {
+    text-align: center;
+}
+
+main h1 {
+    margin-top: -2rem;
+    color: #fff;
+    text-shadow: 0 0 8px #888;
+}
+
+header>.logo>img {
+    width: 50px;
+    height: 50px;
+}
+
+.login-form {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    margin-top: 4.2rem;
+}
+
+.icon {
+    margin: auto 0;
+    color: black;
+    font-size: 1.3rem;
+}
+
+.login-form>.user-name,
+.login-form>.password {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    /* width: 100%; */
+    background: #fff;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.user-name:active {
+    width: 10px;
+}
+
+.user-name>input,
+.password>input {
+    width: 100%;
+    padding: 0.5rem;
+    text-align: center;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.login-form a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+    margin: 0.5rem;
+    text-shadow: 0 0 8px #888;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+    margin: 1rem;
+    background: #fff;
+    font-weight: bolder;
+    background: blue;
+    color: #fff;
+}
+
+.btn:hover {
+    background: #fff;
+    color: blue;
+}
+
+.line {
+    width: 150px;
+    height: 10px;
+    background: #fff;
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+@media (min-width: 740px) {
+    header>.logo>img {
+        width: 65px;
+        height: 65px;
+    }
+    .login-form>.user-name,
+    .login-form>.password {
+        width: 40%;
+    }
+    .btn {
+        padding: 1rem 4rem;
+    }
+    
+}
+
+/* error */
+.form-box #error_message {
+    margin-top: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+    margin-bottom: 4px;
+    border-radius: 10px;
+}
+
+.login-form #errorForResetPassword {
+    margin-top: 20px;
+    background: #fe8b8e;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+    color: #fff;
+    margin-bottom: 2px;
+     width: 40%;
+    
+}

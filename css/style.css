@@ -1,0 +1,238 @@
+#hdr{
+    position: absolute;
+    width: 100%;
+    height: 65.41px;
+    left: 0px;
+    top: 0px;
+    
+    background: #C4C4C4;
+}
+
+#hme{
+position: absolute;
+width: 20px;
+height: 10px;
+left: 40%;
+top: 10px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 10px;
+/* identical to box height */
+
+
+color: rgba(49, 50, 50, 0.72);
+
+
+}
+
+
+#cln{
+    position: absolute;
+
+    height: 10px;
+    left: 45%;
+    top: 10px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 10px;
+    /* identical to box height */
+    
+    
+    color: rgba(49, 50, 50, 0.72);
+    
+    
+
+}
+
+#asn{
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    left: 53%;
+    top: 10px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 10px;
+    /* identical to box height */
+    
+    
+    color: rgba(49, 50, 50, 0.72);
+    
+    
+
+}
+
+#sbj{
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    left: 61%;
+    top: 10px;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 10px;
+    /* identical to box height */
+    
+    
+    color: rgba(49, 50, 50, 0.72);
+    
+    
+
+}
+
+#hme:hover, #cln:hover, #asn:hover, #sbj:hover{
+    color: rgba(10, 89, 207, 0.68);
+    margin-top: 23px;
+}
+
+
+
+
+
+
+#main{
+    position: absolute;
+    left: 5%;
+    width: 60%;
+    height: 25%;
+    border-radius: 20px;
+    background-color:rgba(68, 82, 207, 0.13);
+    margin-top: 8%;
+}
+
+#pos{
+    position: absolute;
+    top: 10%;
+    margin-left: 25%;
+}
+#posTwo{
+    position: absolute;
+    top: 18%;
+    margin-left: 25%;
+}
+#posThree{
+    position: absolute;
+    top: 55%;
+    margin-left: 25%;
+}
+
+#mimg{
+    position: absolute;
+    left: -3%;
+    width: 13%;
+    height: 100%;
+    margin-left: 10%;
+}
+
+#limg{
+    position: absolute;
+    right: 17%;
+    width: 50px;
+    top:8px;
+    height: 50px;
+    border-radius: 60%;
+
+}
+
+#sec{
+    position: absolute;
+    left: 5%;
+    width: 60%;
+    height: 55%;
+    border-radius: 20px;
+    background-color:rgba(68, 82, 207, 0.13);
+    margin-top: 8%;
+    margin-bottom: 8%;
+    top: 33%;
+
+}
+
+#ta{
+    position: absolute;
+    left: 19%;
+    top: 42%;
+    width: 35%;
+    height: 35%;
+}
+
+#mea{
+    position: absolute;
+    left: 5%;
+    top: 42%;
+}
+
+
+
+#ss{
+    margin-left: 5%;
+    margin-top: 8%;
+}
+
+#sc{
+    margin-left: 5%;
+    margin-top: 8%;
+}
+
+#sso{
+    width: 30%;
+    height: 8%;
+    margin-top: 4%;
+    margin-left: 1%;
+}
+
+#ssot{
+    width: 30%;
+    height: 8%;
+    margin-top: 1%;
+    margin-left: 3%;
+}
+
+#btn{
+    position: absolute;
+    left: 44%;
+    top: 82%;
+
+    background-color:rgba(23, 118, 207, 0.46);
+    border: 1px solid rgba(23, 118, 207, 0.46);
+    width: 80px;
+    height: 20px;
+}
+
+#rt{
+position: absolute;
+height: 110%;
+left: 70%;
+top: 9%;
+
+border: 0.300px solid #000000;
+transform: rotate(90);   
+}
+
+#cnn{
+    position: absolute;
+    right: 10%;
+    top:1px;
+    height: 55px;
+    border-radius: 60%;
+}
+
+#cnntw{
+    position: absolute;
+    right: 12.5%;
+    top: 30px;
+    height: 55px;
+    border-radius: 60%;
+    font-size: 13px;
+}
