@@ -1,5 +1,24 @@
 <?php
 require 'controllers/user.php';
+
+$user = new User;
+
+if (isset($_POST['recover_password'])) {
+  $email = $_POST["email"];
+  $code = uniqid(true);
+  if ($user->mailer($email,$code)) {
+    $url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetPassword.php?code=$code";
+    $subject = 'Your Password Reset Link';
+    $body = "<h1>You requested a reset password link</h1> 
+                          <i>Click <a href='$url'> this link </a> to reset your password";
+    SendMail($email, $body, $subject, $url);
+    $_SESSION['mail-mgs'] = 'Reset Password link has been sent to your email';
+   header("location: login.php");
+    exit();
+  }
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +44,7 @@ require 'controllers/user.php';
 
 
     <div class="register_login-content" id="login-form">
-      <form action="" method="POST" onsubmit="return resetPassword();">
+      <form action="" method="POST">
         <h2 class="form-title">Recover Your Password</h2>
 
         <div id="errorForResetPassword">
@@ -35,7 +54,7 @@ require 'controllers/user.php';
 
         <div>
           <label for="">Email</label>
-          <input type="email" name="email" id="email" class="text-input">
+          <input type="email" name="email" id="email" class="text-input" required>
         </div>
 
         <div>
