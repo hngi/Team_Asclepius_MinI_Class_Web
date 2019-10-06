@@ -1,6 +1,7 @@
 <?php
 
 require_once('./config/database.php');
+require_once('mailController.php');
 
 error_reporting(E_ALL | E_WARNING | E_NOTICE);
 ini_set('display_errors', TRUE);
@@ -122,106 +123,37 @@ Class User{
 
             }
 
+    public function mailer($email,$code){
 
-            public function forgetPassword($email)
-            {
-                $errors = array();
-                $message = '';
+      /* mail for forget password */
+      $errors = [];
+      
+      $query =  "INSERT INTO resetpassword (code, email) VALUES('$code', '$email')";
+      $sendEmail  = $this->db->query($query);
+      return $sendEmail;
+    }
 
+    public function createNewPassword($newPassword, $code){
 
-                //check if email exists
-                $sql = "SELECT * FROM users WHERE email = '$email' ";
-                $query = $this->db->query($sql);
-                $UserDetails = mysqli_fetch_assoc($query);
-                $count = mysqli_num_rows($query);
-                $dir= dirname('C:\New folder\htdocs\team\vendor\autoload.php');
-                $dir.='\autoload.php';
-                echo $dir;
+      $errors = [];
+      
+      $getEmailQuery = $this->db->query( "SELECT * FROM resetpassword WHERE code='$code' LIMIT 1 ");
+      $emails = mysqli_fetch_assoc($getEmailQuery);
+      $email = $emails['email'];
+      if ($email) {
+        $newPassword = password_hash($newPassword, PASSWORD_BCRYPT);
+        $query = $this->db->query( "UPDATE users SET password='$newPassword' WHERE email='$email' ");
+        
+        if ($query) {
+          $query = "DELETE FROM resetpassword WHERE code='$code' ";
+          $deletePass = $this->db->query($query);
+          return $deletePass;
+        }
+        
+      }
+  
 
-                if ($count >= 1) {
-
-                    $rand=rand();
-                    $send='localhost/passwordreset?email='.$email.'&password='.$rand;
-                    $link="<a target='_blank' href='.$send.'> click here to reset password </a>";
-//                    require '../maill.php';
-                    require $dir;
-
-
-                    $mail = new PHPMailer(true);
-
-
-
-
-
-                    try {
-                        //Server settings
-                        $mail->SMTPDebug = 2;                                       // Enable verbose debug output
-                        $mail->isSMTP();                                            // Set mailer to use SMTP
-                        $mail->Host       = 'smtp.gmail.com';  // Specify main and backup SMTP servers
-                        $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-                        $mail->Username   = 'oyebamijitobi@gmail.com';                     // SMTP username
-                        $mail->Password   = 'gblcauvijrdacnxm';                               // SMTP password
-                        $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
-                        $mail->Port       = 587;                                    // TCP port to connect to
-
-                        //Recipients
-                        $mail->setFrom('oyebamijitobi@gmail.com', 'MY Name');
-                        $mail->addAddress('oyebamijitobi@gmail.com', 'Joe User');     // Add a recipient
-
-
-                        // Content
-                        $mail->isHTML(true);                                  // Set email format to HTML
-                        $mail->Subject = 'Password Reset';
-                        $mail->Body    = $link;
-                        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-                        $mail->send();
-                        echo 'Message has been sent';
-                    } catch (Exception $e) {
-//                      echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                        $error[]='Email not sent. Please try again.';
-                    }
-                   $message='A one time password has been sent to your account';
-                    $sql = "UPDATE users SET `resetPass`='.$rand.' WHERE `email`=.$email.";
-                    $this->db->query($sql);
-
-
-                } else {
-                    $errors[] = "Email Does Not Exist";
-                }
-
-            }
-
-            public function retrivepassword($pass,$email){
-
-
-                $sql = "SELECT * FROM users WHERE resetPass  = '$pass' ";
-                $query = $this->db->query($sql);
-                $UserDetails = mysqli_fetch_assoc($query);
-                $count = mysqli_num_rows($query);
-
-                if($count>=1){
-                    $rand=rand();
-                    $sql = "UPDATE users SET `resetPass`='$rand' WHERE `email`=.$email.";
-                    $this->db->query($sql);
-                }
-                else{
-                    echo "This link has Expired or does not exist";
-                }
-            }
-
-            public function updatepass($email,$password){
-                $sql = "UPDATE users SET `password`='$password' WHERE `email`=.$email.";
-                $result=$this->db->query($sql);
-
-                    header('location: login.php');
-                    $message="password changed succesfully";
-                    echo $message;
-
-
-            }
-
-    
+    }
     
             
 }

@@ -135,6 +135,16 @@ a {
     margin-bottom: 2px;
 }
 
+.register_login-content #errorCreateNewPassword {
+    margin-top: 20px;
+    background: #fe8b8e;
+    color: #fff;
+    padding: 0px;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.5s ease;
+}
+
 @media only screen and (max-width: 992px) {
     .register_login-content {
         width: 50%;
