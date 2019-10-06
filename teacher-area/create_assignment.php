@@ -16,29 +16,24 @@ if (isset($_POST['create_assignment'])) {
     $errors = array();
     $name = $_FILES['assignment_file']['name'];
     $nameArray = explode('.', $name);
-
-    $arr_size=sizeof($nameArray);
-
     $fileName = $nameArray[0];
-    $fileExt = $nameArray[$arr_size - 1];
-    $ext = pathinfo($fileName, PATHINFO_EXTENSION);
+    $fileExt = $nameArray[1];
     $allowed = array('pdf', 'doc', 'docx');
     $target_dir = "../uploads/assignments/";
     $target_file = $target_dir . basename($_FILES["assignment_file"]["name"]);
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-//    var_dump($nameArray,$arr_size,!in_array($fileExt, $allowed));
 
     // Check if file already exists
     if (file_exists($target_file)) {
-      $error = array_push($errors,"Sorry, file already exists.");
+      $error[] = "Sorry, file already exists.";
     }
     // Check file size
     if ($_FILES["assignment_file"]["size"] > 500000) {
-      $error=array_push($errors, "Sorry, your file is too large. Upload files less than 5mb.");
+      $error[] = "Sorry, your file is too large. Upload files less than 5mb.";
     }
     // Allow certain file formats
     if (!in_array($fileExt, $allowed)) {
-      $error = array_push($errors,"The file must be either pdf, doc or docx.");
+      $error[] = "The file must be either pdf, doc or docx.";
     }
     if (!empty($errors)) {
 
@@ -52,11 +47,13 @@ if (isset($_POST['create_assignment'])) {
       if (move_uploaded_file($_FILES["assignment_file"]["tmp_name"], $target_file)) {
 
         $upload_message = $lecturer->CreateAssignment($course_code, $assignment_title, $target_file, $id_number);
+        $_SESSION['delete-mgs'] = 'Assignment was added successfully!';
+        echo '<script> location.replace("assignment.php"); </script>';
+        exit();
       } else {
         $upload_message = "Sorry, there was an error uploading your file.";
       }
     }
-//    var_dump($errors);
   }
 }
 
@@ -87,7 +84,7 @@ if (isset($_POST['create_assignment'])) {
 
       <div id="error_message">
         <?php
-         if (!empty($messageAss)) {
+        if (!empty($messageAss)) {
 
           echo '<div class="alert alert-info">' . $messageAss . '</div>';
         }
