@@ -1,66 +1,79 @@
-<?php //require_once "controllers/authController.php";
-//if (!isset($_GET["code"])) {
-//  exit("Can't find page");
-//}
-//
-//?>
+<?php
+require 'controllers/user.php';
+$user = new User;
+if (isset($_GET["code"])) {
+  
+  if (isset($_POST['reset_password'])) {
+
+    $code = $_GET["code"];
+    $newPassword =  $_POST['new_password'];
+
+    $message = $user->createNewPassword($newPassword, $code);
+    $_SESSION['mail-mgs'] = "Password Updated!";
+    echo '<script> location.replace("login.php"); </script>';
+    exit();
+  }
+}else{
+  exit("Can't find page");
+}
+
+
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<div lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="stylesheet" href="css/main.css">
-  <title>Document</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/newdashboard.css">
+    <link rel="stylesheet" href="css/form.css">
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <title>Document</title>
+  </head>
 
-<body>
+  <body>
 
-  <div class="container main-div">
-
-
-    <div class="image-png">
-      <!-- image here -->
-      <img src="images/back ground 2.png" alt="" srcset="">
-      <h3>Code<span>Ninja</span></h3>
+    <!-- <div class="logo">
+      <img src="./images/Logo.png" alt="logo">
+    </div> -->
+    <div class="alert alert-sucess">
+      <img src="images/Image from iOS.png" alt="" srcset="" widht="100" height="70">
     </div>
-    <div class="form-area">
-      <h5 class="logo-on-small">Code<span>Ninja</span></h5>
-      <h5>Membership Area</h5>
-      <h6>Create a New Password</h6>
-      <!-- Register form here -->
-      <div class="form">
-        <form method="POST" id="myform" onsubmit="return CreateNewPassword();">
-          <div id="errorCreateNewPassword">
+    <h4 class="little-title text-center text-info">ASCLEPIUS CLASSROOM MEMBERSHIP AREA</h4>
 
-          </div>
-          <div class="form-box">
-            <label for="Email"></label>
-            <input type="password" name="new_password" class="form-control pop" placeholder="New Password" id="new_password">
-            <span class="icon"><img class="icon-img" src="fonts/Vector-1.png" alt=""></span>
-            <!-- <span class="text">Password must be 8 - 20 characters</span> -->
-          </div>
+    <div class="register_login-content" id="login-form">
+      <form method="POST" id="myform" onsubmit="return CreateNewPassword();">
 
-          <div class="form-box">
-            <label for="Password"></label>
-            <input type="password" name="confirm_new_password" class="form-control pop" placeholder="Retype New Password" id="confirm_new_password">
-            <span class="icon"><img class="icon-img" src="fonts/Vector-1.png" alt=""></span>
+        <h2 class="form-title">Create New Password</h2>
+        <div id="errorCreateNewPassword">
 
-          </div>
+        </div>
 
-          <div>
-            <button type="submit" class="btn mt-4" name="newPassword-btn">Create New Password</button>
-          </div>
-        </form>
-        <div class="change">Return back to <a class="login" href="login.php">login</a></div>
-      </div>
+
+
+        <div>
+          <label for="">Password</label>
+          <input type="password" name="new_password" id="new_password" class="text-input">
+        </div>
+        <div>
+          <label for="">Confirm Password</label>
+          <input type="password" name="confirm_password" id="confirm_new_password" class="text-input">
+        </div>
+
+        <div>
+          <button type="submit" class="btn btn-big" name="reset_password">Create New Password</button>
+        </div>
+        <p>Return back to <a href="login.php" class="text-danger">Login</a></p>
+
+      </form>
     </div>
 
+    <script src="js/main.js"></script>
+  </body>
 
-  </div>
-  <script src="js/form_validations.js"></script>
-</body>
-
-</html>
+</div>

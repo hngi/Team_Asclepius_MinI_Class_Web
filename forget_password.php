@@ -1,15 +1,24 @@
 <?php
 require 'controllers/user.php';
 
-$user =  new User;
+$user = new User;
 
-
-if(isset($_POST['reset-btn'])){
-
-  $email = $_POST['email'];
-  $message = $user->forgetPassword($email);
-
+if (isset($_POST['recover_password'])) {
+  $email = $_POST["email"];
+  $code = uniqid(true);
+  if ($user->mailer($email,$code)) {
+    $url = "http://" . $_SERVER["HTTP_HOST"] . dirname($_SERVER["PHP_SELF"]) . "/resetPassword.php?code=$code";
+    $subject = 'Your Password Reset Link';
+    $body = "<h1>You requested a reset password link</h1> 
+                          <i>Click <a href='$url'> this link </a> to reset your password";
+    SendMail($email, $body, $subject, $url);
+    $_SESSION['mail-mgs'] = 'Reset Password link has been sent to your email';
+   header("location: login.php");
+    exit();
+  }
 }
+
+
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +33,7 @@ if(isset($_POST['reset-btn'])){
     <link rel="stylesheet" href="css/newdashboard.css">
     <link rel="stylesheet" href="css/form.css">
     <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <title>Forgot Password</title>
+    <title>Document</title>
   </head>
 
   <body>
@@ -33,24 +42,23 @@ if(isset($_POST['reset-btn'])){
       <img src="./images/Logo.png" alt="logo">
     </div> -->
 
- <!-- enter email to forget password form  -->
+
     <div class="register_login-content" id="login-form">
-      <form action="test.php" method="POST" id="resetPassword" onsubmit="return resetPassword();">
+      <form action="" method="POST">
         <h2 class="form-title">Recover Your Password</h2>
 
         <div id="errorForResetPassword">
 
-        </div> 
+        </div>
 
-        <div class="form-box">
-          <label for="Email"></label>
-          <!-- <input type="email" name="email" id="email" class="text-input"> -->
-          <input type="text" name="email" class="form-control pop" placeholder="Email" id="email">
-          <span class="icon"><img class="icon-img" src="fonts/Vector.png" alt=""></<span>
+
+        <div>
+          <label for="">Email</label>
+          <input type="email" name="email" id="email" class="text-input" required>
         </div>
 
         <div>
-          <button type="submit" class="btn btn-big" name="reset-btn">Reset</button>
+          <button type="submit" class="btn btn-big" name="recover_password">Recover Password</button>
         </div>
         <p>Return back to <a href="login.php" class="text-danger">Login</a></p>
 
